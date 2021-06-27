@@ -4,6 +4,6 @@
 source bgord-scripts/base.sh
 
 info "Linting all files..."
-npx eslint . --ext .js,.tsx,.ts --cache --ignore-path bgord-scripts/.eslintignore
+npx eslint . --ext .js,.tsx,.ts --cache --ignore-path bgord-scripts/.eslintignore --config bgord-scripts/.eslint-config.json
 
 success "Files are corect!"
