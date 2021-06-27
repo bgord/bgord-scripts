@@ -1,2 +1,5 @@
 .eslintcache
 node_modules/
+.env.local
+.env.staging
+.env.prodction
