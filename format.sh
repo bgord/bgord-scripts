@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Preload base bash configuration and functions
+source bgord-scripts/base.sh
+
+info "Formatting all files..."
+npx pretty-quick
+
+success "Files formatted successfully!"
