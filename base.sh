@@ -25,3 +25,13 @@ function goal {
   MESSAGE=$1
   info "[GOAL] $MESSAGE"
 }
+
+function check_if_file_exists {
+  if test -f "$1"
+  then
+    success "$1 file exists!"
+  else
+    error "$1 file doesn't exist!"
+    exit 1
+  fi
+}
