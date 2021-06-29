@@ -2,6 +2,7 @@
 
 # Preload base bash configuration and functions
 source bgord-scripts/base.sh
+setup_base_config
 
 info "Installing Husky..."
 npm install -D husky
