@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+function setup_base_config {
+  # -e (exit immediately if a command fails)
+  # -o pipefail (quit even if a command in a pipelina fails)
+
+  set -eo pipefail
+}
+
 RED="\033[1;31m"
 GREEN="\033[1;32m"
 BLUE="\033[1;34m"
