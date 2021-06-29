@@ -16,7 +16,7 @@ else
 fi
 
 info "Adding .contributor..."
-if test -f ".contributor.example"
+if test -f ".contributor"
 then
   info "$1 file already exist, skipping"
 else
