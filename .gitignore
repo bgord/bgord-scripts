@@ -1,6 +1,7 @@
-.eslintcache
-node_modules/
+.contributor
 .env.local
-.env.staging
 .env.prodction
+.env.staging
+.eslintcache
 access.log
+node_modules/
