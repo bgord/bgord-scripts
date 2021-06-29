@@ -9,18 +9,18 @@ info "Setting up contributor..."
 info "Adding .contributor.example..."
 if test -f ".contributor.example"
 then
-  info "$1 file already exist, skipping"
+  info ".contributor.example file already exist, skipping"
 else
-  info "$1 file doesn't exist, creating..."
+  info ".contributor.example file doesn't exist, creating..."
   cp bgord-scripts/.contributor.example .
 fi
 
 info "Adding .contributor..."
 if test -f ".contributor"
 then
-  info "$1 file already exist, skipping"
+  info ".contributor file already exist, skipping"
 else
-  info "$1 file doesn't exist, creating..."
+  info ".contributor file doesn't exist, creating..."
   cp bgord-scripts/.contributor.example .contributor
 fi
 
