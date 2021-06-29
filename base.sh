@@ -42,3 +42,16 @@ function check_if_file_exists {
     exit 1
   fi
 }
+
+function validate_non_empty {
+  VARIABLE_NAME=$1
+  VARIABLE_VALUE=$2
+
+  if test -z "$VARIABLE_VALUE"
+  then
+    error "Empty argument: $VARIABLE_NAME";
+    exit 1
+  else
+    success "Correct argument: $VARIABLE_NAME";
+  fi
+}
