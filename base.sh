@@ -42,6 +42,7 @@ function check_if_file_exists {
     exit 1
   fi
 }
+
 function check_if_directory_exists {
   if test -d "$1"
   then
@@ -49,6 +50,16 @@ function check_if_directory_exists {
   else
     error "$1 directory doesn't exist!"
     exit 1
+  fi
+}
+
+function check_if_directory_does_not_exist {
+  if test -d "$1"
+  then
+    error "$1 directory already exists!"
+    exit 1
+  else
+    success "$1 directory doesn't exist."
   fi
 }
 
