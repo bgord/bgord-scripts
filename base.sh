@@ -42,6 +42,15 @@ function check_if_file_exists {
     exit 1
   fi
 }
+function check_if_directory_exists {
+  if test -d "$1"
+  then
+    success "$1 directory exists!"
+  else
+    error "$1 directory doesn't exist!"
+    exit 1
+  fi
+}
 
 function validate_non_empty {
   VARIABLE_NAME=$1
