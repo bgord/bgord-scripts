@@ -12,5 +12,6 @@ check_if_directory_does_not_exist "views"
 
 mkdir -p views/layouts
 cp bgord-scripts/templates/main.hbs views/layouts
+cp bgord-scripts/templates/home.hbs views
 
 success "Handlebars set up!"
