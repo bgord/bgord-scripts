@@ -1,3 +1,9 @@
+.contributor
+.env.local
+.env.prodction
+.env.staging
+.eslintcache
+access.log
 node_modules/
-tmp/
 static/*.js
+tmp/
