@@ -4,6 +4,7 @@
 .env.staging
 .eslintcache
 access.log
+build/
 node_modules/
 static/*.js
 tmp/
