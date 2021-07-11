@@ -5,4 +5,7 @@ source bgord-scripts/base.sh
 setup_base_config
 
 info "Watching and rebuilding frontend..."
-npx esbuild --watch frontend/index.ts --outdir=static
+npx esbuild \
+  --bundle \
+  --watch frontend/index.ts \
+  --outdir=static

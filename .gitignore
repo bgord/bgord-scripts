@@ -5,3 +5,4 @@
 .eslintcache
 access.log
 node_modules/
+static/*.js
