@@ -75,3 +75,7 @@ function validate_non_empty {
     success "Correct argument: $VARIABLE_NAME";
   fi
 }
+
+function install_dev_package {
+  yarn add -D $@
+}
