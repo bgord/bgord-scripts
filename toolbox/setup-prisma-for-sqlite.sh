@@ -10,6 +10,7 @@ check_if_directory_does_not_exist prisma
 install_dev_package prisma
 mkdir prisma
 cp bgord-scripts/templates/schema-sqlite.prisma prisma/schema.prisma
+cp bgord-scripts/templates/db.ts db.ts
 
 info "1. Edit your data model in prisma/schema.prisma"
 info "2. Run 'npx prisma generate' to generate Prisma client for your data model"
