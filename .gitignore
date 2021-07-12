@@ -5,4 +5,5 @@
 .eslintcache
 access.log
 node_modules/
+sqlite.db
 static/*.js
