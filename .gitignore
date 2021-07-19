@@ -8,3 +8,7 @@ node_modules/
 prisma/sqlite.db
 prisma/sqlite.db-journal
 static/*.js
+static/main.css
+static/main.min.css
+static/normalize.css
+static/normalize.min.css
