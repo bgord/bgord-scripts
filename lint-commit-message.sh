@@ -5,6 +5,6 @@ source bgord-scripts/base.sh
 setup_base_config
 
 info "Linting commit message..."
-npx commitlint -E HUSKY_GIT_PARAMS --config bgord-scripts/.commitlint-config.js
+npx commitlint --config bgord-scripts/.commitlint-config.js
 
 success "Commit message is correct!"
