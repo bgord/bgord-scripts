@@ -8,4 +8,5 @@ info "Installing commitlint dependencies..."
 
 yarn add -D @commitlint/{cli,config-conventional}
 
-success "Commitlint set up!"
+info "Run './bgord-scripts/setup-husky.sh' to add the commit-msg git hook"
+info "WARNING: you may want to double-check if other hooks were not rewritten!"
