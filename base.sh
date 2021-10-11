@@ -33,6 +33,10 @@ function goal {
   info "[GOAL] $MESSAGE"
 }
 
+function new_line {
+  echo -e ""
+}
+
 function check_if_file_exists {
   if test -f "$1"
   then
@@ -78,4 +82,80 @@ function validate_non_empty {
 
 function install_dev_package {
   yarn add -D $@
+}
+
+function check_if_binary_exists {
+  if test -x "$(command -v $1)"
+  then
+    success "$2 is installed!"
+  else
+    error "$2 is not installed!"
+    exit 1
+  fi
+}
+
+function load_contributor_file {
+  info "Loading .contributor file..."
+
+  check_if_file_exists ".contributor"
+
+  set -a
+  . .contributor
+  set +a
+}
+
+function allow_to_skip_within_5s {
+  info "You can skip within 5s"
+
+  info "5..."
+  sleep 1s
+
+  info "4..."
+  sleep 1s
+
+  info "3..."
+  sleep 1s
+
+  info "2..."
+  sleep 1s
+
+  info "1..."
+  sleep 1s
+
+  success "Proceeding..."
+}
+
+function check_if_linux_or_macos {
+  KERNEL_NAME=$(uname -s)
+
+  if test $KERNEL_NAME == "Linux" || test $KERNEL_NAME == "Darwin"
+  then
+    success "Your host machine is either Linux or MacOS!"
+  else
+    error "Unsupported operating system, Linux or MacOS required."
+    exit 1
+  fi
+}
+
+function ensure_git_root_directory {
+  NEAREST_GIT_REPOSITORY_ROOT_DIRECTORY=$(git rev-parse --show-toplevel)
+  CURRENT_DIRECTORY=$(pwd)
+
+  if test $NEAREST_GIT_REPOSITORY_ROOT_DIRECTORY != $CURRENT_DIRECTORY
+  then
+    error "It seems you're trying to run the script outside the root git repository directory."
+    exit 1
+  fi
+}
+
+function ensure_vagrant_machine_is_running {
+  IS_MACHINE_RUNNING=$(vagrant status | tail +3 | head -n 1 | grep running | wc -l)
+
+  if test $IS_MACHINE_RUNNING != '1'
+  then
+    error "The test_staging_server Vagrant machine is not running"
+    info "Starting the machine..."
+    vagrant up --no-provision
+    success "The machine has been started!"
+  fi
 }
