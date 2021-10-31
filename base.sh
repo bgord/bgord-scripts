@@ -81,7 +81,7 @@ function validate_non_empty {
 }
 
 function install_dev_package {
-  yarn add -D $@
+  npm i -D $@
 }
 
 function check_if_binary_exists {

@@ -5,7 +5,7 @@ source bgord-scripts/base.sh
 setup_base_config
 
 info "Installing Husky..."
-yarn add -D husky
+npm i -D husky
 npm set-script prepare "husky install"
 npm run prepare
 npx husky add .husky/pre-commit "./bgord-scripts/pre-commit.sh"
