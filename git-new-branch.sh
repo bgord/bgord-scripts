@@ -4,16 +4,6 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-function load_contributor_file {
-  info "Loading .contributor file..."
-
-  check_if_file_exists ".contributor"
-
-  set -a
-  . .contributor
-  set +a
-}
-
 # USAGE:
 # ./bgord-scripts/git-new.branch.sh [branch-type: f, feature, b, bugfix] [branch-name]
 # ./bgord-scripts/git-new.branch.sh f add-cypress
