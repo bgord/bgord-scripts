@@ -13,23 +13,23 @@ BLUE="\033[1;34m"
 NC="\033[0m"
 
 function info {
-  MESSAGE=$1
+  local MESSAGE=$1
   echo -e "$BLUE   [info]$NC   $MESSAGE"
 }
 
 function success {
-  MESSAGE=$1
+  local MESSAGE=$1
   # shellcheck disable=SC1087
   echo -e "$GREEN[success]$NC   $MESSAGE"
 }
 
 function error {
-  MESSAGE=$1
+  local MESSAGE=$1
   echo -e "$RED  [error]$NC   $MESSAGE"
 }
 
 function goal {
-  MESSAGE=$1
+  local MESSAGE=$1
   info "[GOAL] $MESSAGE"
 }
 
@@ -68,8 +68,8 @@ function check_if_directory_does_not_exist {
 }
 
 function validate_non_empty {
-  VARIABLE_NAME=$1
-  VARIABLE_VALUE=$2
+  local VARIABLE_NAME=$1
+  local VARIABLE_VALUE=$2
 
   if test -z "$VARIABLE_VALUE"
   then
@@ -126,7 +126,7 @@ function allow_to_skip_within_5s {
 }
 
 function check_if_linux_or_macos {
-  KERNEL_NAME=$(uname -s)
+  local KERNEL_NAME=$(uname -s)
 
   if test $KERNEL_NAME == "Linux" || test $KERNEL_NAME == "Darwin"
   then
@@ -138,8 +138,8 @@ function check_if_linux_or_macos {
 }
 
 function ensure_git_root_directory {
-  NEAREST_GIT_REPOSITORY_ROOT_DIRECTORY=$(git rev-parse --show-toplevel)
-  CURRENT_DIRECTORY=$(pwd)
+  local NEAREST_GIT_REPOSITORY_ROOT_DIRECTORY=$(git rev-parse --show-toplevel)
+  local CURRENT_DIRECTORY=$(pwd)
 
   if test $NEAREST_GIT_REPOSITORY_ROOT_DIRECTORY != $CURRENT_DIRECTORY
   then
@@ -149,7 +149,7 @@ function ensure_git_root_directory {
 }
 
 function ensure_vagrant_machine_is_running {
-  IS_MACHINE_RUNNING=$(vagrant status | tail +3 | head -n 1 | grep running | wc -l)
+  local IS_MACHINE_RUNNING=$(vagrant status | tail +3 | head -n 1 | grep running | wc -l)
 
   if test $IS_MACHINE_RUNNING != '1'
   then
