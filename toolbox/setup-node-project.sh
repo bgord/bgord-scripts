@@ -23,6 +23,7 @@ npm install typescript@4.1.5 zod@3.1.0 @bgord/{node,design} express
 npm install --save-dev \
   ts-node-dev \
   @types/{cors,express,express-handlebars,express-session,lodash,nodemailer} \
+  @commitlint/{cli,config-conventional} \
   gzip
 touch .env
 touch .env.local
