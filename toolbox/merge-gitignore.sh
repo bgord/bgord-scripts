@@ -12,7 +12,7 @@ info "Merging .gitignore..."
 
 sort --unique bgord-scripts/.gitignore .gitignore \
   | grep -v '#' \
-  | tail +2 \
+  | tail +1 \
   > $TMP_GITIGNORE_FILEPATH \
   && mv $TMP_GITIGNORE_FILEPATH .gitignore
 
