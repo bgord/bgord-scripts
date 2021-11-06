@@ -159,3 +159,8 @@ function ensure_vagrant_machine_is_running {
     success "The machine has been started!"
   fi
 }
+
+function press_enter_to_continue {
+  read -s -p "Press enter to continue..."
+  echo -e ""
+}
