@@ -25,9 +25,9 @@ npm install --save-dev \
   @types/{cors,express,express-handlebars,express-session,lodash,nodemailer} \
   @commitlint/{cli,config-conventional} \
   gzip
-touch .env
+touch .env.example
 touch .env.local
-echo 'PORT=3000' > .env
+echo 'PORT=3000' > .env.example
 echo 'PORT=3000' > .env.local
 cp "$BGORD_SCRIPTS_BASE_PATH/templates/index.ts" .
 cp "$BGORD_SCRIPTS_BASE_PATH/templates/env.ts" .
