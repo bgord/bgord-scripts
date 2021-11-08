@@ -24,7 +24,7 @@ npm install --save-dev \
   ts-node-dev \
   @types/{cors,express,express-handlebars,express-session,lodash,nodemailer} \
   @commitlint/{cli,config-conventional} \
-  gzip
+  gzip-cli
 touch .env.example
 touch .env.local
 echo 'PORT=3000' > .env.example
