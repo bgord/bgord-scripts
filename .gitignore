@@ -1,6 +1,6 @@
 .contributor
 .env.local
-.env.prodction
+.env.production
 .env.staging
 .eslintcache
 access.log
