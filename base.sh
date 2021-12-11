@@ -25,7 +25,7 @@ function success {
 
 function error {
   local MESSAGE=$1
-  echo -e "$RED  [error]$NC   $MESSAGE" > &2
+  echo -e "$RED  [error]$NC   $MESSAGE"
 }
 
 function goal {
