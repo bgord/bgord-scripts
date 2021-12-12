@@ -37,7 +37,7 @@ success "You're logged in to npm"
 npm publish --dry-run
 success "Ran npm publish --dry-run"
 
-info "About run [npm publish] after you press Enter"
+info "About to run [npm publish] after you press Enter"
 press_enter_to_continue
 
 npm publish
