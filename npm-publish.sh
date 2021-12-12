@@ -3,6 +3,16 @@
 # Preload base bash configuration and functions
 source bgord-scripts/base.sh
 
+VERSION_BUMP_KIND=$1
+validate_non_empty "VERSION_BUMP_KIND" $VERSION_BUMP_KIND
+
+if test $VERSION_BUMP_KIND != "--major" && test $VERSION_BUMP_KIND != "--minor" && test $VERSION_BUMP_KIND != "--patch"
+then
+  error "First argument - VERSION_BUMP_KIND - has to be one of: --major, --minor, or --patch."
+  info "Usage ./bgord-scripts/npm-publish.sh [--major|--major|--patch]"
+  exit 1
+fi
+
 CURRENT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
 
 if test $CURRENT_BRANCH != "master"
@@ -20,8 +30,8 @@ then
 fi
 success "All changes are pushed to the remote master branch"
 
-info "Run yarn version --{major,minor,patch}"
-press_enter_to_continue
+yarn version $VERSION_BUMP_KIND
+success "Bumped the package version"
 
 git push --follow-tags
 success "Pushed the version commit and new tag to origin/master"
