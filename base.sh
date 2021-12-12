@@ -164,3 +164,13 @@ function press_enter_to_continue {
   read -s -p "Press enter to continue..."
   echo -e ""
 }
+
+function ensure_ssh_staging_alias {
+  (ssh -q staging exit)
+
+  if test $? != '0'
+  then
+    error "The [staging] ssh alias is not present or doesn't work."
+    exit 1
+  fi
+}
