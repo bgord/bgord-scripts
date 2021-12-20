@@ -6,10 +6,10 @@ source bgord-scripts/base.sh
 VERSION_BUMP_KIND=$1
 validate_non_empty "VERSION_BUMP_KIND" $VERSION_BUMP_KIND
 
-if test $VERSION_BUMP_KIND != "--major" && test $VERSION_BUMP_KIND != "--minor" && test $VERSION_BUMP_KIND != "--patch"
+if test $VERSION_BUMP_KIND != "--major" && test $VERSION_BUMP_KIND != "--minor" && test $VERSION_BUMP_KIND != "--patch"  && test $VERSION_BUMP_KIND != "--skip-version-bump"
 then
-  error "First argument - VERSION_BUMP_KIND - has to be one of: --major, --minor, or --patch."
-  info "Usage ./bgord-scripts/npm-publish.sh [--major|--major|--patch]"
+  error "First argument - VERSION_BUMP_KIND - has to be one of: --major, --minor, --patch, --skip-version-bump."
+  info "Usage ./bgord-scripts/npm-publish.sh [--major|--major|--patch|--skip-version-bump]"
   exit 1
 fi
 
@@ -30,11 +30,16 @@ then
 fi
 success "All changes are pushed to the remote master branch"
 
-yarn version $VERSION_BUMP_KIND
-success "Bumped the package version"
+if test $VERSION_BUMP_KIND == '--skip-version-bump'
+then
+  info "Skipping version bump"
+else
+  yarn version $VERSION_BUMP_KIND
+  success "Bumped the package version"
 
-git push --follow-tags
-success "Pushed the version commit and new tag to origin/master"
+  git push --follow-tags
+  success "Pushed the version commit and new tag to origin/master"
+fi
 
 if test ! $(npm whoami)
 then
