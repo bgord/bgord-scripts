@@ -176,8 +176,10 @@ function ensure_ssh_staging_alias {
 }
 
 function validate_environment_file {
-  if ! npx ts-node env.ts
+  if npx ts-node env.ts
   then
+    success "Correct environment file!"
+  else
     error "Invalid environment file, see the output below, quitting."
     exit 1
   fi
