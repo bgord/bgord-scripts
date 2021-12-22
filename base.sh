@@ -174,3 +174,7 @@ function ensure_ssh_staging_alias {
     exit 1
   fi
 }
+
+function validate_environment_file {
+  npx ts-node env.ts
+}
