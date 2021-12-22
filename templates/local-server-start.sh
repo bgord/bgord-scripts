@@ -14,13 +14,6 @@ info "Copied CSS from @bgord/design"
 
 # ==========================================================
 
-npx gzip static/*.js --extension=gz --extension=br 2> /dev/null
-npx gzip static/*.css --extension=gz --extension=br 2> /dev/null
-npx gzip static/*.png --extension=gz --extension=br 2> /dev/null
-info "Compressing static files"
-
-# ==========================================================
-
 export NODE_ENV="local"
 
 npx ts-node-dev \
