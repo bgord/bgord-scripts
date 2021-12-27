@@ -19,13 +19,13 @@ touch .gitignore
 bash "$BGORD_SCRIPTS_BASE_PATH/toolbox/merge-gitignore.sh"
 bash "$BGORD_SCRIPTS_BASE_PATH/toolbox/setup-eslint.sh"
 bash "$BGORD_SCRIPTS_BASE_PATH/toolbox/setup-husky.sh"
+bash "$BGORD_SCRIPTS_BASE_PATH/toolbox/setup-standard-version.sh"
 npm install typescript@4.1.5 zod@3.1.0 @bgord/{node,design} express
 npm install --save-dev \
   ts-node-dev \
   @types/{cors,express,express-handlebars,express-session,lodash,nodemailer} \
   @commitlint/{cli,config-conventional} \
-  gzip-cli \
-  standard-version
+  gzip-cli
 touch .env.example
 touch .env.local
 touch .env.staging
@@ -37,7 +37,6 @@ cp "$BGORD_SCRIPTS_BASE_PATH/templates/env.ts" .
 mkdir routes policies value-objects scripts static aggregates repositories
 cp "$BGORD_SCRIPTS_BASE_PATH/templates/local-server-start.sh" scripts/
 cp "$BGORD_SCRIPTS_BASE_PATH/templates/tsconfig.json" .
-ln -s "$BGORD_SCRIPTS_BASE_PATH/.versionrc.json" .
 git add .
 git commit -m "feature: setup project" --no-verify
 
