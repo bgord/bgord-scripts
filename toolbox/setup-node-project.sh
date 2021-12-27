@@ -43,6 +43,8 @@ bash "$BGORD_SCRIPTS_BASE_PATH/toolbox/setup-staging-server-build-script.sh" $DI
 git add .
 git commit -m "feature: setup project" --no-verify
 
+bash "$BGORD_SCRIPTS_BASE_PATH/version-first-setup.sh"
+
 new_line
 
 info "$DIRECTORY project has been set up!"
