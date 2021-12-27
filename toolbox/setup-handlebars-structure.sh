@@ -14,4 +14,7 @@ mkdir -p views/layouts
 cp bgord-scripts/templates/main.hbs views/layouts
 cp bgord-scripts/templates/home.hbs views
 
+info 'Add response.render("home"); to a route handler'
+info 'Add new bg.Handlebars().applyTo(app); to index.ts file'
+
 success "Handlebars set up!"
