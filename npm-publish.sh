@@ -5,11 +5,14 @@ source bgord-scripts/base.sh
 
 SKIP_VERSION_BUMP=$1
 
-if test $SKIP_VERSION_BUMP != "--skip-version-bump" && test $VERSION_BUMP_KIND != ""
+if test ! -z $SKIP_VERSION_BUMP
 then
-  error "First argument - SKIP_VERSION_BUMP - has to --skip-version-bump or empty."
-  info "Usage ./bgord-scripts/npm-publish.sh [--skip-version-bump]"
-  exit 1
+  if test $SKIP_VERSION_BUMP != "--skip-version-bump"
+  then
+    error "First argument - SKIP_VERSION_BUMP - has to --skip-version-bump or empty."
+    info "Usage ./bgord-scripts/npm-publish.sh [--skip-version-bump]"
+    exit 1
+  fi
 fi
 
 CURRENT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
