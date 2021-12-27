@@ -5,7 +5,7 @@ source bgord-scripts/base.sh
 
 SKIP_VERSION_BUMP=$1
 
-if test $SKIP_VERSION_BUMP != "--skip-version-bump" || test $VERSION_BUMP_KIND != ""
+if test $SKIP_VERSION_BUMP != "--skip-version-bump" && test $VERSION_BUMP_KIND != ""
 then
   error "First argument - SKIP_VERSION_BUMP - has to --skip-version-bump or empty."
   info "Usage ./bgord-scripts/npm-publish.sh [--skip-version-bump]"
