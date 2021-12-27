@@ -28,8 +28,10 @@ npm install --save-dev \
   standard-version
 touch .env.example
 touch .env.local
+touch .env.staging
 echo 'PORT=3000' > .env.example
 echo 'PORT=3000' > .env.local
+echo 'PORT=3000' > .env.staging
 cp "$BGORD_SCRIPTS_BASE_PATH/templates/index.ts" .
 cp "$BGORD_SCRIPTS_BASE_PATH/templates/env.ts" .
 mkdir routes policies value-objects scripts static aggregates repositories
