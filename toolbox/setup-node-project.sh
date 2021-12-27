@@ -38,6 +38,7 @@ mkdir routes policies value-objects scripts static aggregates repositories
 cp "$BGORD_SCRIPTS_BASE_PATH/templates/local-server-start.sh" scripts/
 cp "$BGORD_SCRIPTS_BASE_PATH/templates/tsconfig.json" .
 bash "$BGORD_SCRIPTS_BASE_PATH/toolbox/setup-staging-server-start-script.sh" $DIRECTORY
+bash "$BGORD_SCRIPTS_BASE_PATH/toolbox/setup-staging-server-build-script.sh" $DIRECTORY
 git add .
 git commit -m "feature: setup project" --no-verify
 
