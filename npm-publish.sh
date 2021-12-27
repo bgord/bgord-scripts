@@ -3,13 +3,12 @@
 # Preload base bash configuration and functions
 source bgord-scripts/base.sh
 
-VERSION_BUMP_KIND=$1
-validate_non_empty "VERSION_BUMP_KIND" $VERSION_BUMP_KIND
+SKIP_VERSION_BUMP=$1
 
-if test $VERSION_BUMP_KIND != "--major" && test $VERSION_BUMP_KIND != "--minor" && test $VERSION_BUMP_KIND != "--patch"  && test $VERSION_BUMP_KIND != "--skip-version-bump"
+if test $SKIP_VERSION_BUMP != "--skip-version-bump" || test $VERSION_BUMP_KIND != ""
 then
-  error "First argument - VERSION_BUMP_KIND - has to be one of: --major, --minor, --patch, --skip-version-bump."
-  info "Usage ./bgord-scripts/npm-publish.sh [--major|--major|--patch|--skip-version-bump]"
+  error "First argument - SKIP_VERSION_BUMP - has to --skip-version-bump or empty."
+  info "Usage ./bgord-scripts/npm-publish.sh [--skip-version-bump]"
   exit 1
 fi
 
@@ -30,11 +29,11 @@ then
 fi
 success "All changes are pushed to the remote master branch"
 
-if test $VERSION_BUMP_KIND == '--skip-version-bump'
+if test $SKIP_VERSION_BUMP == '--skip-version-bump'
 then
   info "Skipping version bump"
 else
-  yarn version $VERSION_BUMP_KIND
+  ./bgord-scripts/version-bump.sh
   success "Bumped the package version"
 
   git push --follow-tags
