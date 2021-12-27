@@ -1,4 +1,4 @@
-e!/usr/bin/env bash
+#!/usr/bin/env bash
 
 # Preload base bash configuration and functions
 source bgord-scripts/base.sh
