@@ -7,5 +7,5 @@ setup_base_config
 info "Watching and rebuilding frontend..."
 npx esbuild \
   --bundle \
-  --watch frontend/index.ts \
+  --watch frontend/index.tsx \
   --outdir=static
