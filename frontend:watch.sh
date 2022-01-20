@@ -8,4 +8,5 @@ info "Watching and rebuilding frontend..."
 npx esbuild \
   --bundle \
   --watch frontend/index.tsx \
-  --outdir=static
+  --outdir=static/ \
+  $@
