@@ -20,8 +20,8 @@ bash "$BGORD_SCRIPTS_BASE_PATH/toolbox/merge-gitignore.sh"
 bash "$BGORD_SCRIPTS_BASE_PATH/toolbox/setup-eslint.sh"
 bash "$BGORD_SCRIPTS_BASE_PATH/toolbox/setup-husky.sh"
 bash "$BGORD_SCRIPTS_BASE_PATH/toolbox/setup-standard-version.sh"
-npm install --save-exact typescript@4.1.5 zod@3.1.0
-npm install typescript@4.1.5 zod@3.1.0 @bgord/{node,design} express
+npm install --save-exact zod@3.1.0
+npm install typescript @bgord/{node,design} express
 npm install --save-dev \
   ts-node-dev \
   @types/{cors,express,express-handlebars,express-session,lodash,nodemailer} \
