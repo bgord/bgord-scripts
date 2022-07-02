@@ -1,0 +1,52 @@
+name: Deploy server
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Clone repositories
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
+      - name: Install packages
+        run: npm i
+
+      - name: Create .env.staging file
+        run: echo "${{ secrets.ENV_STAGING }}" > .env.staging
+
+      - name: Build the app
+        run: ./scripts/staging-server-build.sh
+
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/staging.key
+          chmod 600 ~/.ssh/staging.key
+          cat >>~/.ssh/config <<END
+          Host staging
+            HostName $SSH_HOST
+            User $SSH_USER
+            IdentityFile ~/.ssh/staging.key
+            StrictHostKeyChecking no
+          END
+        env:
+          SSH_USER: ${{ secrets.USER }}
+          SSH_KEY: ${{ secrets.PRIVATE_KEY }}
+          SSH_HOST: ${{ secrets.HOSTNAME }}
+
+      - name: Sync source code
+        run: rsync -azP build/ staging:/var/www/${{ secrets.PROJECT_NAME }}
+
+      - name: Restart server
+        run: ssh staging sudo systemctl restart ${{ secrets.PROJECT_NAME }}.service
