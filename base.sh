@@ -12,6 +12,8 @@ GREEN="\033[1;32m"
 BLUE="\033[1;34m"
 NC="\033[0m"
 
+PROJECT_NAME=$(basename `git rev-parse --show-toplevel`)
+
 function info {
   local MESSAGE=$1
   echo -e "$BLUE   [info]$NC   $MESSAGE"
