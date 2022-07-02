@@ -3,7 +3,6 @@
 # Preload base bash configuration and functions
 source bgord-scripts/base.sh
 
-PROJECT_NAME=$(basename `git rev-parse --show-toplevel`)
 PERFORM_SERVICE_RESTART="yes"
 
 while getopts ":s" option; do
