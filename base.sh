@@ -14,6 +14,9 @@ NC="\033[0m"
 
 PROJECT_NAME=$(basename `git rev-parse --show-toplevel`)
 
+CURRENT_TIME=$(date +%F-%H-%M-%S)
+CURRENT_TIMESTAMP=$(date +%s)
+
 function info {
   local MESSAGE=$1
   echo -e "$BLUE   [info]$NC   $MESSAGE"
