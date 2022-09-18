@@ -10,4 +10,4 @@ npm install @bgord/frontend
 info "Commiting package.json changes"
 
 git add package.json package-lock.json
-st "bump bgord/frontend"
+git commit -m "step: bump bgord/frontend"
