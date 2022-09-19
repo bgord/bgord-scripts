@@ -9,8 +9,7 @@ cd bgord-scripts/
 git pull origin master
 
 cd ../
-pwd
-git add bgord-scripts
+git add bgord-scripts/
 git commit -m "step: bump bgord/scripts" --no-verify
 
 success "Updated!"
