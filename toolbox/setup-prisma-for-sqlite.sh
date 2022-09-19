@@ -12,8 +12,9 @@ mkdir prisma
 cp bgord-scripts/templates/schema-sqlite.prisma prisma/schema.prisma
 cp bgord-scripts/templates/db.ts db.ts
 
-info "1. Edit your data model in prisma/schema.prisma"
-info "2. Run 'npx prisma generate' to generate Prisma client for your data model"
-info "3. Run 'npx prisma migrate dev' to create your first migration"
+info "Edit your data model in prisma/schema.prisma before continuing"
+
+npx prisma generate
+npx prisma migrate dev
 
 success "Prisma for SQLite set up!"
