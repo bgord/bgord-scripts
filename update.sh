@@ -8,7 +8,9 @@ info "Performing an auto-update..."
 cd bgord-scripts/
 git pull origin master
 
-git add ../bgord-scripts
+cd ../
+pwd
+git add bgord-scripts
 git commit -m "step: bump bgord/scripts" --no-verify
 
 success "Updated!"
