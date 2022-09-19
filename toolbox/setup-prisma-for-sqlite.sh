@@ -14,6 +14,8 @@ cp bgord-scripts/templates/db.ts db.ts
 
 info "Edit your data model in prisma/schema.prisma before continuing"
 
+press_enter_to_continue
+
 npx prisma generate
 npx prisma migrate dev
 
