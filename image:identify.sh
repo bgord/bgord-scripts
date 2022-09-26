@@ -5,7 +5,7 @@ source bgord-scripts/base.sh
 
 info "Identifying image..."
 
-local IMAGE_PATH=$1
+IMAGE_PATH=$1
 
 validate_non_empty "IMAGE_PATH" $IMAGE_PATH
 
