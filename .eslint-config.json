@@ -2,7 +2,8 @@
   "extends": "bgord",
   "rules": {
     "@typescript-eslint/no-unused-vars": 0,
-    "no-shadow": 0
+    "no-shadow": 0,
+    "jsx-a11y/media-has-caption": 0
   },
   "overrides": [
     {
