@@ -113,19 +113,19 @@ function allow_to_skip_within_5s {
   info "You can skip within 5s"
 
   info "5..."
-  sleep 1s
+  sleep 1
 
   info "4..."
-  sleep 1s
+  sleep 1
 
   info "3..."
-  sleep 1s
+  sleep 1
 
   info "2..."
-  sleep 1s
+  sleep 1
 
   info "1..."
-  sleep 1s
+  sleep 1
 
   success "Proceeding..."
 }
