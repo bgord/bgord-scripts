@@ -1,3 +1,0 @@
-# A nickname that's going to be present in the branch name, so it cannot contain spaces.
-# e.g: NICKNAME=johndoe will result in a branch like: feature/johndoe/<...>
-export NICKNAME=

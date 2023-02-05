@@ -99,16 +99,6 @@ function check_if_binary_exists {
   fi
 }
 
-function load_contributor_file {
-  info "Loading .contributor file..."
-
-  check_if_file_exists ".contributor"
-
-  set -a
-  . .contributor
-  set +a
-}
-
 function allow_to_skip_within_5s {
   info "You can skip within 5s"
 
