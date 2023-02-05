@@ -4,10 +4,27 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <link rel="stylesheet" href="//basehold.it/24" /> -->
+
+    <link
+      as="style"
+      rel="stylesheet preload"
+      href="/static/normalize.min.css"
+    />
+    <link as="style" rel="stylesheet preload" href="/static/main.min.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/static/favicon-32x32.png"
+    />
+    <link rel="manifest" href="/static/site.webmanifest" />
 
     <title>Starter</title>
   </head>
 
-  <body></body>
+  <body data-bg="gray-100" data-mx="auto">
+    <div id="root"></div>
+    <script async src="/static/index.js"></script>
+  </body>
 </html>
