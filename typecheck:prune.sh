@@ -7,8 +7,11 @@ setup_base_config
 info "Detecting unused code..."
 
 npx ts-prune \
-  | grep -v '(used in module)' \
-  | grep -v 'db.ts' \
-  | grep -v 'policies/index.ts' \
-  | grep -v 'services/index.ts' \
-  | grep -v 'value-objects/index.ts'
+  | grep -v -e '(used in module)' \
+    -e "db.ts" \
+    -e "policies/index.ts" \
+    -e "services/index.ts" \
+    -e "value-objects/index.ts" \
+  || true
+
+# Force exit code 0
