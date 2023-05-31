@@ -32,7 +32,7 @@ then
 fi
 success "All changes are pushed to the remote master branch"
 
-if test $SKIP_VERSION_BUMP == "--skip-version-bump"
+if test $SKIP_VERSION_BUMP = "--skip-version-bump"
 then
   info "Skipping version bump"
 else

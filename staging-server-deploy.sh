@@ -25,7 +25,7 @@ allow_to_skip_within_5s
 rsync -azP build/ "staging:/var/www/$PROJECT_NAME"
 info "Synced source files"
 
-if test $PERFORM_SERVICE_RESTART == "yes"
+if test $PERFORM_SERVICE_RESTART = "yes"
 then
   ssh staging "sudo systemctl restart $PROJECT_NAME.service"
   info "Restarted $PROJECT_NAME.service!"
