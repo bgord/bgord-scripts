@@ -7,6 +7,6 @@ setup_base_config
 info "Typechecking..."
 npx tsc --project tsconfig.json --noEmit
 
-./bgord-scripts/typecheck:prune.sh
+./bgord-scripts/typecheck-prune.sh
 
 success "Types are correct!"

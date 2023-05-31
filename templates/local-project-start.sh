@@ -14,7 +14,7 @@ info "Copied CSS from @bgord/design"
 
 # ==========================================================
 
-./bgord-scripts/frontend:build.sh
+./bgord-scripts/frontend-build.sh
 info "Built frontend"
 
 # ==========================================================

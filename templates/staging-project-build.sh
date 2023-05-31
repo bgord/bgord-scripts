@@ -22,7 +22,7 @@ info "Cleaned previous build cache"
 
 # ==========================================================
 
-./bgord-scripts/frontend:build.sh
+./bgord-scripts/frontend-build.sh
 info "Frontend built"
 
 # ==========================================================
@@ -39,7 +39,7 @@ info "Copied CSS"
 
 # ==========================================================
 
-./bgord-scripts/css:purge.sh
+./bgord-scripts/css-purge.sh
 
 # ==========================================================
 
