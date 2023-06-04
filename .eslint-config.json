@@ -3,14 +3,14 @@
   "rules": {
     "@typescript-eslint/no-unused-vars": 0,
     "no-shadow": 0,
-    "jsx-a11y/media-has-caption": 0
+    "jsx-a11y/media-has-caption": 0,
+    "no-sync": 0
   },
   "overrides": [
     {
       "files": ["*.tsx"],
       "rules": {
-        "@typescript-eslint/explicit-module-boundary-types": 0,
-        "no-sync": 0
+        "@typescript-eslint/explicit-module-boundary-types": 0
       }
     }
   ]
