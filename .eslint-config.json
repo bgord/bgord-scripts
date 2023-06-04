@@ -9,7 +9,8 @@
     {
       "files": ["*.tsx"],
       "rules": {
-        "@typescript-eslint/explicit-module-boundary-types": 0
+        "@typescript-eslint/explicit-module-boundary-types": 0,
+        "no-sync": 0
       }
     }
   ]
