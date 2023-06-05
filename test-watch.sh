@@ -6,4 +6,4 @@ setup_base_config
 
 info "Running tests in watch mode..."
 
-npx vitest watch
+npx vitest watch --passWithNoTests

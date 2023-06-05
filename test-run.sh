@@ -6,4 +6,4 @@ setup_base_config
 
 info "Running tests..."
 
-npx vitest run
+npx vitest run --passWithNoTests
