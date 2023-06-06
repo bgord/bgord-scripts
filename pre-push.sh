@@ -6,5 +6,6 @@ setup_base_config
 
 info "Running pre-push hook..."
 ./bgord-scripts/typecheck.sh
+./bgord-scripts/test-run.sh
 
 success "Pre-push hook has finished!"
