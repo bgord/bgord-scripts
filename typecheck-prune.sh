@@ -12,6 +12,7 @@ npx ts-prune \
     -e "policies/index.ts" \
     -e "services/index.ts" \
     -e "value-objects/index.ts" \
+    -e "infra/index.ts" \
   || true
 
 # Force exit code 0
