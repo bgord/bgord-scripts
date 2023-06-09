@@ -1,0 +1,9 @@
+import express from "express";
+
+export async function <name>(
+  _request: express.Request,
+  response: express.Response,
+  _next: express.NextFunction
+) {
+  return response.status(200).send();
+}
