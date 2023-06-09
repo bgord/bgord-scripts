@@ -190,3 +190,10 @@ function validate_pascal_case {
     exit 1
   fi
 }
+
+function pascal_case_to_kebab_case {
+  local PASCAL_CASE_VALUE="$1"
+  local KEBAB_CASE_VALUE=$(echo "$PASCAL_CASE_VALUE" | sed 's/\([a-z0-9]\)\([A-Z]\)/\1-\2/g' | tr '[:upper:]' '[:lower:]')
+
+  echo "$KEBAB_CASE_VALUE"
+}
