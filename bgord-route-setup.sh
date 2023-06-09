@@ -7,7 +7,7 @@ setup_base_config
 ROUTES_DIRECTORY="routes"
 ROUTES_INDEX_FILENAME="$ROUTES_DIRECTORY/index.ts"
 
-ROUTE_TEMPLATE_FILENAME="route-template"
+ROUTE_TEMPLATE_FILENAME="./bgord-scripts/templates/route-template"
 
 info "Setting up a route"
 
