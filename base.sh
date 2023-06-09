@@ -179,3 +179,14 @@ function validate_environment_file {
     exit 1
   fi
 }
+
+function validate_pascal_case {
+  local VALUE="$1"
+
+  if expr "$VALUE" : '^[A-Z][a-z]\{1,\}\([A-Z][a-z]\{1,\}\)*$' >/dev/null; then
+    success "Correct PascalCase: $VALUE"
+  else
+    error "Invalid PascalCase: $VALUE"
+    exit 1
+  fi
+}
