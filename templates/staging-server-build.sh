@@ -13,6 +13,8 @@ check_if_directory_exists node_modules
 check_if_file_exists scripts/staging-server-start.sh
 validate_environment_file
 
+./bgord-scripts/build-prechecks.sh
+
 # ==========================================================
 
 info "Building project!"
