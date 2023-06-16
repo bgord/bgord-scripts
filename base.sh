@@ -197,3 +197,8 @@ function pascal_case_to_kebab_case {
 
   echo "$KEBAB_CASE_VALUE"
 }
+
+function set_node_timezone_to_utc {
+  info "Setting node timezone to UTC"
+  export TZ=UTC
+}
