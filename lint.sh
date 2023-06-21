@@ -10,6 +10,8 @@ npx eslint . --ext .js,.tsx,.ts \
   --cache \
   --ignore-path bgord-scripts/.eslintignore \
   --config bgord-scripts/.eslint-config.json \
+  --max-warnings 5 \
+  --report-unused-disable-directives \
   $@
 
 success "Files are corect!"
