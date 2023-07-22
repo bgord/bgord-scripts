@@ -11,5 +11,5 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
-  "exclude": ["bgord-scripts"]
+  "exclude": ["bgord-scripts", "**/*.test.ts"]
 }
