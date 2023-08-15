@@ -15,4 +15,6 @@ npx ts-prune \
     -e "infra/index.ts" \
   || true
 
+npx knip --strict --no-exit-code
+
 # Force exit code 0
