@@ -5,7 +5,8 @@
     "no-shadow": 0,
     "jsx-a11y/media-has-caption": 0,
     "no-sync": 0,
-    "react/self-closing-comp": 0
+    "react/self-closing-comp": 0,
+    "no-useless-constructor": 0
   },
   "overrides": [
     {
