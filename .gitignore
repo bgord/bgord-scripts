@@ -1,4 +1,5 @@
 .contributor
+.cspellcache
 .env.local
 .env.production
 .env.staging
