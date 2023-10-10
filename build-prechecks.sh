@@ -8,3 +8,4 @@ info "Running build prechecks..."
 ./bgord-scripts/typecheck.sh
 ./bgord-scripts/lint.sh
 ./bgord-scripts/test-run.sh
+./bgord-scripts/cspell.sh
