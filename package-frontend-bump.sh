@@ -7,7 +7,7 @@ info "Installing new @bgord/frontend package version"
 
 npm install @bgord/frontend
 
-info "Commiting package.json changes"
+info "Committing package.json changes"
 
 git add package.json package-lock.json
 git commit -m "step: bump bgord/frontend" --no-verify
