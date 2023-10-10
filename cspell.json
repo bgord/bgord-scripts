@@ -69,6 +69,7 @@
     "necolas",
     "tsconfigs",
     "duplicative",
-    "tsdx"
+    "tsdx",
+    "tinykeys"
   ]
 }
