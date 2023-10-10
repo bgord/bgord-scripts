@@ -12,6 +12,7 @@ git ls-files \
   | grep -v "infra/translations/pl.json" \
   | grep -v "dist" \
   | grep -v "LICENSE" \
+  | grep -v "CHANGELOG" \
   | npx cspell \
   --file-list stdin \
   --locale "en" \

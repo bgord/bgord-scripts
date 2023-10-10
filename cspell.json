@@ -70,6 +70,18 @@
     "tsconfigs",
     "duplicative",
     "tsdx",
-    "tinykeys"
+    "tinykeys",
+    "customizer",
+    "bodyparser",
+    "uncompress",
+    "Exphbs",
+    "maxsize",
+    "anoop",
+    "metatag",
+    "resave",
+    "lastmod",
+    "urlset",
+    "brotli",
+    "newindex"
   ]
 }
