@@ -83,6 +83,7 @@
     "urlset",
     "brotli",
     "newindex",
-    "verificator"
+    "verificator",
+    "checkperiod"
   ]
 }
