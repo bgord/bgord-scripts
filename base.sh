@@ -160,6 +160,18 @@ function press_enter_to_continue {
   echo -e ""
 }
 
+function confirm_dangerous_action {
+  WORD=$(grep -E '^[a-z]{4,5}$' /usr/share/dict/words | shuf -n1)
+
+  read -rp "Type the word '$WORD' if you really want to perform this action: " TYPED
+
+  if test "$WORD" != "$TYPED"
+  then
+    error "You typed "$WORD" wrong, aborting."
+    exit 1
+  fi
+}
+
 function ensure_ssh_staging_alias {
   (ssh -q staging exit)
 
