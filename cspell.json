@@ -85,6 +85,10 @@
     "newindex",
     "verificator",
     "checkperiod",
-    "Xmark"
+    "Xmark",
+    "topo",
+    "preprocessors",
+    "postprocessors",
+    "endfor"
   ]
 }
