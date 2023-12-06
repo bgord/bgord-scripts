@@ -13,6 +13,7 @@ git ls-files \
   | grep -v "dist" \
   | grep -v "LICENSE" \
   | grep -v "CHANGELOG" \
+  | grep -v "changelog.md" \
   | grep -v "static" \
   | npx cspell \
   --file-list stdin \
