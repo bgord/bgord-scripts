@@ -89,6 +89,7 @@
     "topo",
     "preprocessors",
     "postprocessors",
-    "endfor"
+    "endfor",
+    "noninteractive"
   ]
 }
