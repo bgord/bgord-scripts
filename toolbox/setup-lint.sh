@@ -4,7 +4,8 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-info "Installing ESLint dependencies..."
+info "Installing linter dependencies..."
 npm install -D @typescript-eslint/{parser,eslint-plugin} eslint eslint-config-{bgord,prettier} eslint-plugin-{jsx-a11y,react,react-hooks,sonarjs}
+npm install -D oxlint
 
-success "ESLint dependencies installed successfully!"
+success "Linter dependencies installed successfully!"

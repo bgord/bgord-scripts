@@ -14,4 +14,6 @@ npx eslint . --ext .js,.tsx,.ts \
   --report-unused-disable-directives \
   $@
 
+npx oxlint
+
 success "Files are correct!"

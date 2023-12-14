@@ -14,4 +14,6 @@ bunx eslint . --ext .js,.tsx,.ts \
   --report-unused-disable-directives \
   $@
 
+npm install -D oxlint
+
 success "Files are correct!"
