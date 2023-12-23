@@ -1,0 +1,21 @@
+{
+  "ignore": ["bgord-scripts/", "frontend/index.tsx", "**/*/*.test.ts"],
+  "ignoreDependencies": [
+    "@bgord/design",
+    "eslint",
+    "^eslint-.*",
+    "^@types.*",
+    "^@commitlint.*",
+    "^postcss",
+    "vitest",
+    "ts-node-dev",
+    "standard-version",
+    "oxlint",
+    "gzip-cli",
+    "esbuild",
+    "@fullhuman/postcss-purgecss",
+    "date-fns"
+  ],
+  "ignoreBinaries": ["only-allow"],
+  "eslint": true
+}
