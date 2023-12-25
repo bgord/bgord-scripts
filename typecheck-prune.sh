@@ -6,4 +6,4 @@ setup_base_config
 
 info "Detecting unused code..."
 
-npx knip --strict --no-exit-code --config bgord-scripts/knip.json
+npx knip --strict --config bgord-scripts/knip.json
