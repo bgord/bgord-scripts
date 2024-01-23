@@ -90,6 +90,7 @@
     "preprocessors",
     "postprocessors",
     "endfor",
-    "noninteractive"
+    "noninteractive",
+    "plimit"
   ]
 }
