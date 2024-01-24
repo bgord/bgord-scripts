@@ -1,5 +1,10 @@
 {
-  "ignore": ["bgord-scripts/", "frontend/index.tsx", "**/*/*.test.ts"],
+  "ignore": [
+    "bgord-scripts/*",
+    "bgord-scripts/templates/*",
+    "frontend/index.tsx",
+    "**/*/*.test.ts"
+  ],
   "ignoreDependencies": [
     "@bgord/design",
     "eslint",
