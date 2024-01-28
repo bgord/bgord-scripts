@@ -4,5 +4,5 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-info "Formatting Prisma schema file..."
-npx prisma format
+info "Validating Prisma schema file..."
+npx prisma validate
