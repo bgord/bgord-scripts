@@ -19,7 +19,8 @@
     "gzip-cli",
     "esbuild",
     "@fullhuman/postcss-purgecss",
-    "date-fns"
+    "date-fns",
+    "tsx"
   ],
   "ignoreBinaries": ["only-allow"],
   "eslint": true
