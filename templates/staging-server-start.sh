@@ -5,5 +5,7 @@ echo "Starting project..."
 
 export NODE_ENV="staging"
 
-cd /var/www/{{PROJECT_NAME}}/
-node index.js
+cd /var/www/trackers/ || exit
+npx prisma migrate deploy
+npx prisma generate
+node --require tsx/cjs index.js
