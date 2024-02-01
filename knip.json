@@ -13,7 +13,6 @@
     "^@commitlint.*",
     "^postcss",
     "vitest",
-    "ts-node-dev",
     "standard-version",
     "oxlint",
     "gzip-cli",
