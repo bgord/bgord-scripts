@@ -91,6 +91,7 @@
     "postprocessors",
     "endfor",
     "noninteractive",
-    "plimit"
+    "plimit",
+    "redirector"
   ]
 }
