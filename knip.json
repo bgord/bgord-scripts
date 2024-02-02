@@ -21,6 +21,6 @@
     "date-fns",
     "tsx"
   ],
-  "ignoreBinaries": ["only-allow"],
+  "ignoreBinaries": ["only-allow", "pandoc", "ebook-convert"],
   "eslint": true
 }
