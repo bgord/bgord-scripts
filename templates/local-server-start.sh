@@ -9,7 +9,7 @@ then
   bash scripts/local-server-start.sh
   exit
 else
-  error "Local server start script does not exist"
+  info "Local server start script does not exist"
 fi
 
 
