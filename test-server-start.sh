@@ -3,16 +3,16 @@
 # Preload base bash configuration and functions
 source bgord-scripts/base.sh
 
-if test -f "scripts/local-server-start.sh"
+if test -f "scripts/test-server-start.sh"
 then
-  info "Local server start script exists"
-  bash scripts/local-server-start.sh
+  info "Test server start script exists"
+  bash scripts/test-server-start.sh
   exit
 else
-  info "Local server start script does not exist"
+  info "Test server start script does not exist"
 fi
 
-info "Environment: local"
+info "Environment: test"
 info "Starting project..."
 
 # ==========================================================
@@ -28,7 +28,7 @@ info "Built frontend"
 
 # ==========================================================
 
-export NODE_ENV="local"
+export NODE_ENV="test"
 
 npx tsx watch \
   --clear-screen=false \
