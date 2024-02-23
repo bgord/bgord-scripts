@@ -4,7 +4,7 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-SCHEMA_FILE="schema.prisma"
+SCHEMA_FILE="prisma/schema.prisma"
 
 # Check if the schema file exists
 if [ -f "$SCHEMA_FILE" ]; then
