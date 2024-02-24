@@ -7,6 +7,6 @@ setup_base_config
 set_node_timezone_to_utc
 
 info "Running E2E..."
-info $PWD
 
+npx playwright install
 npx playwright test --reporter null --pass-with-no-tests
