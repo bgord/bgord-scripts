@@ -17,6 +17,11 @@ info "Starting project..."
 
 # ==========================================================
 
+./bgord-scripts/prisma-reset.sh
+info "Migrations reset"
+
+# ==========================================================
+
 cp node_modules/@bgord/design/dist/main.min.css static/
 cp node_modules/@bgord/design/dist/normalize.min.css static/
 info "Copied CSS from @bgord/design"
