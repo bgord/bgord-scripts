@@ -8,4 +8,4 @@ set_node_timezone_to_utc
 
 info "Opening E2E..."
 
-npx playwright test --reporter null --ui
+npx playwright test --reporter null --ui --pass-with-no-tests
