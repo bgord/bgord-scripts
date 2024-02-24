@@ -19,7 +19,8 @@
     "esbuild",
     "@fullhuman/postcss-purgecss",
     "date-fns",
-    "tsx"
+    "tsx",
+    "@playwright/test"
   ],
   "ignoreBinaries": ["only-allow", "pandoc", "ebook-convert"],
   "eslint": true
