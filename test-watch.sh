@@ -8,4 +8,4 @@ set_node_timezone_to_utc
 
 info "Running tests in watch mode..."
 
-npx vitest watch --passWithNoTests
+npx vitest watch --passWithNoTests --exclude infra/e2e
