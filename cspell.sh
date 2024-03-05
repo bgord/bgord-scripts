@@ -15,6 +15,9 @@ git ls-files \
   | grep -v "CHANGELOG" \
   | grep -v "changelog.md" \
   | grep -v "static" \
+  | grep -v "env" \
+  | grep -v "github" \
+  | grep -v "gitignore" \
   | npx cspell \
   --file-list stdin \
   --locale "en" \
