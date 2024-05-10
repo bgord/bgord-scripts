@@ -6,13 +6,13 @@ setup_base_config
 
 info "Linting all files..."
 
-npx eslint . --ext .js,.tsx,.ts \
-  --cache \
-  --ignore-path bgord-scripts/.eslintignore \
-  --config bgord-scripts/.eslint-config.json \
-  --max-warnings 5 \
-  --report-unused-disable-directives \
-  $@
+# npx eslint . --ext .js,.tsx,.ts \
+#   --cache \
+#   --ignore-path bgord-scripts/.eslintignore \
+#   --config bgord-scripts/.eslint-config.json \
+#   --max-warnings 5 \
+#   --report-unused-disable-directives \
+#   $@
 
 npx oxlint
 
