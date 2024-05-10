@@ -6,14 +6,6 @@ setup_base_config
 
 info "Linting all files..."
 
-# npx eslint . --ext .js,.tsx,.ts \
-#   --cache \
-#   --ignore-path bgord-scripts/.eslintignore \
-#   --config bgord-scripts/.eslint-config.json \
-#   --max-warnings 5 \
-#   --report-unused-disable-directives \
-#   $@
-
-npx oxlint
+npx @biomejs/biome lint --config-path=bgord-scripts/biome.json .
 
 success "Files are correct!"

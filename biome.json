@@ -1,0 +1,30 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.7.3/schema.json",
+  "organizeImports": {
+    "enabled": true
+  },
+  "files": {
+    "ignore": ["static/**"]
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "complexity": {
+        "noStaticOnlyClass": "off",
+        "useSimplifiedLogicExpression": "error"
+      },
+      "style": {
+        "useImportType": "off",
+        "noImplicitBoolean": "off",
+        "useShorthandAssign": "error",
+        "useFragmentSyntax": "error",
+        "useConsistentArrayType": "error",
+        "useCollapsedElseIf": "error"
+      },
+      "suspicious": {
+        "noConsoleLog": "error"
+      }
+    }
+  }
+}
