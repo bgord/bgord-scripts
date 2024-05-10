@@ -4,7 +4,7 @@
     "enabled": true
   },
   "files": {
-    "ignore": ["static/**"]
+    "ignore": ["static/**", "build/**"]
   },
   "linter": {
     "enabled": true,
