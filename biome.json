@@ -24,6 +24,9 @@
       },
       "suspicious": {
         "noConsoleLog": "error"
+      },
+      "a11y": {
+        "noSvgWithoutTitle": "off"
       }
     }
   }
