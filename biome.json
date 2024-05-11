@@ -28,7 +28,8 @@
         "noExplicitAny": "off"
       },
       "a11y": {
-        "noSvgWithoutTitle": "off"
+        "noSvgWithoutTitle": "off",
+        "noNoninteractiveTabindex": "off"
       },
       "correctness": {
         "useExhaustiveDependencies": "warn"
