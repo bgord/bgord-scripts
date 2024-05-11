@@ -12,7 +12,8 @@
       "recommended": true,
       "complexity": {
         "noStaticOnlyClass": "off",
-        "useSimplifiedLogicExpression": "error"
+        "useSimplifiedLogicExpression": "error",
+        "useArrowFunction": "off"
       },
       "style": {
         "useImportType": "off",
