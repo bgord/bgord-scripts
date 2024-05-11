@@ -3,7 +3,8 @@
     "bgord-scripts/*",
     "bgord-scripts/templates/*",
     "frontend/index.tsx",
-    "**/*/*.test.ts"
+    "**/*/*.test.ts",
+    "scripts/*"
   ],
   "ignoreDependencies": [
     "@bgord/design",
