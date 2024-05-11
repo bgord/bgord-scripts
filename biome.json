@@ -23,7 +23,8 @@
         "useCollapsedElseIf": "error"
       },
       "suspicious": {
-        "noConsoleLog": "error"
+        "noConsoleLog": "error",
+        "noExplicitAny": "off"
       },
       "a11y": {
         "noSvgWithoutTitle": "off"
