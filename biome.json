@@ -13,7 +13,8 @@
       "complexity": {
         "noStaticOnlyClass": "off",
         "useSimplifiedLogicExpression": "error",
-        "useArrowFunction": "off"
+        "useArrowFunction": "off",
+        "noForEach": "off"
       },
       "style": {
         "useImportType": "off",
