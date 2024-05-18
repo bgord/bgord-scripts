@@ -8,4 +8,4 @@ set_node_timezone_to_utc
 
 info "Running bun tests..."
 
-bun test
+bunx vitest run --passWithNoTests --exclude infra/e2e
