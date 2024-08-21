@@ -32,6 +32,7 @@ export NODE_ENV="local"
 
 node \
   --import=tsx \
+  --env-file=".env.$NODE_ENV" \
   --watch-path=app/ \
   --watch-path=index.ts \
   --watch-path=infra/ \
