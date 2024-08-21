@@ -30,8 +30,10 @@ info "Built frontend"
 
 export NODE_ENV="local"
 
-npx tsx watch \
-  --clear-screen=false \
-  --ignore frontend \
-  --ignore node_modules \
+node \
+  --import=tsx \
+  --watch-path=app/ \
+  --watch-path=index.ts \
+  --watch-path=infra/ \
+  --watch-path=modules/ \
   index.ts
