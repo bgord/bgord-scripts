@@ -183,7 +183,7 @@ function ensure_ssh_staging_alias {
 }
 
 function validate_environment_file {
-  if npx tsx infra/env.ts
+  if node --import=tsx --env-file=".env.$NODE_ENV" infra/env.ts
   then
     success "Correct environment file!"
   else
