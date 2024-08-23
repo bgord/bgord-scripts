@@ -37,4 +37,5 @@ node \
   --watch-path=index.ts \
   --watch-path=infra/ \
   --watch-path=modules/ \
+  --watch-path=.env.local/ \
   index.ts
