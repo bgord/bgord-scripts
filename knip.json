@@ -30,7 +30,8 @@
     "@lucia-auth/adapter-prisma",
     "jsdom",
     "@bgord/node",
-    "react-query"
+    "react-query",
+    "react"
   ],
   "ignoreBinaries": ["only-allow", "pandoc", "ebook-convert", "tsdx", "which"],
   "eslint": true
