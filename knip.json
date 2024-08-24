@@ -27,7 +27,10 @@
     "prisma",
     "@prisma/client",
     "accept-language-parser",
-    "@lucia-auth/adapter-prisma"
+    "@lucia-auth/adapter-prisma",
+    "jsdom",
+    "@bgord/node",
+    "react-query"
   ],
   "ignoreBinaries": ["only-allow", "pandoc", "ebook-convert", "tsdx", "which"],
   "eslint": true
