@@ -4,12 +4,11 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-info "Installing Husky..."
-npm i -D husky
-npm pkg set scripts.prepare="husky install"
-npm run prepare
-npx husky add .husky/pre-commit "./bgord-scripts/pre-commit.sh"
-npx husky add .husky/pre-push "./bgord-scripts/pre-push.sh"
-npx husky add .husky/commit-msg "./bgord-scripts/commit-msg.sh"
+# info "Installing Husky..."
+# npm i -D husky@9.1.5
+# npx husky init
+echo "./bgord-scripts/pre-commit.sh" > .husky/pre-commit
+echo "./bgord-scripts/pre-push.sh" > .husky/pre-push
+echo "./bgord-scripts/commit-msg.sh" > .husky/commit-msg
 
 success "Husky set up!"

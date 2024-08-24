@@ -99,6 +99,7 @@
     "distilbart",
     "wholestep",
     "halfstep",
-    "Cordian"
+    "Cordian",
+    "shellcheck"
   ]
 }
