@@ -21,8 +21,13 @@
     "@fullhuman/postcss-purgecss",
     "date-fns",
     "tsx",
-    "@playwright/test"
+    "@playwright/test",
+    "body-parser",
+    "prisma",
+    "@prisma/client",
+    "accept-language-parser",
+    "@lucia-auth/adapter-prisma"
   ],
-  "ignoreBinaries": ["only-allow", "pandoc", "ebook-convert"],
+  "ignoreBinaries": ["only-allow", "pandoc", "ebook-convert", "tsdx", "which"],
   "eslint": true
 }
