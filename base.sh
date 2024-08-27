@@ -182,6 +182,16 @@ function ensure_ssh_staging_alias {
   fi
 }
 
+function ensure_ssh_production_alias {
+  (ssh -q production exit)
+
+  if test $? != '0'
+  then
+    error "The [production] ssh alias is not present or doesn't work."
+    exit 1
+  fi
+}
+
 function validate_environment_file {
   if node --import=tsx --env-file=".env.$NODE_ENV" infra/env.ts
   then
