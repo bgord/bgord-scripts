@@ -23,7 +23,7 @@ jobs:
         run: npm i
 
       - name: Create .env.production file
-        run: echo "${{ secrets.ENV_STAGING }}" > .env.production
+        run: echo "${{ secrets.ENV_PRODUCTION }}" > .env.production
 
       - name: Build the app
         run: ./scripts/production-server-build.sh
