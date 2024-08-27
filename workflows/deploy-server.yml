@@ -22,11 +22,11 @@ jobs:
       - name: Install packages
         run: npm i
 
-      - name: Create .env.staging file
-        run: echo "${{ secrets.ENV_STAGING }}" > .env.staging
+      - name: Create .env.production file
+        run: echo "${{ secrets.ENV_STAGING }}" > .env.production
 
       - name: Build the app
-        run: ./scripts/staging-server-build.sh
+        run: ./scripts/production-server-build.sh
 
       - name: Configure SSH
         run: |

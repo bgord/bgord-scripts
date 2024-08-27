@@ -15,19 +15,19 @@ while getopts ":s" option; do
   esac
 done
 
-info "Environment: staging"
+info "Environment: production"
 info "Project name: $PROJECT_NAME"
 info "Perform service restart: $PERFORM_SERVICE_RESTART"
 
-ensure_ssh_staging_alias
+ensure_ssh_production_alias
 allow_to_skip_within_5s
 
-rsync -azP build/ "staging:/var/www/$PROJECT_NAME"
+rsync -azP build/ "production:/var/www/$PROJECT_NAME"
 info "Synced source files"
 
 if test $PERFORM_SERVICE_RESTART = "yes"
 then
-  ssh staging "sudo systemctl restart $PROJECT_NAME.service"
+  ssh production "sudo systemctl restart $PROJECT_NAME.service"
   info "Restarted $PROJECT_NAME.service!"
 else
   info "Skipping service restart due to option -s"

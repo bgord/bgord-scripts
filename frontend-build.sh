@@ -3,7 +3,7 @@
 # Preload base bash configuration and functions
 source bgord-scripts/base.sh
 
-info "Environment: staging"
+info "Environment: production"
 
 info "Building frontend..."
 

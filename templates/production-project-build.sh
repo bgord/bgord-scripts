@@ -5,8 +5,8 @@ source bgord-scripts/base.sh
 
 OUT_DIR="build"
 
-info "Environment: staging"
-export NODE_ENV="staging"
+info "Environment: production"
+export NODE_ENV="production"
 
 check_if_directory_exists node_modules
 

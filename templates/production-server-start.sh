@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-echo "Environment: staging"
+echo "Environment: production"
 echo "Starting project..."
 
-export NODE_ENV="staging"
+export NODE_ENV="production"
 
 cd /var/www/trackers/ || exit
 npx prisma migrate deploy

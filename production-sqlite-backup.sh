@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "Environment: staging"
+echo "Environment: production"
 
 PROJECT_NAME=$1
 CURRENT_TIME=$(date +%F-%H-%M-%S)

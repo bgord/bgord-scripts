@@ -4,6 +4,6 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-cp bgord-scripts/templates/staging-server-build.sh scripts/
+cp bgord-scripts/templates/production-server-build.sh scripts/
 
-success "staging-server-build.sh script setup!"
+success "production-server-build.sh script setup!"
