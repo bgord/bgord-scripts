@@ -3,7 +3,9 @@ on:
   push:
     branches: [master]
   workflow_dispatch:
-
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   generate:
     runs-on: ubuntu-20.04
@@ -22,11 +24,11 @@ jobs:
         run: bgord-scripts/changelog-generate.sh
 
       - name: Print changelog
-        run: cat CHANGELOG.md
+        run: cat infra/CHANGELOG.md
 
       - name: Commit CHANGELOG.md
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           branch: master
           commit_message: "docs: generate CHANGELOG"
-          file_pattern: CHANGELOG.md
+          file_pattern: infra/CHANGELOG.md
