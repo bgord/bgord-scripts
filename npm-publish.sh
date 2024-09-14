@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# Preload base bash configuration and functions
 source bgord-scripts/base.sh
 
 CURRENT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)

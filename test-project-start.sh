@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# Preload base bash configuration and functions
 source bgord-scripts/base.sh
 
 if test -f "scripts/test-project-start.sh"
