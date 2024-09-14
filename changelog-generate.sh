@@ -1,6 +1,7 @@
 #!/bin/bash
 
-output_file="infra/CHANGELOG.md"
+output_directory="infra"
+output_file="$output_directory/CHANGELOG.md"
 
 echo "# Changelog" > "$output_file"
 
