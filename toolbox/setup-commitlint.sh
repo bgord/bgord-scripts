@@ -6,7 +6,7 @@ setup_base_config
 
 info "Installing commitlint dependencies..."
 
-npm i -D @commitlint/{cli,config-conventional}
+install_dev_package @commitlint/{cli,config-conventional}
 
 info "Run './bgord-scripts/setup-husky.sh' to add the commit-msg git hook"
 info "WARNING: you may want to double-check if other hooks were not rewritten!"

@@ -6,7 +6,7 @@ setup_base_config
 
 info "Settuping up only-allow npm..."
 
-npm i -D only-allow
+install_dev_package only-allow
 npm pkg set scripts.preinstall="npx only-allow npm"
 
 success "only-allow npm set up!"
