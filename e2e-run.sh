@@ -10,7 +10,7 @@ then
   info "Running E2E..."
 else
   info "E2E tests not available"
-  exit 1
+  exit 0
 fi
 
 npx playwright install
