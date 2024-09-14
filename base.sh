@@ -33,11 +33,6 @@ function error {
   echo -e "$RED  [error]$NC   $MESSAGE"
 }
 
-function goal {
-  local MESSAGE=$1
-  info "[GOAL] $MESSAGE"
-}
-
 function new_line {
   echo -e ""
 }

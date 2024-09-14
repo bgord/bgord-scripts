@@ -3,7 +3,7 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-goal "Encrypt a file with ansible-vault"
+info "Encrypting a file with ansible-vault..."
 
 FILE_TO_ENCRYPT=$1
 

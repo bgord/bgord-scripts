@@ -3,7 +3,7 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-goal "View an encrypted file with ansible-vault"
+info "Viewing an encrypted file with ansible-vault..."
 
 FILE_TO_VIEW=$1
 
