@@ -5,6 +5,6 @@ setup_base_config
 
 info "Linting commit message..."
 
-npx commitlint --edit --config bgord-scripts/.commitlint-config.js
+npx commitlint --edit --config bgord-scripts/templates/.commitlint-config.js
 
 success "Commit message is correct!"
