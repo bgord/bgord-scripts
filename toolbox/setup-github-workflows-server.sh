@@ -7,7 +7,7 @@ info "Settuping up GitHub workflows for servers..."
 
 mkdir -p .github/workflows
 
-cp ./bgord-scripts/workflows/deploy-project.yml .github/workflows/deploy.yml
+cp ./bgord-scripts/workflows/deploy-server.yml .github/workflows/deploy.yml
 cp ./bgord-scripts/workflows/codeql-analysis.yml .github/workflows
 cp ./bgord-scripts/workflows/changelog.yml .github/workflows
 
