@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 source bgord-scripts/base.sh
+setup_base_config
 
 if test -f "scripts/local-server-start.sh"
 then

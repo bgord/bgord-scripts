@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 source bgord-scripts/base.sh
+setup_base_config
 
 OUT_DIR="build"
 

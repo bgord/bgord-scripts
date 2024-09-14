@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 source bgord-scripts/base.sh
+setup_base_config
+
+info "Starting project..."
 
 if test -f "scripts/test-project-start.sh"
 then

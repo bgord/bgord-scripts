@@ -6,6 +6,7 @@ setup_base_config
 OUTPUT_PATH=$1
 
 info "Setting up HTML file..."
+
 validate_non_empty "OUTPUT_PATH" "$OUTPUT_PATH"
 
 cp bgord-scripts/templates/index.html "$OUTPUT_PATH"

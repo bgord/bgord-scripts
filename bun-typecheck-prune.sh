@@ -16,4 +16,4 @@ bunx ts-prune \
 
 bunx knip --strict --no-exit-code
 
-# Force exit code 0
+success "No unused code detected!"

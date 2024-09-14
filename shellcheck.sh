@@ -10,3 +10,5 @@ npx shellcheck \
   --enable=all \
   --exclude=SC2248,SC2250 \
   scripts/*.sh
+
+success "No shellcheck errors!"

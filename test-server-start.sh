@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 source bgord-scripts/base.sh
+setup_base_config
+
+info "Running test server..."
 
 if test -f "scripts/test-server-start.sh"
 then

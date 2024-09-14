@@ -4,6 +4,7 @@ source bgord-scripts/base.sh
 setup_base_config
 
 info "Setting up Prisma for SQLite..."
+
 check_if_directory_does_not_exist prisma
 
 install_dev_package prisma@5.19.1

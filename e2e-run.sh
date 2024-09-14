@@ -15,3 +15,5 @@ fi
 
 npx playwright install
 npx playwright test --reporter null --pass-with-no-tests
+
+success "E2E tests ran!"

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 source bgord-scripts/base.sh
+setup_base_config
 
 CURRENT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
 

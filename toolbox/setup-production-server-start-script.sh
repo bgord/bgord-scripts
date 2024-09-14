@@ -3,6 +3,8 @@
 source bgord-scripts/base.sh
 setup_base_config
 
+info "Setting upproduction-server-scripts.sh script..."
+
 PROJECT_NAME=$1
 validate_non_empty "PROJECT_NAME" $PROJECT_NAME
 

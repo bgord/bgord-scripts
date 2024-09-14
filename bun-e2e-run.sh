@@ -15,3 +15,5 @@ fi
 
 bunx playwright install
 bunx playwright test --reporter null --pass-with-no-tests
+
+success "E2E tests ran!"

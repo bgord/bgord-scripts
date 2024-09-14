@@ -10,3 +10,5 @@ install_dev_package @commitlint/config-conventional@19.5.0
 
 info "Run './bgord-scripts/setup-husky.sh' to add the commit-msg git hook"
 info "WARNING: you may want to double-check if other hooks were not rewritten!"
+
+success "Commitlint setup finished!"

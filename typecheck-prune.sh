@@ -6,3 +6,5 @@ setup_base_config
 info "Detecting unused code..."
 
 npx knip --strict --config bgord-scripts/knip.json
+
+success "No unused code detected!"
