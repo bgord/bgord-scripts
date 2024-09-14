@@ -138,18 +138,6 @@ function ensure_git_root_directory {
   fi
 }
 
-function ensure_vagrant_machine_is_running {
-  local IS_MACHINE_RUNNING=$(vagrant status | tail +3 | head -n 1 | grep running | wc -l)
-
-  if test $IS_MACHINE_RUNNING != '1'
-  then
-    error "The test_staging_server Vagrant machine is not running"
-    info "Starting the machine..."
-    vagrant up --no-provision
-    success "The machine has been started!"
-  fi
-}
-
 function press_enter_to_continue {
   read -s -p "Press enter to continue..."
   echo -e ""
