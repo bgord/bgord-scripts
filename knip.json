@@ -15,7 +15,6 @@
     "^@commitlint.*",
     "^postcss",
     "vitest",
-    "standard-version",
     "oxlint",
     "gzip-cli",
     "esbuild",
