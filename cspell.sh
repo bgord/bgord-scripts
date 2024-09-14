@@ -23,7 +23,7 @@ git ls-files \
   --unique \
   --no-progress \
   --cache \
-  --config "bgord-scripts/cspell.json" \
+  --config "bgord-scripts/templates/cspell.json" \
   $@
 
 success "Files are correct!"
