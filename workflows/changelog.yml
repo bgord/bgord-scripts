@@ -25,7 +25,7 @@ jobs:
         run: cat CHANGELOG.md
 
       - name: Commit CHANGELOG.md
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
           branch: master
           commit_message: "docs: generate CHANGELOG"
