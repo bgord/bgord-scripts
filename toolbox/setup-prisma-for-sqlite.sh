@@ -7,7 +7,9 @@ setup_base_config
 info "Setting up Prisma for SQLite..."
 check_if_directory_does_not_exist prisma
 
-install_dev_package prisma
+install_dev_package prisma@5.19.1
+install_dev_package @prisma/client@5.19.1
+
 mkdir prisma
 cp bgord-scripts/templates/schema-sqlite.prisma prisma/schema.prisma
 cp bgord-scripts/templates/db.ts db.ts
