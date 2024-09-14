@@ -1,13 +1,14 @@
-name: Deploy server
-
+name: Deploy
 on:
   push:
     branches: [master]
-
+  workflow_dispatch:
+concurrency:
+  group: ci-deploy-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
-
+    runs-on: ubuntu-20.04
     steps:
       - name: Clone repositories
         uses: actions/checkout@v3
@@ -17,13 +18,53 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2
         with:
-          node-version: 16.x
+          node-version: 22.6
+          cache: "npm"
 
-      - name: Install packages
-        run: npm i
+      - name: Get installed Playwright version
+        shell: bash
+        working-directory: ${{ inputs.WORKSPACE_ROOT }}
+        id: playwright-version
+        run: echo "PLAYWRIGHT_VERSION=$(jq '.devDependencies."@playwright/test"' package.json)" >> $GITHUB_ENV
+
+      - name: Cache playwright binaries
+        uses: actions/cache@v3
+        id: playwright-cache
+        with:
+          path: |
+            ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ env.PLAYWRIGHT_VERSION }}
+
+      - name: Cache node modules
+        id: cache-npm
+        uses: actions/cache@v3
+        env:
+          cache-name: node-cache-bundle
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: List the state of node modules
+        continue-on-error: true
+        run: npm list
+
+      - name: NPM Install
+        if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        run: npm install
+
+      - name: Create .env.test file
+        run: echo "${{ secrets.ENV_TEST }}" > .env.test
 
       - name: Create .env.production file
         run: echo "${{ secrets.ENV_PRODUCTION }}" > .env.production
+
+      - name: Run build prechecks
+        run: ./bgord-scripts/build-prechecks.sh
 
       - name: Build the app
         run: ./scripts/production-server-build.sh
@@ -47,6 +88,9 @@ jobs:
 
       - name: Sync source code
         run: rsync -azP build/ production:/var/www/${{ secrets.PROJECT_NAME }}
+
+      - name: Install sharp
+        run: ssh production "cd /var/www/${{ secrets.PROJECT_NAME }} && npm install --platform=linux --arch=x64 sharp"
 
       - name: Restart server
         run: ssh production sudo systemctl restart ${{ secrets.PROJECT_NAME }}.service
