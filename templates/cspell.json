@@ -102,6 +102,7 @@
     "Cordian",
     "shellcheck",
     "cassiozen",
-    "usestatemachine"
+    "usestatemachine",
+    "secam"
   ]
 }
