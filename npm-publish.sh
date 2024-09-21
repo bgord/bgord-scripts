@@ -3,14 +3,18 @@
 source bgord-scripts/base.sh
 setup_base_config
 
+VERSION_CHANGE=$1
 CURRENT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
 
-if test $CURRENT_BRANCH != "master"
+validate_non_empty "VERSION_CHANGE" $VERSION_CHANGE
+
+if test "$VERSION_CHANGE" == "major" || test "$VERSION_CHANGE" == "minor" || test "$VERSION_CHANGE" == "patch"
 then
-  error "You have to have the master branch checked out"
+  success "Version change: $VERSION_CHANGE"
+else
+  error "Unsupported version change: $VERSION_CHANGE"
   exit 1
 fi
-success "You are on the master branch"
 
 if test $(git rev-parse master) != $(git rev-parse origin/master)
 then
@@ -27,6 +31,15 @@ then
   exit 1
 fi
 success "You're logged in to npm"
+
+info "Changing app $VERSION_CHANGE version..."
+npm version $VERSION_CHANGE
+success "Version changed to $VERSION_CHANGE!"
+
+info "Pushing version change..."
+git push --no-verify
+git push --tags --no-verify
+success "Version change pushed!"
 
 npm publish --dry-run
 success "Ran npm publish --dry-run"
