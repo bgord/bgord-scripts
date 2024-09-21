@@ -12,7 +12,7 @@ GREEN="\033[1;32m"
 BLUE="\033[1;34m"
 NC="\033[0m"
 
-PROJECT_NAME=$(basename `git rev-parse --show-toplevel`)
+PROJECT_NAME=$(basename $(git rev-parse --show-toplevel 2>/dev/null) 2>/dev/null || echo "not-in-git")
 
 CURRENT_TIME=$(date +%F-%H-%M-%S)
 CURRENT_TIMESTAMP=$(date +%s)
