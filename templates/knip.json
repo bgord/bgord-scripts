@@ -43,7 +43,8 @@
     "hono/request-id",
     "hono/secure-headers",
     "hono/timeout",
-    "hono/timing"
+    "hono/timing",
+    "lodash"
   ],
   "ignoreBinaries": ["only-allow", "pandoc", "ebook-convert", "tsdx", "which"],
   "eslint": true
