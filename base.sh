@@ -185,6 +185,16 @@ function validate_environment_file {
   fi
 }
 
+function bun_validate_environment_file {
+  if bun run --env-file=".env.$NODE_ENV" infra/env.ts
+  then
+    success "Correct environment file!"
+  else
+    error "Invalid environment file, see the output below, quitting."
+    exit 1
+  fi
+}
+
 function validate_pascal_case {
   local VALUE="$1"
 
