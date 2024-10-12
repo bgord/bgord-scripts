@@ -30,7 +30,20 @@
     "jsdom",
     "@bgord/node",
     "react-query",
-    "react"
+    "react",
+    "hono",
+    "hono/http-exception",
+    "hono/basic-auth",
+    "hono/http-exception",
+    "hono",
+    "hono",
+    "hono/body-limit",
+    "hono/bun",
+    "hono/cors",
+    "hono/request-id",
+    "hono/secure-headers",
+    "hono/timeout",
+    "hono/timing"
   ],
   "ignoreBinaries": ["only-allow", "pandoc", "ebook-convert", "tsdx", "which"],
   "eslint": true
