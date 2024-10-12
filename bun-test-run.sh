@@ -4,8 +4,10 @@ source bgord-scripts/base.sh
 setup_base_config
 set_node_timezone_to_utc
 
+export NODE_ENV="local"
+
 info "Running tests..."
 
-bunx vitest run --passWithNoTests --exclude infra/e2e
+bun test
 
 success "Tests passed!"
