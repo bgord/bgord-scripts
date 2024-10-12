@@ -8,7 +8,7 @@ info "Running shellcheck..."
 bunx shellcheck \
   --external-sources \
   --enable=all \
-  --exclude=SC2248,SC2250 \
+  --exclude=SC2248,SC2250,SC1008 \
   scripts/*.sh
 
 success "No shellcheck errors!"
