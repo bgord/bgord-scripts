@@ -17,7 +17,7 @@ info "Starting bun project..."
 
 # ==========================================================
 
-if test -f "static/"
+if test -d "static/"
 then
   cp node_modules/@bgord/design/dist/main.min.css static/
   cp node_modules/@bgord/design/dist/normalize.min.css static/
@@ -26,7 +26,7 @@ fi
 
 # ==========================================================
 
-if test -f "frontend/"
+if test -d "frontend/"
 then
   ./bgord-scripts/frontend-build.sh
   info "Built frontend"
