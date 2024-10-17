@@ -26,7 +26,7 @@ fi
 
 # ==========================================================
 
-if test -d "frontend/"
+if test -f "frontend/"
 then
   ./bgord-scripts/frontend-build.sh
   info "Built frontend"
