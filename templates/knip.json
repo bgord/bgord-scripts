@@ -44,7 +44,8 @@
     "hono/secure-headers",
     "hono/timeout",
     "hono/timing",
-    "lodash"
+    "lodash",
+    "zod"
   ],
   "ignoreBinaries": ["only-allow", "pandoc", "ebook-convert", "tsdx", "which"],
   "eslint": true
