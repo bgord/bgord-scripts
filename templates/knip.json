@@ -45,8 +45,14 @@
     "hono/timeout",
     "hono/timing",
     "lodash",
-    "zod"
+    "zod",
+    "js-cookie",
+    "polish-plurals",
+    "react-router-dom",
+    "tinykeys",
+    "ts-storage"
   ],
   "ignoreBinaries": ["only-allow", "pandoc", "ebook-convert", "tsdx", "which"],
-  "eslint": true
+  "eslint": true,
+  "project": ["!tests/setup.ts"]
 }
