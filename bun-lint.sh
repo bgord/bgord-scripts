@@ -5,6 +5,9 @@ setup_base_config
 
 info "Linting all files..."
 
-bunx @biomejs/biome lint --config-path=bgord-scripts/templates/biome.json .
+bunx @biomejs/biome lint \
+  --config-path=bgord-scripts/templates/biome.json \
+  --no-errors-on-unmatched \
+  .
 
 success "Files are correct!"
