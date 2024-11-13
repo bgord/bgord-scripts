@@ -3,7 +3,7 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-info "Installing Husky..."
+info "Installing Lefthook..."
 
 install_dev_package lefthook@1.8.2
 
