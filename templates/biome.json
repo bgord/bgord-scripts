@@ -4,7 +4,13 @@
     "enabled": true
   },
   "files": {
-    "ignore": ["static/**", "build/**", "dist/**", "bgord-scripts/**"]
+    "ignore": [
+      "static/**",
+      "build/**",
+      "dist/**",
+      "bgord-scripts/**",
+      "bgord-frontend/**"
+    ]
   },
   "linter": {
     "enabled": true,
