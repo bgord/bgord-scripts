@@ -81,7 +81,7 @@ function validate_non_empty {
 }
 
 function install_dev_package {
-  npm i -D $@
+  bun i -D $@
 }
 
 function check_if_binary_exists {
