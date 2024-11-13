@@ -32,7 +32,7 @@ pre-commit:
 commit-msg:
   commands:
     commit-lint:
-      run: ./bgord-scripts/bun-commit-msg.sh
+      run: ./bgord-scripts/bun-lint-commit-message.sh
 
 skip_output:
   - meta
