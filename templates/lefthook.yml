@@ -1,0 +1,45 @@
+assert_lefthook_installed: true
+
+pre-push:
+  parallel: true
+  commands:
+    typecheck:
+      run: ./bgord-scripts/bun-typecheck.sh
+    prisma-validate:
+      glob: "*.{prisma}"
+      run: ./bgord-scripts/bun-prisma-validate.sh
+    typecheck-prune:
+      run: ./bgord-scripts/bun-typecheck-prune.sh
+    test-run:
+      run: ./bgord-scripts/bun-test-run.sh
+
+pre-commit:
+  parallel: true
+  commands:
+    format-staged:
+      run: ./bgord-scripts/bun-format-staged.sh
+      stage_fixed: true
+    lint:
+      run: ./bgord-scripts/bun-lint.sh
+    cspell:
+      run: ./bgord-scripts/bun-cspell.sh
+    shellcheck:
+      glob: "*.{sh}"
+      run: ./bgord-scripts/bun-shellcheck.sh
+    biome-check:
+      run: ./bgord-scripts/bun-biome-check.sh
+
+commit-msg:
+  commands:
+    commit-lint:
+      run: ./bgord-scripts/bun-commit-msg.sh
+
+skip_output:
+  - meta
+  - summary
+  - empty_summary
+  - success
+  - execution
+  - execution_out
+  - execution_info
+  - skips
