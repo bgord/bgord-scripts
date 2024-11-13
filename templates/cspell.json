@@ -104,6 +104,7 @@
     "cassiozen",
     "usestatemachine",
     "secam",
-    "Errback"
+    "Errback",
+    "lefthook"
   ]
 }
