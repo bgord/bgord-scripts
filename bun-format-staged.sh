@@ -5,6 +5,6 @@ setup_base_config
 
 info "Formatting all staged files..."
 
-bunx pretty-quick --staged
+npx @biomejs/biome format --write --staged --config-path=bgord-scripts/templates/biome.json
 
 success "Staged files formatted successfully!"
