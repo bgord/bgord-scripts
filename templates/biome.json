@@ -12,6 +12,12 @@
       "bgord-frontend/**"
     ]
   },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "tab",
+    "indentWidth": 4,
+    "lineWidth": 120
+  },
   "linter": {
     "enabled": true,
     "rules": {
