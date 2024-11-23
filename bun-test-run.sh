@@ -8,6 +8,6 @@ export NODE_ENV="test"
 
 info "Running tests..."
 
-bun test
+bun test bun
 
 success "Tests passed!"

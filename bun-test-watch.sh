@@ -8,4 +8,4 @@ export NODE_ENV="test"
 
 info "Running bun tests in watch mode..."
 
-bun test --watch
+bun test bun --watch
