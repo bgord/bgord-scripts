@@ -5,6 +5,6 @@ setup_base_config
 
 info "Linting commit message..."
 
-bunx commitlint --edit --config bgord-scripts/templates/.commitlint-config.js
+bunx commitlint --edit --config bgord-scripts/templates/.commitlint-config.cjs
 
 success "Commit message is correct!"
