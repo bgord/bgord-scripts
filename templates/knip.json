@@ -7,7 +7,5 @@
     "scripts/*",
     "dist/*",
     ".git/hooks/*"
-  ],
-  "eslint": true,
-  "project": ["!tests/setup.ts"]
+  ]
 }
