@@ -6,6 +6,6 @@ set_node_timezone_to_utc
 
 info "Running test coverage..."
 
-bunx vitest run --passWithNoTests --exclude infra/e2e --coverage
+bun test --coverage
 
 success "Tests passed!"
