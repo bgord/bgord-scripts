@@ -105,6 +105,9 @@
     "usestatemachine",
     "secam",
     "Errback",
-    "lefthook"
+    "lefthook",
+    "nosniff",
+    "noopen",
+    "SAMEORIGIN"
   ]
 }
