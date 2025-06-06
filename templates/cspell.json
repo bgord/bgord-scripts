@@ -108,6 +108,7 @@
     "lefthook",
     "nosniff",
     "noopen",
-    "SAMEORIGIN"
+    "SAMEORIGIN",
+    "prereqs"
   ]
 }
