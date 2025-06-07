@@ -7,12 +7,18 @@ info "Detecting outdated dependencies..."
 
 outdated=$(bun outdated)
 
-if echo "$outdated" | grep -qE '^\s*\S+\s+\S+\s+\S+\s+\S+'; then
-  echo "$outdated"
+has_outdated_dependencies=false
+
+if grep -q 'Package.*Current.*Update.*Latest' <<< "$outdated"; then
+  has_outdated_dependencies=true
+fi
+
+echo "$outdated"
+
+if [ "$has_outdated_dependencies" = true ]; then
   error "There are outdated dependencies."
   exit 1
 else
-  echo "$outdated"
   success "All dependencies are up-to-date."
   exit 0
 fi
