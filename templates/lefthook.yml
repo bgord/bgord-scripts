@@ -14,6 +14,8 @@ pre-push:
       run: ./bgord-scripts/bun-test-run.sh
     dependency-vulnerabilities:
       run: ./bgord-scripts/bun-dependency-vulnerabilities.sh
+    outdated-dependencies:
+      run: ./bgord-scripts/bun-outdated-dependencies.sh
 
 pre-commit:
   parallel: true
