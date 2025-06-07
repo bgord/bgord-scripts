@@ -12,6 +12,8 @@ pre-push:
       run: ./bgord-scripts/bun-typecheck-prune.sh
     test-run:
       run: ./bgord-scripts/bun-test-run.sh
+    dependency-vulnerabilities:
+      run: ./bgord-scripts/bun-dependency-vulnerabilities.sh
 
 pre-commit:
   parallel: true
