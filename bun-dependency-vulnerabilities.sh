@@ -6,5 +6,3 @@ setup_base_config
 info "Detecting vulnerable dependencies..."
 
 bun audit
-
-success "No vulnerable dependencies detected"
