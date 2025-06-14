@@ -30,6 +30,16 @@ then
 fi
 success "All changes are pushed to the remote master branch"
 
+# ========================================
+
+info "Building the package"
+
+bun run build
+
+success "Package built successfully"
+
+# ========================================
+
 if test ! $(npm whoami)
 then
   error "You're not logged in to npm"
