@@ -109,6 +109,8 @@
     "nosniff",
     "noopen",
     "SAMEORIGIN",
-    "prereqs"
+    "prereqs",
+    "IBAN",
+    "iban"
   ]
 }
