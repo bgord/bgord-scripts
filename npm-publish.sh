@@ -3,8 +3,12 @@
 source bgord-scripts/base.sh
 setup_base_config
 
+# ========================================
+
 VERSION_CHANGE=$1
 CURRENT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
+
+# ========================================
 
 validate_non_empty "VERSION_CHANGE" $VERSION_CHANGE
 
@@ -15,6 +19,8 @@ else
   error "Unsupported version change: $VERSION_CHANGE"
   exit 1
 fi
+
+# ========================================
 
 if test $(git rev-parse master) != $(git rev-parse origin/master)
 then
@@ -32,19 +38,28 @@ then
 fi
 success "You're logged in to npm"
 
+# ========================================
+
 info "Changing app $VERSION_CHANGE version..."
 npm version $VERSION_CHANGE
 success "Version changed to $VERSION_CHANGE!"
+
+# ========================================
 
 info "Pushing version change..."
 git push --no-verify
 git push --tags --no-verify
 success "Version change pushed!"
 
+# ========================================
+
 npm publish --dry-run
 success "Ran npm publish --dry-run"
 
+# ========================================
+
 info "About to run [npm publish] after you press Enter"
+
 press_enter_to_continue
 
 npm publish
