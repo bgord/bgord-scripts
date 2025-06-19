@@ -6,3 +6,5 @@ setup_base_config
 info "Detecting vulnerable dependencies..."
 
 bun audit
+
+info "Detecting vulnerable dependencies finished"
