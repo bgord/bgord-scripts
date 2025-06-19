@@ -1,15 +1,15 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.0/schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
+  "root": false,
+  "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "files": {
-    "ignore": [
-      "static/**",
-      "build/**",
-      "dist/**",
-      "bgord-scripts/**",
-      "bgord-frontend/**"
+    "includes": [
+      "**",
+      "!**/static/**",
+      "!**/build/**",
+      "!**/dist/**",
+      "!**/bgord-scripts/**",
+      "!**/bgord-frontend/**"
     ]
   },
   "formatter": {
@@ -34,11 +34,22 @@
         "useShorthandAssign": "error",
         "useFragmentSyntax": "error",
         "useConsistentArrayType": "error",
-        "useCollapsedElseIf": "error"
+        "useCollapsedElseIf": "error",
+        "noParameterAssign": "error",
+        "useAsConstAssertion": "error",
+        "useDefaultParameterLast": "error",
+        "useEnumInitializers": "error",
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error",
+        "noUnusedTemplateLiteral": "error",
+        "useNumberNamespace": "error",
+        "noInferrableTypes": "error",
+        "noUselessElse": "error"
       },
       "suspicious": {
-        "noConsoleLog": "error",
-        "noExplicitAny": "off"
+        "noExplicitAny": "off",
+        "noConsole": { "level": "error", "options": { "allow": ["log"] } },
+        "useAdjacentOverloadSignatures": "off"
       },
       "a11y": {
         "noSvgWithoutTitle": "off",
