@@ -111,6 +111,7 @@
     "SAMEORIGIN",
     "prereqs",
     "IBAN",
-    "iban"
+    "iban",
+    "autoincrement"
   ]
 }
