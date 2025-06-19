@@ -3,7 +3,7 @@
     "bgord-scripts/*",
     "bgord-scripts/templates/*",
     "frontend/index.tsx",
-    "**/*/*.test.ts",
+    "tests/*",
     "scripts/*",
     "dist/*",
     ".git/hooks/*"
