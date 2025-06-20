@@ -9,6 +9,7 @@ git ls-files \
   | grep -v "package.json" \
   | grep -v "prisma" \
   | grep -v "infra/translations/pl.json" \
+  | grep -v "infra/drizzle" \
   | grep -v "dist" \
   | grep -v "LICENSE" \
   | grep -v "CHANGELOG" \
