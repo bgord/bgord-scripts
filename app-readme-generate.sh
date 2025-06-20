@@ -12,6 +12,8 @@ validate_non_empty "PROJECT_NAME" $PROJECT_NAME
 echo "# $PROJECT_NAME" > "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
+[Check status]("https://bgord.github.io/statuses/history/$PROJECT_NAME")
+
 # ===============
 
 echo "## Configuration:" >> "$OUTPUT_FILE"
