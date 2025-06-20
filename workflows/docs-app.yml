@@ -1,14 +1,14 @@
-name: Changelog
+name: Docs
 on:
   push:
     branches: [master]
   workflow_dispatch:
 concurrency:
-  group: ci-${{ github.ref }}
+  group: ci-docs-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   generate:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
 
     permissions:
       contents: write
@@ -32,3 +32,16 @@ jobs:
           branch: master
           commit_message: "docs: generate CHANGELOG"
           file_pattern: infra/CHANGELOG.md
+
+      - name: Generate a README
+        run: bgord-scripts/app-readme-generate.sh "${{ github.event.repository.name }}"
+
+      - name: Print README
+        run: cat infra/CHANGELOG.md
+
+      - name: Commit readme.md
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          branch: master
+          commit_message: "docs: generate readme"
+          file_pattern: readme.md
