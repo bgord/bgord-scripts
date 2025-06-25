@@ -7,6 +7,7 @@ info "Performing biome analysis..."
 
 bunx @biomejs/biome check \
     --config-path=bgord-scripts/templates/biome.json \
+    --no-errors-on-unmatched \
     --write \
     .
 
