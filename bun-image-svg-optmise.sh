@@ -9,6 +9,6 @@ info "Optimising image..."
 
 validate_non_empty "IMAGE_PATH" $IMAGE_PATH
 
-npx svgo $IMAGE_PATH
+bunx svgo $IMAGE_PATH
 
 success "Image optimised!"
