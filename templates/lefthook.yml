@@ -4,37 +4,37 @@ pre-push:
   parallel: true
   commands:
     typecheck:
-      run: ./bgord-scripts/bun-typecheck.sh
+      run: ./bgord-scripts/typecheck.sh
     prisma-validate:
       glob: "*.{prisma}"
-      run: ./bgord-scripts/bun-prisma-validate.sh
+      run: ./bgord-scripts/prisma-validate.sh
     typecheck-prune:
-      run: ./bgord-scripts/bun-typecheck-prune.sh
+      run: ./bgord-scripts/typecheck-prune.sh
     test-run:
-      run: ./bgord-scripts/bun-test-run.sh
+      run: ./bgord-scripts/test-run.sh
     outdated-dependencies:
-      run: ./bgord-scripts/bun-outdated-dependencies.sh
+      run: ./bgord-scripts/outdated-dependencies.sh
 
 pre-commit:
   parallel: true
   commands:
     format-staged:
-      run: ./bgord-scripts/bun-format-staged.sh
+      run: ./bgord-scripts/format-staged.sh
       stage_fixed: true
     lint:
-      run: ./bgord-scripts/bun-lint.sh
+      run: ./bgord-scripts/lint.sh
     cspell:
-      run: ./bgord-scripts/bun-cspell.sh
+      run: ./bgord-scripts/cspell.sh
     shellcheck:
       glob: "*.{sh}"
-      run: ./bgord-scripts/bun-shellcheck.sh
+      run: ./bgord-scripts/shellcheck.sh
     biome-check:
-      run: ./bgord-scripts/bun-biome-check.sh
+      run: ./bgord-scripts/biome-check.sh
 
 commit-msg:
   commands:
     commit-lint:
-      run: ./bgord-scripts/bun-lint-commit-message.sh
+      run: ./bgord-scripts/lint-commit-message.sh
 
 skip_output:
   - meta
