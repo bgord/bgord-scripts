@@ -3,17 +3,17 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-if test -f "scripts/bun-local-server-start.sh"
+if test -f "scripts/local-server-start.sh"
 then
-  info "Bun local server start script exists"
-  bash scripts/bun-local-server-start.sh
+  info "Local server start script exists"
+  bash scripts/local-server-start.sh
   exit
 else
-  info "Bun local server start script does not exist"
+  info "Local server start script does not exist"
 fi
 
 info "Environment: local"
-info "Starting bun project..."
+info "Starting project..."
 
 # ==========================================================
 
