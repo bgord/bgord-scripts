@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "strict": true,
     "esModuleInterop": true,
+    "incremental": true,
     "jsx": "react",
-    "jsxFactory": "h",
-    "jsxFragmentFactory": "Fragment",
+    "lib": ["ESNext", "DOM"],
     "noUncheckedIndexedAccess": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true
   },
   "exclude": ["bgord-scripts", "**/*.test.ts"]
 }
