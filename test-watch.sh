@@ -6,6 +6,6 @@ set_node_timezone_to_utc
 
 export NODE_ENV="test"
 
-info "Running bun tests in watch mode..."
+info "Running tests in watch mode..."
 
 bun test --watch

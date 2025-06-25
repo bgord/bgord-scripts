@@ -176,16 +176,6 @@ function ensure_ssh_production_alias {
 }
 
 function validate_environment_file {
-  if node --import=tsx --env-file=".env.$NODE_ENV" infra/env.ts
-  then
-    success "Correct environment file!"
-  else
-    error "Invalid environment file, see the output below, quitting."
-    exit 1
-  fi
-}
-
-function bun_validate_environment_file {
   if bun run --env-file=".env.$NODE_ENV" infra/env.ts
   then
     success "Correct environment file!"
