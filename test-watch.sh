@@ -8,4 +8,9 @@ export NODE_ENV="test"
 
 info "Running tests in watch mode..."
 
-bun test --watch
+if test -f "tests/_setup.ts"
+then
+  bun test --watch --preload ./tests/_setup.ts
+else
+  bun test --watch
+fi

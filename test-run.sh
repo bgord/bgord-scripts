@@ -8,6 +8,9 @@ export NODE_ENV="test"
 
 info "Running tests..."
 
-bun test
-
-success "Tests passed!"
+if test -f "tests/_setup.ts"
+then
+  bun test --preload ./tests/_setup.ts
+else
+  bun test
+fi
