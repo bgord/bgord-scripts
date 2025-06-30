@@ -4,11 +4,12 @@ source bgord-scripts/base.sh
 setup_base_config
 
 PAIRS=(
-  "lefthook.yml:bgord-scripts/templates/lefthook-target.yml"
   ".github/dependabot.yml:bgord-scripts/workflows/dependabot.yml"
-  ".github/workflows/docs-app.yml:bgord-scripts/workflows/docs-app.yml"
   ".github/workflows/codeql-analysis.yml:bgord-scripts/workflows/codeql-analysis.yml"
   ".github/workflows/deploy-server.yml:bgord-scripts/workflows/deploy-server.yml"
+  ".github/workflows/docs-app.yml:bgord-scripts/workflows/docs-app.yml"
+  "lefthook.yml:bgord-scripts/templates/lefthook-target.yml"
+  "tsconfig.json:bgord-scripts/templates/server.tsconfig.json"
 )
 
 ALL_OK=true
