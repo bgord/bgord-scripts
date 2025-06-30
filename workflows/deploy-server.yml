@@ -8,35 +8,20 @@ concurrency:
   cancel-in-progress: true
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Clone repositories
         uses: actions/checkout@v4
         with:
           submodules: recursive
 
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v4
+      - name: Setup Bun environment
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: 22.6
-          cache: "npm"
+          bun-version: 1.2.15
 
-      - name: Get installed Playwright version
-        shell: bash
-        working-directory: ${{ inputs.WORKSPACE_ROOT }}
-        id: playwright-version
-        run: echo "PLAYWRIGHT_VERSION=$(jq '.devDependencies."@playwright/test"' package.json)" >> $GITHUB_ENV
-
-      - name: Cache playwright binaries
-        uses: actions/cache@v4
-        id: playwright-cache
-        with:
-          path: |
-            ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ env.PLAYWRIGHT_VERSION }}
-
-      - name: NPM Install
-        run: npm install
+      - name: Bun install
+        run: bun install --exact --frozen-lockfile --no-summary
 
       - name: Create .env.test file
         run: echo "${{ secrets.ENV_TEST }}" > .env.test
@@ -49,6 +34,9 @@ jobs:
 
       - name: Build the app
         run: ./scripts/production-server-build.sh
+
+      - name: Inspect the app size
+        run: ./bgord-scripts/production-server-inspect.sh ${{ secrets.PROJECT_NAME }}
 
       - name: Configure SSH
         run: |
@@ -70,8 +58,14 @@ jobs:
       - name: Sync source code
         run: rsync -azP build/ production:/var/www/${{ secrets.PROJECT_NAME }}
 
+      - name: Remove package.json
+        run: ssh production "cd /var/www/${{ secrets.PROJECT_NAME }} && rm -rf package.json"
+
       - name: Install sharp
-        run: ssh production "cd /var/www/${{ secrets.PROJECT_NAME }} && npm install --platform=linux --arch=x64 sharp"
+        run: ssh production "cd /var/www/${{ secrets.PROJECT_NAME }} && /home/${{ secrets.USER }}/.bun/bin/bun install --platform=linux --arch=x64 sharp"
+
+      - name: Sync package.json
+        run: rsync -azP package.json production:/var/www/${{ secrets.PROJECT_NAME }}
 
       - name: Restart server
         run: ssh production sudo systemctl restart ${{ secrets.PROJECT_NAME }}.service
