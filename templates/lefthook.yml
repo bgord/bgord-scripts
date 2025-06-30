@@ -11,6 +11,8 @@ pre-push:
       run: ./bgord-scripts/test-run.sh
     outdated-dependencies:
       run: ./bgord-scripts/outdated-dependencies.sh
+    compare-configs:
+      run: ./bgord-scripts/compare-configs.sh
 
 pre-commit:
   parallel: true
