@@ -6,7 +6,7 @@ setup_base_config
 info "Running build prechecks..."
 
 ./bgord-scripts/typecheck.sh
-./bgord-scripts/lint.sh
+./bgord-scripts/biome-check.sh
 ./bgord-scripts/test-run.sh
 ./bgord-scripts/cspell.sh
 ./bgord-scripts/shellcheck.sh
