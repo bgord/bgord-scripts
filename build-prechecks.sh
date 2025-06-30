@@ -10,4 +10,5 @@ info "Running build prechecks..."
 ./bgord-scripts/test-run.sh
 ./bgord-scripts/cspell.sh
 ./bgord-scripts/shellcheck.sh
+./bgord-scripts/compare-configs.sh
 ./bgord-scripts/e2e-run.sh
