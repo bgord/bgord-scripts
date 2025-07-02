@@ -2,7 +2,7 @@
   "ignore": [
     "bgord-scripts/*",
     "bgord-scripts/templates/*",
-    "frontend/index.tsx",
+    "frontend/*",
     "tests/*",
     "scripts/*",
     "dist/*",
