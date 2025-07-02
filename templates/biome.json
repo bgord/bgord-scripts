@@ -9,7 +9,9 @@
       "!**/build/**",
       "!**/dist/**",
       "!**/bgord-scripts/**",
-      "!**/bgord-frontend/**"
+      "!**/bgord-frontend/**",
+      "!**/frontend/.react-router/**",
+      "!**/frontend/public/**"
     ]
   },
   "formatter": {
