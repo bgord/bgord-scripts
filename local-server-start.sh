@@ -17,23 +17,6 @@ info "Starting project..."
 
 # ==========================================================
 
-if test -d "static/"
-then
-  cp node_modules/@bgord/design/dist/main.min.css static/
-  cp node_modules/@bgord/design/dist/normalize.min.css static/
-  info "Copied CSS from @bgord/design"
-fi
-
-# ==========================================================
-
-if test -f "frontend/"
-then
-  ./bgord-scripts/frontend-build.sh
-  info "Built frontend"
-fi
-
-# ==========================================================
-
 export NODE_ENV="local"
 
 bun run \
