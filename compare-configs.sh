@@ -9,7 +9,6 @@ PAIRS=(
   ".github/workflows/deploy-server.yml:bgord-scripts/workflows/deploy-server.yml"
   ".github/workflows/docs-app.yml:bgord-scripts/workflows/docs-app.yml"
   "lefthook.yml:bgord-scripts/templates/lefthook-target.yml"
-  "tsconfig.json:bgord-scripts/templates/server.tsconfig.json"
 )
 
 ALL_OK=true
