@@ -5,12 +5,8 @@ setup_base_config
 
 info "Watching and rebuilding frontend..."
 
-BUILD_VERSION=\"v$(node -p -e "require('./package.json').version")\"
-BUILD_DATE=$(date +"%s")
+cp frontend/node_modules/@bgord/design/dist/main.min.css frontend/public/
+cp frontend/node_modules/@bgord/design/dist/normalize.min.css frontend/public/
 
-bun build frontend/index.tsx \
-  --outdir static/ \
-  --watch \
-  --define BUILD_VERSION=$BUILD_VERSION \
-  --define BUILD_DATE=$BUILD_DATE \
-  $@
+cd frontend
+bunx react-router dev
