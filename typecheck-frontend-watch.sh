@@ -15,6 +15,6 @@ then
 
   bunx tsc --watch --preserveWatchOutput --project tsconfig.json --noEmit
 else
-  error "$FRONTEND_DIRECTORY directory doesn't exist!"
-  exit 1
+  info "$FRONTEND_DIRECTORY directory doesn't exist!"
+  exit 0
 fi
