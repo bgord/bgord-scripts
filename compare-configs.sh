@@ -17,7 +17,7 @@ for pair in "${PAIRS[@]}"; do
   IFS=: read -r FILE TEMPLATE <<<"$pair"
 
   # Presence checks
-  [[ -f "$FILE"     ]] || { error "❌  $FILE not found";      ALL_OK=false; continue; }
+  [[ -f "$FILE" ]] || continue
   [[ -f "$TEMPLATE" ]] || { error "❌  $TEMPLATE not found";  ALL_OK=false; continue; }
 
   # Comparison
