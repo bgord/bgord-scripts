@@ -10,7 +10,7 @@ info "Running tests in watch mode..."
 
 if test -f "tests/_setup.ts"
 then
-  bun test --watch --preload ./tests/_setup.ts
+  bun test --watch --preload ./tests/_setup.ts tests/
 else
-  bun test --watch
+  bun test --watch tests/
 fi

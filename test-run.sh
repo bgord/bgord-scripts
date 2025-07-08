@@ -10,7 +10,7 @@ info "Running tests..."
 
 if test -f "tests/_setup.ts"
 then
-  bun test --preload ./tests/_setup.ts
+  bun test --preload ./tests/_setup.ts tests/
 else
-  bun test
+  bun test tests/
 fi
