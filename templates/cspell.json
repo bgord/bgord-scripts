@@ -112,6 +112,7 @@
     "prereqs",
     "IBAN",
     "iban",
-    "autoincrement"
+    "autoincrement",
+    "recaptcha"
   ]
 }
