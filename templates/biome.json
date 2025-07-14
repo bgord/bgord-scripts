@@ -56,7 +56,10 @@
       "a11y": {
         "noSvgWithoutTitle": "off",
         "noNoninteractiveTabindex": "off",
-        "noLabelWithoutControl": "off"
+        "noLabelWithoutControl": "off",
+        "noAutofocus": "off",
+        "noStaticElementInteractions": "warn",
+        "useKeyWithClickEvents": "warn"
       },
       "correctness": {
         "useExhaustiveDependencies": "warn"
