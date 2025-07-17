@@ -23,6 +23,7 @@ pre-push:
       # below we’ll turn on verbose output just for this command
       env:
         LEFTHOOK_VERBOSE: "true"
+        LEFTHOOK_OUTPUT: "execution,execution_out,success,summary"
 
 pre-commit:
   parallel: true
