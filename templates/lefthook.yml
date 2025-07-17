@@ -17,13 +17,6 @@ pre-push:
       run: ./bgord-scripts/typecheck-frontend.sh
     verify-dependencies:
       run: ./bgord-scripts/verify-dependencies.sh
-    list-todos:
-      # wrap in bash -c so that '|| true' applies to the whole pipeline
-      run: bash -c "./bgord-scripts/list-todos.sh || true"
-      # below we’ll turn on verbose output just for this command
-      env:
-        LEFTHOOK_VERBOSE: "true"
-        LEFTHOOK_OUTPUT: "execution,execution_out,success,summary"
 
 pre-commit:
   parallel: true
