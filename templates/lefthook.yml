@@ -17,8 +17,6 @@ pre-push:
       run: ./bgord-scripts/typecheck-frontend.sh
     verify-dependencies:
       run: ./bgord-scripts/verify-dependencies.sh
-    list-todos:
-      run: ./bgord-scripts/list-todos.sh
 
 pre-commit:
   parallel: true
