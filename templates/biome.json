@@ -51,7 +51,8 @@
       "suspicious": {
         "noExplicitAny": "off",
         "noConsole": { "level": "error", "options": { "allow": ["log"] } },
-        "useAdjacentOverloadSignatures": "off"
+        "useAdjacentOverloadSignatures": "off",
+        "noArrayIndexKey": "off"
       },
       "a11y": {
         "noSvgWithoutTitle": "off",
