@@ -7,7 +7,6 @@ info "Environment: production"
 info "Building frontend..."
 
 cp frontend/node_modules/@bgord/design/dist/main.min.css frontend/public/
-cp frontend/node_modules/@bgord/design/dist/normalize.min.css frontend/public/
 
 cd frontend/
 bunx --bun react-router build
