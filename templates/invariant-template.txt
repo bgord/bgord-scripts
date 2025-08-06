@@ -1,0 +1,25 @@
+import * as bg from "@bgord/bun";
+import type { ContentfulStatusCode } from "hono/utils/http-status";
+
+class {{INVARIANT_NAME_PASCAL_CASE}}Error extends Error {
+  constructor() {
+    super();
+    Object.setPrototypeOf(this, {{INVARIANT_NAME_PASCAL_CASE}}Error.prototype);
+  }
+}
+
+type {{INVARIANT_NAME_PASCAL_CASE}}ConfigType = { count: number };
+
+class {{INVARIANT_NAME_PASCAL_CASE}}Factory extends bg.Policy<{{INVARIANT_NAME_PASCAL_CASE}}ConfigType> {
+  fails(config: {{INVARIANT_NAME_PASCAL_CASE}}ConfigType) {
+    return config.count >= 1;
+  }
+
+  message = "{{INVARIANT_NAME_PASCAL_CASE}}";
+
+  error = {{INVARIANT_NAME_PASCAL_CASE}}Error;
+
+  code = 403 as ContentfulStatusCode;
+}
+
+export const {{INVARIANT_NAME_PASCAL_CASE}} = new {{INVARIANT_NAME_PASCAL_CASE}}Factory();
