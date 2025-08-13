@@ -1,7 +1,30 @@
 {
   "root": true,
-  "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
-  "assist": { "actions": { "source": { "organizeImports": "on" } } },
+  "$schema": "https://biomejs.dev/schemas/2.1.0/schema.json",
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              ":URL:",
+              ":BUN:",
+              ":NODE:",
+              ":PACKAGE_WITH_PROTOCOL:",
+              ":PACKAGE:",
+              "@bgord/**",
+              "+*",
+              "+*/**",
+              ":ALIAS:",
+              ":PATH:",
+              ":IMPORT_TYPE:"
+            ]
+          }
+        }
+      }
+    }
+  },
   "files": {
     "includes": [
       "**",
