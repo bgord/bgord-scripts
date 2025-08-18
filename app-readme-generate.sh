@@ -68,6 +68,15 @@ echo "" >> "$OUTPUT_FILE"
 
 # ===============
 
+echo "## App:" >> "$OUTPUT_FILE"
+echo "" >> "$OUTPUT_FILE"
+
+echo "\`\`\`" >> "$OUTPUT_FILE"
+tree app/ | grep -v index.ts | sed -e :a -e '$d;N;2,2ba' -e 'P;D' >> "$OUTPUT_FILE"
+echo "\`\`\`" >> "$OUTPUT_FILE"
+echo "" >> "$OUTPUT_FILE"
+
+# ===============
 echo "## Infra:" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
