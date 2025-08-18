@@ -54,7 +54,7 @@
         "noForEach": "off"
       },
       "style": {
-        "useImportType": "off",
+        "useImportType": "error",
         "noImplicitBoolean": "off",
         "useShorthandAssign": "error",
         "useFragmentSyntax": "error",
