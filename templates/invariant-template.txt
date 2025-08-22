@@ -10,7 +10,7 @@ class {{INVARIANT_NAME_PASCAL_CASE}}Error extends Error {
 
 type {{INVARIANT_NAME_PASCAL_CASE}}ConfigType = { count: number };
 
-class {{INVARIANT_NAME_PASCAL_CASE}}Factory extends bg.Policy<{{INVARIANT_NAME_PASCAL_CASE}}ConfigType> {
+class {{INVARIANT_NAME_PASCAL_CASE}}Factory extends bg.Invariant<{{INVARIANT_NAME_PASCAL_CASE}}ConfigType> {
   fails(config: {{INVARIANT_NAME_PASCAL_CASE}}ConfigType) {
     return config.count >= 1;
   }
