@@ -18,7 +18,7 @@ if CARET_DEPS=$(jq -r '
   e("devDependencies"),
   e("peerDependencies")
 ' package.json); [[ -n "${CARET_DEPS}" ]]; then
-  error "Found caret (^) versions:"
+  error "Found versions:"
   echo "${CARET_DEPS}" | sed 's/^/  - /'
   exit 1
 fi
