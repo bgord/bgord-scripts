@@ -4,7 +4,6 @@ source bgord-scripts/base.sh
 setup_base_config
 
 PAIRS=(
-  ".github/dependabot.yml:bgord-scripts/workflows/dependabot.yml"
   ".github/workflows/codeql-analysis.yml:bgord-scripts/workflows/codeql-analysis.yml"
   ".github/workflows/deploy-server.yml:bgord-scripts/workflows/deploy-server.yml"
   ".github/workflows/docs-app.yml:bgord-scripts/workflows/docs-app.yml"
