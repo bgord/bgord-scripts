@@ -9,6 +9,6 @@ info "Building frontend..."
 cp node_modules/@bgord/design/dist/main.min.css frontend/public/
 
 cd frontend/
-bunx --bun react-router build
+NODE_ENV=production bunx --bun react-router build --mode production
 
 success "Frontend built!"
