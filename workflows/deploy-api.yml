@@ -32,7 +32,7 @@ jobs:
       - name: Run build prechecks
         run: ./bgord-scripts/build-prechecks.sh
 
-      - name: Build the app
+      - name: Build the API
         run: ./scripts/production-server-build.sh
 
       - name: Inspect the app size
