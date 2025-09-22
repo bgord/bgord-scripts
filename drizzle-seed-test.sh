@@ -5,8 +5,8 @@ setup_base_config
 
 info "Seeding Drizzle database..."
 
-export NODE_ENV="local"
+export NODE_ENV="test"
 
-bun scripts/local-db-seed.ts
+bun scripts/db-seed.ts
 
 success "Drizzle database seeded!"
