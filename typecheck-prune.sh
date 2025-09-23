@@ -3,8 +3,6 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-info "Detecting unused code..."
-
+step_start "Typecheck prune"
 bunx knip --strict --exclude unlisted,binaries,dependencies --config bgord-scripts/templates/knip.json
-
-success "No unused code detected!"
+step_end "Typecheck prune"
