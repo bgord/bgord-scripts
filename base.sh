@@ -6,7 +6,7 @@ function setup_base_config {
   set -eo pipefail
 
   SCRIPT_STARTED_AT="${SCRIPT_STARTED_AT:-$(date +%s)}"
-  trap 'elapsed=$(( $(date +%s) - SCRIPT_STARTED_AT )); echo -e "\nFinished in ${elapsed}s${NC}"' EXIT
+  trap 'elapsed=$(( $(date +%s) - SCRIPT_STARTED_AT )); echo -e "\n⏲ Finished in ${elapsed}s${NC}"' EXIT
 }
 
 RED="\033[1;31m"
