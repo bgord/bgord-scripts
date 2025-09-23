@@ -207,3 +207,21 @@ function set_node_timezone_to_utc {
   info "Setting node timezone to UTC"
   export TZ=UTC
 }
+
+# STEPS
+
+CURRENT_STEP_TITLE=""
+
+step_start() {
+  CURRENT_STEP_TITLE="${1:-Unnamed step}"
+  SECONDS=0
+  echo -e "${BLUE}▶ ${CURRENT_STEP_TITLE}${NC}"
+}
+
+step_end() {
+  local given_title="${1:-$CURRENT_STEP_TITLE}"
+  local elapsed="${SECONDS}"
+
+  echo -e "${GREEN}✓ ${given_title} — ${elapsed}s${NC}"
+  CURRENT_STEP_TITLE=""
+}
