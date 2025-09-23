@@ -217,6 +217,7 @@ CURRENT_STEP_TITLE=""
 step_start() {
   CURRENT_STEP_TITLE="${1:-Unnamed step}"
   SECONDS=0
+  new_line
   echo -e "${BLUE}▶ ${CURRENT_STEP_TITLE}${NC} • $(date '+%Y-%m-%d %H:%M:%S')"
 }
 
