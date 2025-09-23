@@ -39,6 +39,12 @@ function new_line {
   echo -e ""
 }
 
+horizontal_line() {
+  local cols
+  cols=$( (command -v tput >/dev/null 2>&1 && tput cols) || echo 80 )
+  printf '%*s\n' "$cols" '' | tr ' ' '─'
+}
+
 function check_if_file_exists {
   if test -f "$1"
   then
@@ -217,7 +223,6 @@ CURRENT_STEP_TITLE=""
 step_start() {
   CURRENT_STEP_TITLE="${1:-Unnamed step}"
   SECONDS=0
-  new_line
   echo -e "${BLUE}▶ ${CURRENT_STEP_TITLE}${NC} • $(date '+%Y-%m-%d %H:%M:%S')"
 }
 
@@ -225,5 +230,6 @@ step_end() {
   local given_title="${1:-$CURRENT_STEP_TITLE}"
   local elapsed="${SECONDS}"
   echo -e "${GREEN}✓ ${given_title} — ${elapsed}s${NC}"
+  horizontal_line
   CURRENT_STEP_TITLE=""
 }
