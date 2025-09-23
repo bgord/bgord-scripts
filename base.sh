@@ -208,20 +208,19 @@ function set_node_timezone_to_utc {
   export TZ=UTC
 }
 
-# STEPS
+# --- STEPS ---
 
 CURRENT_STEP_TITLE=""
 
 step_start() {
   CURRENT_STEP_TITLE="${1:-Unnamed step}"
   SECONDS=0
-  echo -e "${BLUE}▶ ${CURRENT_STEP_TITLE}${NC}"
+  echo -e "${BLUE}▶ ${CURRENT_STEP_TITLE}${NC} • $(date '+%Y-%m-%d %H:%M:%S')"
 }
 
 step_end() {
   local given_title="${1:-$CURRENT_STEP_TITLE}"
   local elapsed="${SECONDS}"
-
   echo -e "${GREEN}✓ ${given_title} — ${elapsed}s${NC}"
   CURRENT_STEP_TITLE=""
 }
