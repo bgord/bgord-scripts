@@ -3,8 +3,10 @@
 function setup_base_config {
   # -e (exit immediately if a command fails)
   # -o pipefail (quit even if a command in a pipeline fails)
-
   set -eo pipefail
+
+  SCRIPT_STARTED_AT="${SCRIPT_STARTED_AT:-$(date +%s)}"
+  trap 'elapsed=$(( $(date +%s) - SCRIPT_STARTED_AT )); echo -e "${GREEN}Finished in ${elapsed}s${NC}"' EXIT
 }
 
 RED="\033[1;31m"
