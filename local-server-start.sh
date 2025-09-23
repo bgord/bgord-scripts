@@ -13,13 +13,14 @@ else
 fi
 
 info "Environment: local"
-info "Starting project..."
 
 # ==========================================================
 
 export NODE_ENV="local"
 
+step_start "Local server start"
 bun run \
   --watch \
   --env-file=".env.$NODE_ENV" \
   index.ts
+step_end "Local server start"

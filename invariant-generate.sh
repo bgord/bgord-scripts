@@ -3,13 +3,13 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-info "Generating an invariant..."
-
 INVARIANT_NAME_PASCAL_CASE=$1
 DIRECTORY=$2
 
 validate_non_empty "INVARIANT_NAME_PASCAL_CASE" $INVARIANT_NAME_PASCAL_CASE
 validate_non_empty "DIRECTORY" $DIRECTORY
+
+step_start "Invariant generate"
 
 INVARIANT_NAME_KEBAB_CASE=$(
   echo "$INVARIANT_NAME_PASCAL_CASE" \
@@ -24,4 +24,4 @@ OUTPUT_PATH="$DIRECTORY/${INVARIANT_NAME_KEBAB_CASE}.ts"
 sed "s/{{INVARIANT_NAME_PASCAL_CASE}}/${INVARIANT_NAME_PASCAL_CASE}/g" \
   "$TEMPLATE_PATH" > "$OUTPUT_PATH"
 
-success "Invariant generated at $OUTPUT_PATH"
+step_end "Invariant generate"

@@ -4,11 +4,12 @@ source bgord-scripts/base.sh
 setup_base_config
 
 info "Environment: production"
-info "Building frontend..."
 
+step_start "CSS copy"
 cp node_modules/@bgord/design/dist/main.min.css frontend/public/
+step_end "CSS copy"
 
+step_start "Frontend build"
 cd frontend/
 NODE_ENV=production bunx --bun react-router build --mode production
-
-success "Frontend built!"
+step_end "Frontend build"

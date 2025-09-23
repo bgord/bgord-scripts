@@ -3,8 +3,6 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-info "Formatting all files..."
-
+step_start "Files format"
 npx @biomejs/biome format --write --config-path=bgord-scripts/templates/biome.json
-
-success "Files formatted successfully!"
+step_end "Files format"

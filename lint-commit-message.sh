@@ -3,8 +3,6 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-info "Linting commit message..."
-
+step_start "Commit message lint"
 bunx commitlint --edit --config bgord-scripts/templates/.commitlint-config.cjs
-
-success "Commit message is correct!"
+step_end "Commit message lint"

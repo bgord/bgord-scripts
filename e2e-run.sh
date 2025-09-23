@@ -2,18 +2,17 @@
 
 source bgord-scripts/base.sh
 setup_base_config
-
 set_node_timezone_to_utc
 
 if test -d "infra/e2e"
 then
-  info "Running E2E..."
+  info "E2E tests available"
 else
   info "E2E tests not available"
   exit 0
 fi
 
+step_start "E2E run"
 bunx playwright install
 bunx playwright test --reporter null --pass-with-no-tests
-
-success "E2E tests ran!"
+step_end "E2E run"

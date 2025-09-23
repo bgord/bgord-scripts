@@ -5,10 +5,8 @@ setup_base_config
 
 IMAGE_PATH=$1
 
-info "Optimising image..."
-
 validate_non_empty "IMAGE_PATH" $IMAGE_PATH
 
+step_start "SVG optimise"
 bunx svgo $IMAGE_PATH
-
-success "Image optimised!"
+step_end "SVG optimise"

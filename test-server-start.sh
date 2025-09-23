@@ -22,9 +22,9 @@ info "Environment: test"
 
 ./bgord-scripts/drizzle-seed-test.sh
 
-info "Starting project..."
-
+step_start "Test server start"
 bun run \
   --watch \
   --env-file=".env.$NODE_ENV" \
   index.ts
+step_end "Test server start"

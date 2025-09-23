@@ -4,7 +4,7 @@ source bgord-scripts/base.sh
 setup_base_config
 set_node_timezone_to_utc
 
-info "Running test coverage..."
+step_start "Test coverage"
 
 if test -f "tests/_setup.ts"
 then
@@ -13,4 +13,4 @@ else
   bun test --coverage tests/
 fi
 
-success "Tests passed!"
+step_end "Test coverage"

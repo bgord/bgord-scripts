@@ -3,8 +3,7 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-info "Detecting outdated dependencies..."
-
+step_start "Dependencies outdated"
 outdated=$(bun outdated)
 
 has_outdated_dependencies=false
@@ -51,3 +50,4 @@ then
 else
   info "$FRONTEND_DIRECTORY directory doesn't exist!"
 fi
+step_end "Dependencies outdated"
