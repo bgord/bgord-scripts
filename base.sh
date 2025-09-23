@@ -41,8 +41,16 @@ function new_line {
 
 horizontal_line() {
   local cols
-  cols=$( (command -v tput >/dev/null 2>&1 && tput cols) || echo 80 )
-  printf '%*s\n' "$cols" '' | tr ' ' '─'
+
+  if [ -n "${COLUMNS:-}" ]; then
+    cols="$COLUMNS"
+  elif [ -n "${TERM:-}" ] && [ "${TERM}" != "dumb" ] && command -v tput >/dev/null 2>&1; then
+    cols="$(tput cols 2>/dev/null || echo 80)"
+  else
+    cols=80
+  fi
+
+  printf '%*s\n' "$cols" '' | tr ' ' '-'
 }
 
 function check_if_file_exists {
