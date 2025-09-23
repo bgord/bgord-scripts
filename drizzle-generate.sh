@@ -3,8 +3,6 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-info "Generating Drizzle schema..."
-
+step_start "Drizzle generate"
 bunx drizzle-kit generate --config bgord-scripts/templates/drizzle.config.ts
-
-success "Drizzle schema generated!"
+step_end "Drizzle generate"

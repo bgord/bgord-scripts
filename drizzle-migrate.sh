@@ -3,8 +3,6 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-info "Migrating Drizzle database..."
-
+step_start "Drizzle migrate"
 bunx drizzle-kit migrate --config bgord-scripts/templates/drizzle.config.ts
-
-success "Drizzle database migrating!"
+step_end "Drizzle migrate"

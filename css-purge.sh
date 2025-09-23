@@ -3,8 +3,6 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-info "Purging CSS..."
-
+step_start "CSS purge"
 bunx postcss static/main.min.css --replace --config bgord-scripts/templates
-
-success "CSS purged!"
+step_end "CSS purge"

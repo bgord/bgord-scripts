@@ -6,7 +6,7 @@ set_node_timezone_to_utc
 
 export NODE_ENV="test"
 
-info "Running tests in watch mode..."
+info "Test watch..."
 
 if test -f "tests/_setup.ts"
 then

@@ -3,10 +3,9 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-info "Verifying dependencies"
+step_start "Dependencies verify"
 
 check_if_file_exists "package.json"
-
 # Fail if any version in deps/devDeps/peerDeps starts with '^'
 if CARET_DEPS=$(jq -r '
   def e(section):
@@ -23,4 +22,4 @@ if CARET_DEPS=$(jq -r '
   exit 1
 fi
 
-success "Dependencies verified"
+step_end "Dependencies verify"

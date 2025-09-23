@@ -3,8 +3,7 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-info "Detecting spelling mistakes..."
-
+step_start "cspell"
 git ls-files \
   | grep -v "package.json" \
   | grep -v "prisma" \
@@ -26,5 +25,4 @@ git ls-files \
   --cache \
   --config "bgord-scripts/templates/cspell.json" \
   $@
-
-success "Files are correct!"
+step_end "cspell"

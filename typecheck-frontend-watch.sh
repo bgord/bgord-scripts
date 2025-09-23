@@ -3,7 +3,7 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-info "Typechecking frontend..."
+info "Typecheck frontend watch..."
 
 FRONTEND_DIRECTORY="frontend/"
 

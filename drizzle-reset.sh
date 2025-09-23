@@ -3,18 +3,9 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-info "Resetting Drizzle database..."
-
-info "Deleting SQL database..."
-
+step_start "Database delete"
 rm -rf sqlite.db
-
-info "Generating..."
+step_end "Database delete"
 
 ./bgord-scripts/drizzle-generate.sh
-
-info "Migrating..."
-
 ./bgord-scripts/drizzle-migrate.sh
-
-success "Drizzle database resetted correctly!"

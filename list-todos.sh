@@ -3,6 +3,6 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-info "Listing todos..."
-
+step_start "TODO list"
 ag "TODO"
+step_end "TODO list"

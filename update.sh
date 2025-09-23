@@ -3,7 +3,7 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-info "Performing an auto-update..."
+step_start "Autoupdate"
 
 cd bgord-scripts/
 git pull origin master
@@ -12,4 +12,4 @@ cd ../
 git add bgord-scripts/
 git commit -m "step: bump bgord/scripts" --no-verify
 
-success "Auto-update performed!"
+step_end "Autoupdate"
