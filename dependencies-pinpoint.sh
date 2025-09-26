@@ -22,4 +22,4 @@ if CARET_DEPS=$(jq -r '
   exit 1
 fi
 
-step_end "Dependencies verify"
+step_end "Dependencies pinpoint"
