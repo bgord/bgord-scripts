@@ -3,7 +3,7 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-step_start "Dependencies verify"
+step_start "Dependencies pinpoint"
 
 check_if_file_exists "package.json"
 # Fail if any version in deps/devDeps/peerDeps starts with '^'

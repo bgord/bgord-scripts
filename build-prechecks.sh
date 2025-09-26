@@ -9,9 +9,9 @@ step_start "Build prechecks"
 ./bgord-scripts/typecheck-prune.sh
 ./bgord-scripts/typecheck-frontend.sh
 ./bgord-scripts/test-run.sh
-./bgord-scripts/outdated-dependencies.sh
+./bgord-scripts/dependencies-outdated.sh
 ./bgord-scripts/compare-configs.sh
-./bgord-scripts/verify-dependencies.sh
+./bgord-scripts/dependencies-pinpoint.sh
 ./bgord-scripts/depcruise.sh
 ./bgord-scripts/biome-check.sh
 ./bgord-scripts/shellcheck.sh
