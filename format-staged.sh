@@ -4,7 +4,7 @@ source bgord-scripts/base.sh
 setup_base_config
 
 step_start "Files format staged"
-npx @biomejs/biome format \
+bunx @biomejs/biome format \
   --write \
   --staged \
   --no-errors-on-unmatched \
