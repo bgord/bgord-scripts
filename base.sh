@@ -54,23 +54,21 @@ horizontal_line() {
 }
 
 function check_if_file_exists {
-  if test -f "$1"
-  then
-    success "$1 file exists!"
-  else
-    error "$1 file doesn't exist!"
+  step_start "File exists $1"
+  if ! test -f "$1"; then
+    error "File doesn't exist: $1"
     exit 1
   fi
+  step_end "File exists $1"
 }
 
 function check_if_directory_exists {
-  if test -d "$1"
-  then
-    success "$1 directory exists!"
-  else
-    error "$1 directory doesn't exist!"
+  step_start "Directory exists $1"
+  if ! test -d "$1"; then
+    error "Directory doesn't exist: $1"
     exit 1
   fi
+  step_end "Directory exists $1"
 }
 
 function check_if_directory_does_not_exist {
@@ -192,13 +190,12 @@ function ensure_ssh_production_alias {
 }
 
 function validate_environment_file {
-  if bun run --env-file=".env.$NODE_ENV" infra/env.ts
-  then
-    success "Correct environment file!"
-  else
-    error "Invalid environment file, see the output below, quitting."
+  step_start "Environment file validate"
+  if ! bun run --env-file=".env.$NODE_ENV" infra/env.ts; then
+    error "Invalid environment file '.env.$NODE_ENV', see output above. Quitting."
     exit 1
   fi
+  step_end "Environment file validate"
 }
 
 function validate_pascal_case {
