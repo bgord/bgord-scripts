@@ -3,7 +3,7 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-step_start "Dependencies check"
+step_start "Dependencies import check"
 if test -f "infra/depcruise.webpack.cjs"
 then
   info "infra/depcruise.webpack.cjs file exists!"
@@ -11,4 +11,4 @@ then
 else
   info "infra/depcruise.webpack.cjs file doesn't exist, skippng"
 fi
-step_end "Dependencies check"
+step_end "Dependencies import check"

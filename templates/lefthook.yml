@@ -17,8 +17,8 @@ pre-push:
       run: ./bgord-scripts/typecheck-frontend.sh
     verify-dependencies:
       run: ./bgord-scripts/dependencies-pinpoint.sh
-    depcruise:
-      run: ./bgord-scripts/depcruise.sh
+    dependencies-import-check:
+      run: ./bgord-scripts/dependencies-import-check.sh
 
 pre-commit:
   parallel: true
