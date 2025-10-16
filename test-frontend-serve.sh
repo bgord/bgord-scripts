@@ -6,7 +6,7 @@ setup_base_config
 info "Environment: production"
 
 step_start "CSS copy"
-cp node_modules/@bgord/design/dist/main.min.css frontend/public/
+cp frontend/node_modules/@bgord/design/dist/main.min.css frontend/public/
 step_end "CSS copy"
 
 ./bgord-scripts/frontend-build.sh
