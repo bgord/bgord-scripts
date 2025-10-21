@@ -39,7 +39,7 @@ commit-msg:
     commit-lint:
       run: ./bgord-scripts/lint-commit-message.sh
 
-skip_output:
+output:
   - meta
   - summary
   - empty_summary
