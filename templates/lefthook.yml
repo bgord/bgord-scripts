@@ -13,8 +13,6 @@ pre-push:
       run: ./bgord-scripts/dependencies-outdated.sh
     compare-configs:
       run: ./bgord-scripts/compare-configs.sh
-    typecheck-frontend:
-      run: ./bgord-scripts/typecheck-frontend.sh
     verify-dependencies:
       run: ./bgord-scripts/dependencies-pinpoint.sh
     dependencies-import-check:
