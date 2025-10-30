@@ -2,12 +2,13 @@
   "ignore": [
     "bgord-scripts/*",
     "bgord-scripts/templates/*",
-    "frontend/**",
     "tests/*",
     "scripts/*",
     "dist/*",
     ".git/hooks/*",
     "infra/*",
-    "release-candidates/*"
+    "release-candidates/*",
+    "web/entry-client.tsx",
+    "public/*"
   ]
 }
