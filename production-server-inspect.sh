@@ -12,3 +12,7 @@ validate_non_empty "PROJECT_NAME" "$PROJECT_NAME"
 step_start "Production server inspect"
 du -sh "$OUTPUT_DIRECTORY/$PROJECT_NAME"
 step_end "Production server inspect"
+
+step_start "Directory list"
+ls -al "$OUTPUT_DIRECTORY"
+step_end "Directory list"
