@@ -32,10 +32,7 @@
       "!**/build/**",
       "!**/dist/**",
       "!**/public/**",
-      "!**/bgord-scripts/**",
-      "!**/bgord-frontend/**",
-      "!**/frontend/.react-router/**",
-      "!**/frontend/public/**"
+      "!**/bgord-scripts/**"
     ]
   },
   "formatter": {
