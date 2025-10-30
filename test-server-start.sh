@@ -19,8 +19,8 @@ export NODE_ENV="test"
 info "Environment: test"
 
 ./bgord-scripts/drizzle-reset.sh
-
 ./bgord-scripts/drizzle-seed-test.sh
+./bgord-scripts/web-build.sh
 
 step_start "Test server start"
 bun run \
