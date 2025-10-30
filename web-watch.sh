@@ -14,11 +14,11 @@ step_start "CSS copy"
 cp node_modules/@bgord/design/dist/main.min.css public
 step_end "CSS copy"
 
-step_start "Frontend watch"
+step_start "Web watch"
 bun build ./web/entry-client.tsx \
   --outdir ./public \
   --target browser \
   --splitting \
   --sourcemap \
   --watch
-step_end "Frontend watch"
+step_end "Web watch"
