@@ -33,11 +33,12 @@ export default {
     keepResetLayer,
 
     purgecss({
-      content: ["web/**/*.{ts,tsx,jsx,js,html,hbs}", "public/**/*.html"],
+      content: [
+        "web/**/*.{ts,tsx,jsx,js,html,hbs}",
+        "public/**/*.html",
+        "node_modules/@bgord/ui/**/*.{ts,tsx,jsx,js}",
+      ],
       defaultExtractor: dataAttributeAwareExtractor,
-      safelist: {
-        standard: ["[data-backdrop]"],
-      },
     }),
   ],
 };
