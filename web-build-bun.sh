@@ -14,7 +14,7 @@ step_start "CSS copy"
 cp node_modules/@bgord/design/dist/main.min.css public
 step_end "CSS copy"
 
-step_start "Web build"
+step_start "Web build bun"
 bun build web/entry-client.tsx \
   --outdir ./public \
   --target browser \
@@ -22,4 +22,4 @@ bun build web/entry-client.tsx \
   --minify \
   --production \
   --define process.env.NODE_ENV=\"production\"
-step_end "Web build"
+step_end "Web build bun"
