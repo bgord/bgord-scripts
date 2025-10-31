@@ -20,7 +20,7 @@ info "Environment: test"
 
 ./bgord-scripts/drizzle-reset.sh
 ./bgord-scripts/drizzle-seed-test.sh
-./bgord-scripts/web-build.sh
+./bgord-scripts/web-build-vite.sh
 
 step_start "Test server start"
 bun run \
