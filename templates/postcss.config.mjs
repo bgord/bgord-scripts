@@ -35,6 +35,9 @@ export default {
     purgecss({
       content: ["web/**/*.{ts,tsx,jsx,js,html,hbs}", "public/**/*.html"],
       defaultExtractor: dataAttributeAwareExtractor,
+      safelist: {
+        standard: ["[data-backdrop]"],
+      },
     }),
   ],
 };
