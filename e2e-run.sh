@@ -13,6 +13,7 @@ else
 fi
 
 step_start "E2E run"
-bunx playwright install --with-deps chromium
+export PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=1
+bunx playwright install chromium
 bunx playwright test --reporter null --pass-with-no-tests
 step_end "E2E run"
