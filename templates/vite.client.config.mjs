@@ -12,6 +12,7 @@ export default defineConfig({
     outDir: "public",
     emptyOutDir: false,
     target: "es2022",
+    reportCompressedSize: false,
     sourcemap: false,
     modulePreload: { polyfill: false },
     assetsInlineLimit: 0,
