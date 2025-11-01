@@ -13,6 +13,6 @@ else
 fi
 
 step_start "E2E run"
-bunx playwright install
+bunx playwright install --with-deps chromium
 bunx playwright test --reporter null --pass-with-no-tests
 step_end "E2E run"
