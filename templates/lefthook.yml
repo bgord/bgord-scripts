@@ -1,5 +1,5 @@
 assert_lefthook_installed: true
-
+output: false
 pre-push:
   parallel: true
   commands:
@@ -37,13 +37,3 @@ commit-msg:
   commands:
     commit-lint:
       run: ./bgord-scripts/lint-commit-message.sh
-
-output:
-  - meta
-  - summary
-  - empty_summary
-  - success
-  - execution
-  - execution_out
-  - execution_info
-  - skips
