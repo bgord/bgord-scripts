@@ -23,7 +23,7 @@ echo "" >> "$OUTPUT_FILE"
 echo "Clone the repository" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 echo "\`\`\`" >> "$OUTPUT_FILE"
-echo "git clone git@github.com:bgord/journal.git --recurse-submodules" >> "$OUTPUT_FILE"
+echo "git clone git@github.com:bgord/$PROJECT_NAME.git --recurse-submodules" >> "$OUTPUT_FILE"
 echo "\`\`\`" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
