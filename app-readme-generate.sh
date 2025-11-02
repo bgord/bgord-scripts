@@ -12,6 +12,9 @@ validate_non_empty "PROJECT_NAME" $PROJECT_NAME
 echo "# $PROJECT_NAME" > "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
+echo "[![Deploy](https://github.com/bgord/$PROJECT_NAME/actions/workflows/deploy-server.yml/badge.svg)](https://github.com/bgord/$PROJECT_NAME/actions/workflows/deploy-server.yml)" >> "$OUTPUT_FILE"
+echo "" >> "$OUTPUT_FILE"
+
 echo "[Check status](https://bgord.github.io/statuses/history/$PROJECT_NAME)" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
