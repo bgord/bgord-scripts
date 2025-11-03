@@ -3,11 +3,7 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-if ! test -d "web"
-then
-  info "Web part not set up"
-  exit 0
-fi
+ensure_web_set_up
 
 info "Environment: local"
 

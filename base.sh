@@ -221,6 +221,22 @@ function set_node_timezone_to_utc {
   export TZ=UTC
 }
 
+function ensure_web_set_up {
+  if ! test -d "web"
+  then
+    info "Web part not set up"
+    exit 0
+  fi
+}
+
+function ensure_drizzle_set_up {
+  if ! test -d "infra/drizzle"
+  then
+    info "Database not set up"
+    exit 0
+  fi
+}
+
 # --- STEPS ---
 
 CURRENT_STEP_TITLE=""
