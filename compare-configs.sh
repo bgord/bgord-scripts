@@ -5,7 +5,7 @@ setup_base_config
 
 PAIRS=(
   ".github/workflows/codeql-analysis.yml:bgord-scripts/workflows/codeql-analysis.yml"
-  ".github/workflows/deploy-api.yml:bgord-scripts/workflows/deploy-api.yml"
+  ".github/workflows/deploy-api.yml:bgord-scripts/workflows/deploy-server.yml"
   ".github/workflows/docs-app.yml:bgord-scripts/workflows/docs-app.yml"
   ".github/workflows/docs-package.yml:bgord-scripts/workflows/docs-package.yml"
   "lefthook.yml:bgord-scripts/templates/lefthook-target.yml"

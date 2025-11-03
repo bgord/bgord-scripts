@@ -18,7 +18,7 @@ jobs:
       - name: Setup Bun environment
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: 1.3.0
+          bun-version: 1.3.1
 
       - name: Bun install
         run: bun install --exact --frozen-lockfile --no-summary
@@ -26,16 +26,49 @@ jobs:
       - name: Create .env.test file
         run: echo "${{ secrets.ENV_TEST }}" > .env.test
 
-      - name: Create .env.production file
-        run: echo "${{ secrets.ENV_PRODUCTION }}" > .env.production
+      - name: Read Playwright version
+        id: pw
+        run: |
+          VERSION=$(jq -r '.devDependencies["@playwright/test"] // "unknown"' package.json)
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ms-pw-${{ runner.os }}-${{ steps.pw.outputs.version }}
+
+      - name: Cache TS buildinfo
+        uses: actions/cache@v4
+        with:
+          path: |
+            **/*.tsbuildinfo
+          key: tsbuildinfo-${{ runner.os }}-${{ hashFiles('tsconfig*.json') }}
+          restore-keys: |
+            tsbuildinfo-${{ runner.os }}-
+
+      - name: Read ShellCheck wrapper version
+        id: sc
+        run: |
+          VERSION=$(jq -r '.devDependencies.shellcheck // "unknown"' package.json)
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Cache ShellCheck
+        uses: actions/cache@v4
+        with:
+          path: node_modules/shellcheck/bin
+          key: shellcheck-${{ runner.os }}-${{ steps.sc.outputs.version }}
 
       - name: Run build prechecks
         run: ./bgord-scripts/build-prechecks.sh
 
-      - name: Build the API
+      - name: Create .env.production file
+        run: echo "${{ secrets.ENV_PRODUCTION }}" > .env.production
+
+      - name: Build app
         run: ./scripts/production-server-build.sh
 
-      - name: Inspect the app size
+      - name: Inspect app size
         run: ./bgord-scripts/production-server-inspect.sh ${{ secrets.PROJECT_NAME }}
 
       - name: Configure SSH
@@ -55,8 +88,11 @@ jobs:
           SSH_KEY: ${{ secrets.PRIVATE_KEY }}
           SSH_HOST: ${{ secrets.HOSTNAME }}
 
+      - name: Clean public
+        run: ssh production "cd /var/www/${{ secrets.PROJECT_NAME }} && rm -rf public/"
+
       - name: Sync source code
-        run: rsync -azP build/ production:/var/www/${{ secrets.PROJECT_NAME }}
+        run: rsync -azP output/ production:/var/www/${{ secrets.PROJECT_NAME }}
 
       - name: Remove package.json
         run: ssh production "cd /var/www/${{ secrets.PROJECT_NAME }} && rm -rf package.json"
