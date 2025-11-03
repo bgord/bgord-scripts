@@ -3,6 +3,12 @@
 source bgord-scripts/base.sh
 setup_base_config
 
+if ! test -d "web"
+then
+  info "Web part not set up"
+  exit 0
+fi
+
 info "Environment: production"
 
 step_start "Remove public artifacts"
