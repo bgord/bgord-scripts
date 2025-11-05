@@ -3,7 +3,8 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-BASIC_AUTH_HEADER=$1
+PROJECT_NAME=$1
+BASIC_AUTH_HEADER=$2
 
 validate_non_empty "PROJECT_NAME" $PROJECT_NAME
 validate_non_empty "BASIC_AUTH_HEADER" $BASIC_AUTH_HEADER
