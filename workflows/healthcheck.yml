@@ -17,11 +17,12 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Run healthcheck script
+      - name: Run healthcheck
+        id: run_healthcheck
         run: ./bgord-scripts/healthcheck.sh "${{ secrets.PROJECT_NAME }}" "${{ secrets.BASIC_AUTH_PRODUCTION }}"
 
       - name: Notify on failure
-        if: ${{ failure() && steps.run_healthcheck.outcome == 'failure' }}
+        if: ${{ always() && steps.run_healthcheck.outcome == 'failure' }}
         run: |
           curl -sS -X POST "https://lobbygow.bgord.dev/api/notification-send" \
             -H "Content-Type: application/json" \
