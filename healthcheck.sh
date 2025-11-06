@@ -23,6 +23,6 @@ echo "$BODY"
 
 step_end "Healthcheck request"
 
-if test "$STATUS" != "200" && "$STATUS" != "429"; then
+if test "$STATUS" != "200" -a "$STATUS" != "429"; then
   exit 1
 fi
