@@ -3,6 +3,11 @@ on:
   push:
     branches: [master]
   workflow_dispatch:
+    inputs:
+      fasttrack:
+        description: "Skip build prechecks"
+        type: boolean
+        default: false
 concurrency:
   group: ci-deploy-${{ github.ref }}
   cancel-in-progress: true
@@ -24,21 +29,25 @@ jobs:
         run: bun install --exact --frozen-lockfile --no-summary
 
       - name: Create .env.test file
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
         run: echo "${{ secrets.ENV_TEST }}" > .env.test
 
       - name: Read Playwright version
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
         id: pw
         run: |
           VERSION=$(jq -r '.devDependencies["@playwright/test"] // "unknown"' package.json)
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Cache Playwright browsers
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
           key: ms-pw-${{ runner.os }}-${{ steps.pw.outputs.version }}
 
       - name: Cache TS buildinfo
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
         uses: actions/cache@v4
         with:
           path: |
@@ -48,18 +57,21 @@ jobs:
             tsbuildinfo-${{ runner.os }}-
 
       - name: Read ShellCheck wrapper version
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
         id: sc
         run: |
           VERSION=$(jq -r '.devDependencies.shellcheck // "unknown"' package.json)
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Cache ShellCheck
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
         uses: actions/cache@v4
         with:
           path: node_modules/shellcheck/bin
           key: shellcheck-${{ runner.os }}-${{ steps.sc.outputs.version }}
 
       - name: Run build prechecks
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
         run: ./bgord-scripts/build-prechecks.sh
 
       - name: Create .env.production file
