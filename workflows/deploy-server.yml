@@ -81,6 +81,7 @@ jobs:
         run: ./scripts/production-server-build.sh
 
       - name: Inspect app size
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
         run: ./bgord-scripts/production-server-inspect.sh ${{ secrets.PROJECT_NAME }}
 
       - name: Configure SSH
