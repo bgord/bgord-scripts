@@ -222,7 +222,7 @@ function set_node_timezone_to_utc {
 }
 
 function ensure_web_set_up {
-  if ! test -d "web"
+  if ! test -f "web/entry-client.tsx"
   then
     info "Web part not set up"
     exit 0
