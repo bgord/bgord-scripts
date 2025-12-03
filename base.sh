@@ -81,6 +81,15 @@ function check_if_directory_does_not_exist {
   fi
 }
 
+function check_if_package_installed {
+  PACKAGE=$1
+
+  if test $(jq -r --arg pkg "$PACKAGE" '.devDependencies[$pkg]' package.json) == 'null'
+  then
+    error "$PACKAGE package not installed"
+  fi
+}
+
 function validate_non_empty {
   local VARIABLE_NAME=$1
   local VARIABLE_VALUE=$2
