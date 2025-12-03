@@ -9,14 +9,16 @@ pre-push:
       run: ./bgord-scripts/typecheck-prune.sh
     test-run:
       run: ./bgord-scripts/test-run.sh
-    outdated-dependencies:
+    dependencies-outdated:
       run: ./bgord-scripts/dependencies-outdated.sh
     compare-configs:
       run: ./bgord-scripts/compare-configs.sh
-    verify-dependencies:
+    dependencies-pinpoint:
       run: ./bgord-scripts/dependencies-pinpoint.sh
     dependencies-import-check:
       run: ./bgord-scripts/dependencies-import-check.sh
+    dependencies-presence-check:
+      run: ./bgord-scripts/dependencies-presence-check.sh
 
 pre-commit:
   parallel: true
