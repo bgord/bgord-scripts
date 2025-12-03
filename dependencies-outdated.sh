@@ -4,7 +4,7 @@ source bgord-scripts/base.sh
 setup_base_config
 
 step_start "Dependencies outdated"
-outdated=$(bun outdated --minimum-release-age=86400) # 1 day in seconds
+outdated=$(bun outdated)
 
 has_outdated_dependencies=false
 
