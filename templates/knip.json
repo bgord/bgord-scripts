@@ -1,4 +1,5 @@
 {
+  "ignoreDependencies": ["sharp"],
   "ignore": [
     "bgord-scripts/*",
     "bgord-scripts/templates/*",
