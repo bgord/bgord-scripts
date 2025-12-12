@@ -31,7 +31,9 @@ then
 fi
 step_end "Sync status"
 
+step_start "Build package"
 bun run build
+step_end "Build package"
 
 step_start "NPM login status"
 if test ! $(npm whoami)
