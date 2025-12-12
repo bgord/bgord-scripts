@@ -22,6 +22,16 @@ else
 fi
 step_end "Version change"
 
+step_start "NPM login status"
+if test ! $(npm whoami)
+then
+  error "You're not logged in to npm"
+  info "Run [npm login], you can find the credentials on Keeper"
+  exit 1
+fi
+step_end "NPM login status"
+
+
 step_start "Sync status"
 if test $(git rev-parse master) != $(git rev-parse origin/master)
 then
@@ -34,15 +44,6 @@ step_end "Sync status"
 step_start "Build package"
 bun run build
 step_end "Build package"
-
-step_start "NPM login status"
-if test ! $(npm whoami)
-then
-  error "You're not logged in to npm"
-  info "Run [npm login], you can find the credentials on Keeper"
-  exit 1
-fi
-step_end "NPM login status"
 
 step_start "Version bump: $VERSION_CHANGE"
 npm version $VERSION_CHANGE
