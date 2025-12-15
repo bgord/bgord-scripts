@@ -2,6 +2,15 @@
 
 source bgord-scripts/base.sh
 setup_base_config
+
+if test -d "infra/e2e"
+then
+  info "E2E tests available"
+else
+  info "E2E tests not available"
+  exit 0
+fi
+
 set_node_timezone_to_utc
 
 step_start "E2E open"
