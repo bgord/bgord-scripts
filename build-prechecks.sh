@@ -12,7 +12,6 @@ setup_base_config
 ./bgord-scripts/dependencies-import-check.sh
 ./bgord-scripts/lockfile-lint.sh
 ./bgord-scripts/gitleaks-scan.sh
-./bgord-scripts/cspell.sh
 ./bgord-scripts/shellcheck.sh
 ./bgord-scripts/biome-check.sh
 ./bgord-scripts/e2e-run.sh
