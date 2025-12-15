@@ -14,6 +14,8 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-24.04
+    env:
+      GITLEAKS_VERSION: 8.18.2
     steps:
       - name: Clone repositories
         uses: actions/checkout@v4
@@ -69,6 +71,24 @@ jobs:
         with:
           path: node_modules/shellcheck/bin
           key: shellcheck-${{ runner.os }}-${{ steps.sc.outputs.version }}
+
+      - name: Cache Gitleaks
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
+        id: gl-cache
+        uses: actions/cache@v4
+        with:
+          path: /home/runner/.local/bin/gitleaks
+          key: gitleaks-${{ runner.os }}-${{ env.GITLEAKS_VERSION }}
+
+      - name: Install Gitleaks
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) && steps.gl-cache.outputs.cache-hit != 'true' }}
+        run: |
+          mkdir -p /home/runner/.local/bin
+          curl -sSfL "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" | tar -xz -C /home/runner/.local/bin gitleaks
+
+      - name: Add Gitleaks to PATH
+        if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
+        run: echo "/home/runner/.local/bin" >> $GITHUB_PATH
 
       - name: Run build prechecks
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
