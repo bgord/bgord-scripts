@@ -1,0 +1,8 @@
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Global allowlist for development files"
+paths = [
+  '''tests/mocks\.ts'''
+]
