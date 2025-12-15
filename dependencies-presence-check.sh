@@ -17,5 +17,6 @@ check_if_package_installed "lefthook"
 check_if_package_installed "only-allow"
 check_if_package_installed "shellcheck"
 check_if_package_installed 'typescript'
+check_if_package_installed 'lockfile-lint'
 
 step_end "Dependencies presence check"
