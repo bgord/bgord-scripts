@@ -19,6 +19,8 @@ pre-push:
       run: ./bgord-scripts/dependencies-import-check.sh
     dependencies-presence-check:
       run: ./bgord-scripts/dependencies-presence-check.sh
+    lockfile-lint:
+      run: ./bgord-scripts/lockfile-lint.sh
 
 pre-commit:
   parallel: true
