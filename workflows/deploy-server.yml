@@ -15,7 +15,7 @@ jobs:
   deploy:
     runs-on: ubuntu-24.04
     env:
-      GITLEAKS_VERSION: 8.18.2
+      GITLEAKS_VERSION: 8.30.0
     steps:
       - name: Clone repositories
         uses: actions/checkout@v4
