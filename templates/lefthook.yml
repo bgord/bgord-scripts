@@ -1,5 +1,5 @@
 assert_lefthook_installed: true
-output: false
+output: true
 pre-push:
   parallel: true
   commands:
