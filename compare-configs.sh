@@ -11,23 +11,30 @@ PAIRS=(
   "lefthook.yml:bgord-scripts/templates/lefthook-target.yml"
 )
 
-ALL_OK=true
+step_start "Compare configs"
 
 for pair in "${PAIRS[@]}"; do
   IFS=: read -r FILE TEMPLATE <<<"$pair"
 
-  # Presence checks
-  [[ -f "$FILE" ]] || continue
-  [[ -f "$TEMPLATE" ]] || { error "❌  $TEMPLATE not found";  ALL_OK=false; continue; }
+  test -f "$FILE" || continue
 
-  # Comparison
-  if diff -u --color=always --label "$TEMPLATE" --label "$FILE" "$TEMPLATE" "$FILE" > /dev/null; then
+  if diff -u --color=always "$TEMPLATE" "$FILE" > /dev/null; then
     success "$FILE matches $TEMPLATE"
-  else
-    error "$FILE differs from $TEMPLATE:"
-    diff -u --color=always --label "$TEMPLATE" --label "$FILE" "$TEMPLATE" "$FILE" || true
-    ALL_OK=false
+    continue
   fi
+
+  if [ $? -eq 2 ]; then
+    error "❌  Comparison failed: $TEMPLATE or $FILE not found."
+  else
+    # If the exit code was 1, the files differ. Print the difference.
+    error "$FILE differs from $TEMPLATE:"
+    # Use the labels when printing the diff for user clarity
+    diff -u --color=always --label "$TEMPLATE" --label "$FILE" "$TEMPLATE" "$FILE"
+  fi
+  
+  exit 1
 done
 
-$ALL_OK && exit 0 || exit 1
+step_end "Compare configs"
+
+exit 0
