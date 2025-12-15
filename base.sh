@@ -87,6 +87,7 @@ function check_if_package_installed {
   if test $(jq -r --arg pkg "$PACKAGE" '.devDependencies[$pkg]' package.json) == 'null'
   then
     error "$PACKAGE package not installed"
+    exit 1
   fi
 }
 
