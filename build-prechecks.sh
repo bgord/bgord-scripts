@@ -11,6 +11,7 @@ setup_base_config
 ./bgord-scripts/dependencies-pinpoint.sh
 ./bgord-scripts/dependencies-import-check.sh
 ./bgord-scripts/lockfile-lint.sh
+./bgord-scripts/gitleaks-scan.sh
 ./bgord-scripts/cspell.sh
 ./bgord-scripts/shellcheck.sh
 ./bgord-scripts/biome-check.sh
