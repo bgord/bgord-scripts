@@ -62,6 +62,15 @@ echo "./bgord-scripts/test-run.sh" >> "$OUTPUT_FILE"
 echo "\`\`\`" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
+echo "Generate production master key" >> "$OUTPUT_FILE"
+echo "" >> "$OUTPUT_FILE"
+echo "Master key fils hould include 64 hex characters" >> "$OUTPUT_FILE"
+echo "" >> "$OUTPUT_FILE"
+echo "\`\`\`" >> "$OUTPUT_FILE"
+echo "bun run bgord-scripts/secrets-encrypt.ts --master-key /run/master-key.txt --input /project/path/.env.production --output /project/path/infra/secrets.enc" >> "$OUTPUT_FILE"
+echo "\`\`\`" >> "$OUTPUT_FILE"
+echo "" >> "$OUTPUT_FILE"
+
 # ===============
 
 echo "## Domain:" >> "$OUTPUT_FILE"
