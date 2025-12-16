@@ -20,7 +20,7 @@ const { values } = parseArgs({
   const Encryption = new bg.EncryptionBunAdapter({ CryptoKeyProvider });
 
   const input = tools.FilePathAbsolute.fromString(values.input as string);
-  const output = tools.FilePathAbsolute.fromString(values.input as string);
+  const output = tools.FilePathAbsolute.fromString(values.output as string);
   const recipe = { input, output };
 
   await Encryption.encrypt(recipe);

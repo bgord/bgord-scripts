@@ -199,6 +199,7 @@ function ensure_ssh_production_alias {
   fi
 }
 
+# TODO
 function validate_environment_file {
   step_start "Environment file validate"
   if ! bun run --env-file=".env.$NODE_ENV" infra/env.ts; then
