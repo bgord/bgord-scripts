@@ -95,9 +95,6 @@ jobs:
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
         run: ./bgord-scripts/build-prechecks.sh
 
-      - name: Create .env.production file
-        run: echo "${{ secrets.ENV_PRODUCTION }}" > .env.production
-
       - name: Build app
         run: ./scripts/production-server-build.sh
 
