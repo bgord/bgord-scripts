@@ -1,5 +1,5 @@
 {
-  "ignoreDependencies": ["sharp"],
+  "ignoreDependencies": ["sharp", "lru-cache"],
   "ignore": [
     "bgord-scripts/*",
     "bgord-scripts/templates/*",
