@@ -30,6 +30,10 @@ then
 fi
 step_end "NPM login status"
 
+step_start "Mutation tests"
+info "Have you run the mutation tests?"
+press_enter_to_continue
+step_end "Mutation tests"
 
 step_start "Sync status"
 if test $(git rev-parse master) != $(git rev-parse origin/master)
