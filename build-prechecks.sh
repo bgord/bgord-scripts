@@ -14,4 +14,5 @@ setup_base_config
 ./bgord-scripts/gitleaks-scan.sh
 ./bgord-scripts/shellcheck.sh
 ./bgord-scripts/biome-check.sh
+./bgord-scripts/dependencies-audit.sh
 ./bgord-scripts/e2e-run.sh
