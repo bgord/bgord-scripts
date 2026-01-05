@@ -6,7 +6,7 @@
     "command": "./bgord-scripts/test-run.sh",
     "timeoutMS": 5000
   },
-  "mutate": ["src/**/*.ts", "!tests/**", "!**/_setup.ts"],
+  "mutate": ["src/**/*.ts", "modules/**/*.ts", "!tests/**", "!**/_setup.ts"],
   "reporters": ["clear-text", "progress", "html"],
   "coverageAnalysis": "off",
   "concurrency": 5,
