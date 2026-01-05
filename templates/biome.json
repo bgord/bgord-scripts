@@ -33,7 +33,8 @@
       "!**/dist/**",
       "!**/public/**",
       "!**/bgord-scripts/**",
-      "!**/.stryker-tmp/**"
+      "!**/.stryker-tmp/**",
+      "!**/reports/**"
     ]
   },
   "formatter": {
