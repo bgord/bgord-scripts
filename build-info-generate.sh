@@ -17,4 +17,6 @@ validate_non_empty "SHA" $SHA
 
 echo "{ \"timestamp\": $TIMESTAMP, \"sha\": \"$SHA\", \"version\": \"$VERSION\" }" > $OUTPUT_PATH
 
+cat $OUTPUT_PATH
+
 step_end "Build info generate"
