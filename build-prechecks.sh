@@ -7,7 +7,7 @@ setup_base_config
 ./bgord-scripts/typecheck-prune.sh
 ./bgord-scripts/test-run.sh
 ./bgord-scripts/dependencies-outdated.sh
-# ./bgord-scripts/compare-configs.sh
+./bgord-scripts/compare-configs.sh
 ./bgord-scripts/dependencies-pinpoint.sh
 ./bgord-scripts/dependencies-import-check.sh
 ./bgord-scripts/lockfile-lint.sh
