@@ -3,7 +3,7 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-OUTPUT_PATH="infra/build-info.json"
+OUTPUT_PATH="output/infra/build-info.json"
 
 TIMESTAMP="$(date +%s)000"
 VERSION=$(jq -r '.version' package.json)
