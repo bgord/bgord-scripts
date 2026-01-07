@@ -99,7 +99,7 @@ jobs:
         run: ./scripts/production-server-build.sh
 
       - name: Generate build info
-        run: ./scripts/build-info-generate.sh "${{ github.sha }}"
+        run: ./bgord-scripts/build-info-generate.sh "${{ github.sha }}"
 
       - name: Inspect app size
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
