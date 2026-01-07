@@ -74,10 +74,10 @@ function check_if_directory_exists {
 function check_if_directory_does_not_exist {
   if test -d "$1"
   then
-    error "$1 directory already exists!"
+    error "$1 directory exists"
     exit 1
   else
-    success "$1 directory doesn't exist."
+    success "$1 directory doesn't exist"
   fi
 }
 
@@ -111,9 +111,9 @@ function install_dev_package {
 function check_if_binary_exists {
   if test -x "$(command -v $1)"
   then
-    success "$2 is installed!"
+    success "$2 is installed"
   else
-    error "$2 is not installed!"
+    error "$2 is not installed"
     exit 1
   fi
 }
@@ -144,9 +144,9 @@ function check_if_linux_or_macos {
 
   if test $KERNEL_NAME == "Linux" || test $KERNEL_NAME == "Darwin"
   then
-    success "Your host machine is either Linux or MacOS!"
+    success "Your host machine is either Linux or MacOS"
   else
-    error "Unsupported operating system, Linux or MacOS required."
+    error "Unsupported operating system, Linux or MacOS required"
     exit 1
   fi
 }
@@ -157,7 +157,7 @@ function ensure_git_root_directory {
 
   if test $NEAREST_GIT_REPOSITORY_ROOT_DIRECTORY != $CURRENT_DIRECTORY
   then
-    error "It seems you're trying to run the script outside the root git repository directory."
+    error "It seems you're trying to run the script outside the root git repository directory"
     exit 1
   fi
 }
@@ -174,7 +174,7 @@ function confirm_dangerous_action {
 
   if test "$WORD" != "$TYPED"
   then
-    error "You typed "$WORD" wrong, aborting."
+    error "You typed "$WORD" wrong, aborting"
     exit 1
   fi
 }
@@ -184,7 +184,7 @@ function ensure_ssh_staging_alias {
 
   if test $? != '0'
   then
-    error "The [staging] ssh alias is not present or doesn't work."
+    error "The [staging] ssh alias is not present or doesn't work"
     exit 1
   fi
 }
@@ -194,7 +194,7 @@ function ensure_ssh_production_alias {
 
   if test $? != '0'
   then
-    error "The [production] ssh alias is not present or doesn't work."
+    error "The [production] ssh alias is not present or doesn't work"
     exit 1
   fi
 }
