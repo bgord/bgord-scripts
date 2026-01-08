@@ -128,14 +128,8 @@ jobs:
       - name: Sync source code
         run: rsync -azP output/ production:/var/www/${{ secrets.PROJECT_NAME }}
 
-      - name: Remove package.json
-        run: ssh production "cd /var/www/${{ secrets.PROJECT_NAME }} && rm -rf package.json"
-
       - name: Install sharp
         run: ssh production "cd /var/www/${{ secrets.PROJECT_NAME }} && /home/${{ secrets.USER }}/.bun/bin/bun install --platform=linux --arch=x64 sharp"
-
-      - name: Sync package.json
-        run: rsync -azP package.json production:/var/www/${{ secrets.PROJECT_NAME }}
 
       - name: Restart server
         run: ssh production sudo systemctl restart ${{ secrets.PROJECT_NAME }}.service
