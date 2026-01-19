@@ -33,6 +33,7 @@
       "!**/dist/**",
       "!**/output/**",
       "!**/public/**",
+      "!**/tmp/**",
       "!**/bgord-scripts/**",
       "!**/.stryker-tmp/**",
       "!**/reports/**"
