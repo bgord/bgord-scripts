@@ -10,6 +10,7 @@
     "infra/*",
     "release-candidates/*",
     "web/entry-client.tsx",
-    "public/*"
+    "public/*",
+    "rc/*"
   ]
 }
