@@ -128,8 +128,5 @@ jobs:
       - name: Sync source code
         run: rsync -azP output/ production:/var/www/${{ secrets.PROJECT_NAME }}
 
-      - name: Install sharp
-        run: ssh production "cd /var/www/${{ secrets.PROJECT_NAME }} && /home/${{ secrets.USER }}/.bun/bin/bun install --platform=linux --arch=x64 sharp"
-
       - name: Restart server
         run: ssh production sudo systemctl restart ${{ secrets.PROJECT_NAME }}.service
