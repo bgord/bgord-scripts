@@ -60,7 +60,7 @@
         "noImplicitBoolean": "off",
         "useShorthandAssign": "error",
         "useFragmentSyntax": "error",
-        "useConsistentArrayType": { "level": "error", "options": { "syntax": "shorthand" } },
+        "useConsistentArrayType": { "level": "error", "options": { "syntax": "generic" } },
         "useCollapsedElseIf": "error",
         "noParameterAssign": "error",
         "useAsConstAssertion": "error",
