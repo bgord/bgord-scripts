@@ -93,5 +93,8 @@
         "noUnusedImports": "error"
       }
     }
+  },
+  "javascript": {
+    "experimentalEmbeddedSnippetsEnabled": true
   }
 }
