@@ -5,6 +5,7 @@
     "actions": {
       "source": {
         "noDuplicateClasses": "on",
+        "useSortedAttributes": "on",
         "organizeImports": {
           "level": "on",
           "options": {
