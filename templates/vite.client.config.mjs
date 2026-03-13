@@ -5,9 +5,10 @@ export default defineConfig({
   base: "/public/",
   publicDir: false,
   plugins: [react({ jsxRuntime: "automatic" })],
-  resolve: { dedupe: ["react", "react-dom", "@tanstack/react-router"] },
+  resolve: {
+    dedupe: ["react", "react-dom", "@tanstack/react-router", "@tanstack/router-core"],
+  },
   define: { "process.env.NODE_ENV": '"production"', __DEV__: "false" },
-  esbuild: { legalComments: "none" },
   build: {
     outDir: "public",
     emptyOutDir: false,
@@ -29,7 +30,7 @@ export default defineConfig({
       format: { comments: false },
     },
     assetsDir: "",
-    rollupOptions: {
+    rolldownOptions: {
       input: "web/entry-client.tsx",
       output: {
         entryFileNames: "entry-client.js",
@@ -41,7 +42,6 @@ export default defineConfig({
       treeshake: {
         moduleSideEffects: false,
         propertyReadSideEffects: false,
-        tryCatchDeoptimization: false,
         unknownGlobalSideEffects: false,
       },
       preserveEntrySignatures: "exports-only",
