@@ -35,20 +35,6 @@ export default defineConfig({
       output: {
         entryFileNames: "entry-client.js",
         chunkFileNames: "[name]-[hash].js",
-        manualChunks(id) {
-          if (
-            id.includes("@tanstack/react-router") ||
-            id.includes("@tanstack/router-core") ||
-            id.includes("@tanstack/history")
-          ) {
-            return "router";
-          }
-          if (id.includes("node_modules")) return "vendor";
-        },
-      },
-      treeshake: {
-        propertyReadSideEffects: false,
-        unknownGlobalSideEffects: false,
       },
       preserveEntrySignatures: "exports-only",
     },
