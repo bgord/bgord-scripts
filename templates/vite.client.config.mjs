@@ -26,7 +26,6 @@ export default defineConfig({
         drop_debugger: true,
         pure_funcs: ["console.info", "console.debug", "console.trace"],
       },
-      mangle: { properties: { regex: /^_/ } },
       format: { comments: false },
     },
     assetsDir: "",
