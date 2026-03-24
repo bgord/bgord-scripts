@@ -6,7 +6,7 @@ setup_base_config
 OUTPUT_PATH="output/infra/build-info.json"
 
 TIMESTAMP="$(date +%s)000"
-VERSION=$(jq -r '.version' package.json)
+VERSION="v$(jq -r '.version' package.json)"
 SHA=$1
 SIZE=$(jq '.outputs["./index.js"].bytes' meta.json)
 
