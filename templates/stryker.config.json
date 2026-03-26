@@ -10,5 +10,7 @@
   "reporters": ["clear-text", "progress", "html"],
   "coverageAnalysis": "off",
   "concurrency": 5,
-  "timeoutMS": 5000
+  "timeoutMS": 5000,
+  "checkers": ["typescript"],
+  "tsconfigFile": "tsconfig.json"
 }
