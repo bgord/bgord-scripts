@@ -55,7 +55,8 @@
         "noStaticOnlyClass": "off",
         "useSimplifiedLogicExpression": "error",
         "useArrowFunction": "off",
-        "noForEach": "off"
+        "noForEach": "off",
+        "useLiteralKeys": "off"
       },
       "style": {
         "useImportType": "error",
