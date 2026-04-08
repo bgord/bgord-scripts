@@ -77,7 +77,15 @@
         "noUnusedTemplateLiteral": "error",
         "useNumberNamespace": "error",
         "noInferrableTypes": "error",
-        "noUselessElse": "error"
+        "noUselessElse": "error",
+        "noRestrictedGlobals": {
+          "level": "error",
+          "options": {
+            "deniedGlobals": {
+              "Date": "Use Temporal"
+            }
+          }
+        }
       },
       "suspicious": {
         "noExplicitAny": "off",
