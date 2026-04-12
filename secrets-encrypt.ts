@@ -15,9 +15,23 @@ const { values } = parseArgs({
 
 (async function main() {
   const MasterKeyPath = tools.FilePathAbsolute.fromString(values["master-key"] as string);
-  const CryptoKeyProvider = new bg.CryptoKeyProviderFileAdapter(MasterKeyPath);
 
-  const Encryption = new bg.EncryptionBunAdapter({ CryptoKeyProvider });
+  const FileInspection = new bg.FileInspectionAdapter();
+  const FileReaderText = new bg.FileReaderTextAdapter();
+  const FileWriter = new bg.FileWriterAdapter();
+  const FileReaderRaw = new bg.FileReaderRawAdapter();
+
+  const CryptoKeyProvider = new bg.CryptoKeyProviderFileAdapter(MasterKeyPath, {
+    FileInspection,
+    FileReaderText,
+  });
+
+  const Encryption = new bg.EncryptionAesGcmAdapter({
+    FileReaderRaw,
+    FileWriter,
+    CryptoKeyProvider,
+    FileInspection,
+  });
 
   const input = tools.FilePathAbsolute.fromString(values.input as string);
   const output = tools.FilePathAbsolute.fromString(values.output as string);
