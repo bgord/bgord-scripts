@@ -20,5 +20,6 @@ check_if_package_installed "lockfile-lint"
 check_if_package_installed "only-allow"
 check_if_package_installed "shellcheck"
 check_if_package_installed "typescript"
+check_if_package_installed "@typescript/native-preview"
 
 step_end "Dependencies presence check"

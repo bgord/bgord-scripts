@@ -5,4 +5,4 @@ setup_base_config
 
 info "Typechecking watch"
 
-bunx tsc --watch --preserveWatchOutput --project tsconfig.json --noEmit
+bunx tsgo --watch --preserveWatchOutput --project tsconfig.json --noEmit
