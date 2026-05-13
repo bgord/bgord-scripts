@@ -19,8 +19,7 @@
               "+*",
               "+*/**",
               ":ALIAS:",
-              ":PATH:",
-              ":IMPORT_TYPE:"
+              ":PATH:"
             ]
           }
         }
