@@ -6,19 +6,28 @@ on:
 concurrency:
   group: ci-docs-${{ github.ref }}
   cancel-in-progress: true
+permissions: {}
 jobs:
   generate:
+    name: Generate docs
     runs-on: ubuntu-24.04
 
     permissions:
-      contents: write
+      contents: write # Required to commit generated CHANGELOG.md and readme.md
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v4
         with:
           submodules: recursive
           fetch-depth: 0
+          persist-credentials: false
+
+      - name: Configure git credentials
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY: ${{ github.repository }}
+        run: git remote set-url origin https://x-access-token:${TOKEN}@github.com/${REPOSITORY}
 
       - name: Generate a changelog
         run: bgord-scripts/changelog-generate.sh
@@ -27,20 +36,22 @@ jobs:
         run: cat infra/CHANGELOG.md
 
       - name: Commit CHANGELOG.md
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v5
         with:
           branch: master
           commit_message: "docs: generate CHANGELOG"
           file_pattern: infra/CHANGELOG.md
 
       - name: Generate a README
-        run: bgord-scripts/app-readme-generate.sh "${{ github.event.repository.name }}"
+        run: bgord-scripts/package-readme-generate.sh "${GITHUB_EVENT_REPOSITORY_NAME}"
+        env:
+          GITHUB_EVENT_REPOSITORY_NAME: ${{ github.event.repository.name }}
 
       - name: Print README
         run: cat infra/CHANGELOG.md
 
       - name: Commit readme.md
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v5
         with:
           branch: master
           commit_message: "docs: generate readme"
