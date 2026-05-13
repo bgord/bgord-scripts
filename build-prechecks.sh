@@ -12,7 +12,6 @@ setup_base_config
 ./bgord-scripts/dependencies-presence-check.sh
 ./bgord-scripts/dependencies-audit.sh
 ./bgord-scripts/lockfile-lint.sh
-./bgord-scripts/cspell.sh
 ./bgord-scripts/shellcheck.sh
 ./bgord-scripts/biome-check.sh
 ./bgord-scripts/gitleaks-scan.sh
