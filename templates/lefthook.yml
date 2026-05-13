@@ -23,6 +23,8 @@ pre-push:
       run: ./bgord-scripts/dependencies-audit.sh
     lockfile-lint:
       run: ./bgord-scripts/lockfile-lint.sh
+    ci-lint:
+      run: ./bgord-scripts/ci-lint.sh
 
 pre-commit:
   parallel: true
