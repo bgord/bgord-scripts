@@ -48,7 +48,7 @@ jobs:
           GITHUB_EVENT_REPOSITORY_NAME: ${{ github.event.repository.name }}
 
       - name: Print README
-        run: cat infra/CHANGELOG.md
+        run: cat readme.md
 
       - name: Commit readme.md
         uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v5
