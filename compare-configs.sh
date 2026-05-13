@@ -9,6 +9,7 @@ PAIRS=(
   ".github/workflows/docs-package.yml:bgord-scripts/workflows/docs-package.yml"
   ".github/workflows/healthcheck.yml:bgord-scripts/workflows/healthcheck.yml"
   "lefthook.yml:bgord-scripts/templates/lefthook-target.yml"
+  "bunfig.toml:bgord-scripts/templates/bunfig.toml"
 )
 
 step_start "Compare configs"
