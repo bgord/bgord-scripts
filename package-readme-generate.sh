@@ -5,7 +5,7 @@ setup_base_config
 
 OUTPUT_FILE="readme.md"
 
-PACKAGE_NAME=$1
+PACKAGE_NAME=$PROJECT_NAME
 
 validate_non_empty "PACKAGE_NAME" $PACKAGE_NAME
 
