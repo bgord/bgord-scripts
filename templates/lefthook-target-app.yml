@@ -1,0 +1,3 @@
+extends:
+  - "./bgord-scripts/templates/lefthook.yml"
+  - "./bgord-scripts/templates/lefthook-readme-app.yml"
