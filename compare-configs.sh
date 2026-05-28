@@ -5,8 +5,6 @@ setup_base_config
 
 PAIRS=(
   ".github/workflows/deploy-server.yml:bgord-scripts/workflows/deploy-server.yml"
-  ".github/workflows/docs-app.yml:bgord-scripts/workflows/docs-app.yml"
-  ".github/workflows/docs-package.yml:bgord-scripts/workflows/docs-package.yml"
   ".github/workflows/healthcheck.yml:bgord-scripts/workflows/healthcheck.yml"
   "lefthook.yml:bgord-scripts/templates/lefthook-target.yml"
   "bunfig.toml:bgord-scripts/templates/bunfig.toml"

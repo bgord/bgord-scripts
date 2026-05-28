@@ -5,22 +5,22 @@ setup_base_config
 
 OUTPUT_FILE="readme.md"
 
-PROJECT_NAME=$1
+APP_NAME=$PROJECT_NAME
 
-validate_non_empty "PROJECT_NAME" $PROJECT_NAME
+validate_non_empty "APP_NAME" $APP_NAME
 
-echo $PROJECT_NAME
+echo $APP_NAME
 
-echo "# $PROJECT_NAME" > "$OUTPUT_FILE"
+echo "# $APP_NAME" > "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
-echo "[![Deploy](https://github.com/bgord/$PROJECT_NAME/actions/workflows/deploy-server.yml/badge.svg)](https://github.com/bgord/$PROJECT_NAME/actions/workflows/deploy-server.yml)" >> "$OUTPUT_FILE"
+echo "[![Deploy](https://github.com/bgord/$APP_NAME/actions/workflows/deploy-server.yml/badge.svg)](https://github.com/bgord/$APP_NAME/actions/workflows/deploy-server.yml)" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
-echo "[![Healthcheck](https://github.com/bgord/$PROJECT_NAME/actions/workflows/healthcheck.yml/badge.svg)](https://github.com/bgord/$PROJECT_NAME/actions/workflows/healthcheck.yml)" >> "$OUTPUT_FILE"
+echo "[![Healthcheck](https://github.com/bgord/$APP_NAME/actions/workflows/healthcheck.yml/badge.svg)](https://github.com/bgord/$APP_NAME/actions/workflows/healthcheck.yml)" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
-echo "[Check status](https://bgord.github.io/statuses/history/$PROJECT_NAME)" >> "$OUTPUT_FILE"
+echo "[Check status](https://bgord.github.io/statuses/history/$APP_NAME)" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
 # ===============
@@ -31,7 +31,7 @@ echo "" >> "$OUTPUT_FILE"
 echo "Clone the repository" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 echo "\`\`\`" >> "$OUTPUT_FILE"
-echo "git clone git@github.com:bgord/$PROJECT_NAME.git --recurse-submodules" >> "$OUTPUT_FILE"
+echo "git clone git@github.com:bgord/$APP_NAME.git --recurse-submodules" >> "$OUTPUT_FILE"
 echo "\`\`\`" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
