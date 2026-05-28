@@ -9,8 +9,6 @@ APP_NAME=$PROJECT_NAME
 
 validate_non_empty "APP_NAME" $APP_NAME
 
-echo $APP_NAME
-
 echo "# $APP_NAME" > "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
