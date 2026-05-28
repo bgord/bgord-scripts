@@ -47,3 +47,5 @@ echo "\`\`\`" >> "$OUTPUT_FILE"
 tree src/ | grep -v index.ts | sed -e :a -e '$d;N;2,2ba' -e 'P;D' >> "$OUTPUT_FILE"
 echo "\`\`\`" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
+
+git add $OUTPUT_FILE
