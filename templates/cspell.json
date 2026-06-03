@@ -20,6 +20,9 @@
     "renamer",
     "emittery",
     "upcaster",
-    "hcaptcha"
+    "hcaptcha",
+    "maxw",
+    "maxh",
+    "vite"
   ]
 }
