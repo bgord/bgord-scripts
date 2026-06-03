@@ -6,11 +6,11 @@ setup_base_config
 step_start "cspell"
 git ls-files \
   | grep -v "package.json" \
+  | grep -v "readme.md" \
   | grep -v "infra/translations/pl.json" \
   | grep -v "infra/drizzle" \
   | grep -v "dist" \
   | grep -v "LICENSE" \
-  | grep -v "static" \
   | grep -v "env" \
   | grep -v "github" \
   | grep -v "gitignore" \
