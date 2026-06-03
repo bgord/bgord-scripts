@@ -24,6 +24,10 @@
     "maxw",
     "maxh",
     "vite",
-    "iconoir"
+    "iconoir",
+    "xmark",
+    "haveibeenpwned",
+    "prechecks",
+    "lookback"
   ]
 }
