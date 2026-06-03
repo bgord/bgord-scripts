@@ -23,6 +23,7 @@
     "hcaptcha",
     "maxw",
     "maxh",
-    "vite"
+    "vite",
+    "iconoir"
   ]
 }
