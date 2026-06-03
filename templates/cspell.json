@@ -17,6 +17,8 @@
     "healthcheck",
     "panopticon",
     "deleter",
-    "renamer"
+    "renamer",
+    "emittery",
+    "upcaster"
   ]
 }
