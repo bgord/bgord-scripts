@@ -44,4 +44,4 @@ pre-commit:
 commit-msg:
   commands:
     commit-lint:
-      run: ./bgord-scripts/lint-commit-message.sh
+      run: ./bgord-scripts/lint-commit-message.sh {1}
