@@ -10,6 +10,6 @@ git pull origin master
 
 cd ../
 git add bgord-scripts/
-git commit -m "step: bump bgord/scripts" --no-verify
+git commit -m "Bump bgord/scripts" --no-verify
 
 step_end "Autoupdate"
