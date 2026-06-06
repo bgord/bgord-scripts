@@ -8,8 +8,6 @@ step_start "Dependencies presence check"
 check_if_file_exists "package.json"
 
 check_if_package_installed "@biomejs/biome"
-check_if_package_installed "@commitlint/cli"
-check_if_package_installed "@commitlint/config-conventional"
 check_if_package_installed "@stryker-mutator/core"
 check_if_package_installed "@stryker-mutator/typescript-checker"
 check_if_package_installed "@types/bun"
