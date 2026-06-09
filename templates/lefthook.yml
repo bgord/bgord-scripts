@@ -40,8 +40,3 @@ pre-commit:
       stage_fixed: true
     gitleaks-scan-staged:
       run: ./bgord-scripts/gitleaks-scan-staged.sh
-
-commit-msg:
-  commands:
-    commit-lint:
-      run: ./bgord-scripts/lint-commit-message.sh {1}
