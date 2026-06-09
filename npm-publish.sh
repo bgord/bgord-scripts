@@ -70,5 +70,12 @@ info "About to run [npm publish] after you press Enter"
 press_enter_to_continue
 
 step_start "Publish"
-npm publish
+
+read -p "Enter the 6-digit OTP from your authenticator app: " OTP
+if [[ -z "$OTP" ]]; then
+  error "OTP is required to publish with 2FA enabled"
+  exit 1
+fi
+
+npm publish --otp=$OTP
 step_end "Publish"
