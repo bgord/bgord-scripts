@@ -62,28 +62,8 @@ git push --no-verify
 git push --tags --no-verify
 step_end "Tags push"
 
-step_start "Publish dry run"
-npm publish --dry-run
-step_end "Publish dry run"
+step_start "Stage Package" 
+npm stage publish  
+step_end "Stage Package"
 
-info "About to run npm publish after you press Enter"
-press_enter_to_continue
-
-step_start "Publish"
-
-read -sp "Paste your npm Granular Access Token: " NPM_TOKEN
-echo
-
-if test -z "$NPM_TOKEN"
-then
-  error "No token provided"
-  exit 1
-fi
-
-export NPM_TOKEN
-
-npm publish
-
-unset NPM_TOKEN
-
-step_end "Publish"
+info "Package version ${VERSION_CHANGE}"
