@@ -13,7 +13,7 @@ step_start "Healthcheck request"
 
 RESPONSE="$(curl -sS -H "Authorization: Basic $BASIC_AUTH_HEADER" \
   -w $'\n%{http_code}\n' \
-  "https://${PROJECT_NAME}.bgord.dev/api/healthcheck")"
+  "https://${PROJECT_NAME}.bgord.space/api/healthcheck")"
 
 STATUS="$(printf "%s" "$RESPONSE" | tail -n1)"
 BODY="$(printf "%s" "$RESPONSE" | sed -e '$d')"

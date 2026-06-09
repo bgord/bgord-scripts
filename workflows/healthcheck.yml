@@ -30,7 +30,7 @@ jobs:
           LOBBYGOW_API_KEY: ${{ secrets.LOBBYGOW_API_KEY }}
         if: ${{ always() && steps.run_healthcheck.outcome == 'failure' }}
         run: |
-          curl -sS -X POST "https://lobbygow.bgord.dev/api/notification-send" \
+          curl -sS -X POST "https://lobbygow.bgord.space/api/notification-send" \
             -H "Content-Type: application/json" \
             -H "api-key: ${LOBBYGOW_API_KEY}" \
             --data "{\"kind\":\"error\",\"subject\":\"[${PROJECT_NAME}] healthcheck\",\"content\":\"https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}\"}"
