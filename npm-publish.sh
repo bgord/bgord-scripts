@@ -70,5 +70,20 @@ info "About to run npm publish after you press Enter"
 press_enter_to_continue
 
 step_start "Publish"
+
+read -sp "Paste your npm Granular Access Token: " NPM_TOKEN
+echo
+
+if test -z "$NPM_TOKEN"
+then
+  error "No token provided"
+  exit 1
+fi
+
+export NPM_TOKEN
+
 npm publish
+
+unset NPM_TOKEN
+
 step_end "Publish"
