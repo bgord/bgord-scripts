@@ -66,16 +66,9 @@ step_start "Publish dry run"
 npm publish --dry-run
 step_end "Publish dry run"
 
-info "About to run [npm publish] after you press Enter"
+info "About to run npm publish after you press Enter"
 press_enter_to_continue
 
 step_start "Publish"
-
-read -p "Enter the 6-digit OTP from your authenticator app: " OTP
-if [[ -z "$OTP" ]]; then
-  error "OTP is required to publish with 2FA enabled"
-  exit 1
-fi
-
-npm publish --otp=$OTP
+npm publish
 step_end "Publish"
