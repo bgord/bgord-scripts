@@ -7,6 +7,6 @@
     "shellcheck",
     "valibot",
     "gzip-cli",
-    "lighningcss-cli"
+    "lightningcss-cli"
   ]
 }
