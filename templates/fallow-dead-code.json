@@ -1,5 +1,12 @@
 {
   "$schema": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json",
   "ignorePatterns": ["bgord-scripts/*", "tests/fixtures/*"],
-  "ignoreDependencies": ["@stryker-mutator/typescript-checker", "lockfile-lint", "shellcheck", "valibot"]
+  "ignoreDependencies": [
+    "@stryker-mutator/typescript-checker",
+    "lockfile-lint",
+    "shellcheck",
+    "valibot",
+    "gzip-cli",
+    "lighningcss-cli"
+  ]
 }
