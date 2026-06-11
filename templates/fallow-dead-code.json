@@ -15,5 +15,5 @@
     "shellcheck",
     "valibot"
   ],
-  "entry": ["index.ts", "app/**/*.ts", "modules/**/*.ts", "infra/**/*.ts"]
+  "entry": ["index.ts", "app/**/*.ts", "modules/**/*.ts", "infra/**/*.ts", "scripts/**/*.ts"]
 }
