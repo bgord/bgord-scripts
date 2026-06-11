@@ -12,8 +12,7 @@
     "lockfile-lint",
     "nodemailer",
     "shellcheck",
-    "valibot",
-    "gzip-cli",
-    "lightningcss-cli"
-  ]
+    "valibot"
+  ],
+  "entry": ["index.ts", "app/**/*.ts", "modules/**/*.ts", "infra/**/*.ts"]
 }
