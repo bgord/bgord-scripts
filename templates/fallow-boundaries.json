@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json",
+  "boundaries": {
+    "zones": [
+      { "name": "modules", "patterns": ["modules/**"] },
+      { "name": "infra", "patterns": ["infra/**"] },
+      { "name": "app", "patterns": ["app/**"] },
+      { "name": "tests", "patterns": ["tests/**"] }
+    ],
+    "rules": [
+      { "from": "modules", "allow": [] },
+      { "from": "infra", "allow": ["modules"] },
+      { "from": "app", "allow": ["modules"] },
+      { "from": "tests", "allow": ["modules", "infra", "app"] }
+    ]
+  }
+}
