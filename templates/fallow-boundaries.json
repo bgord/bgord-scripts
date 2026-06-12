@@ -12,7 +12,7 @@
       { "from": "src", "allow": [] },
       { "from": "modules", "allow": [] },
       { "from": "infra", "allow": ["modules"] },
-      { "from": "app", "allow": ["modules"] },
+      { "from": "app", "allow": ["modules"], "allowTypeOnly": ["infra"] },
       { "from": "tests", "allow": ["src", "modules", "infra", "app"] }
     ]
   }
