@@ -5,6 +5,14 @@
     "@bgord/bun",
     "@bgord/design",
     "@bgord/tools",
+    "@bgord/ui",
+    "better-auth",
+    "iconoir-react",
+    "react",
+    "better-sqlite3",
+    "@better-auth/drizzle-adapter",
+    "@fullhuman/postcss-purgecss",
+    "@happy-dom/global-registrator",
     "@stryker-mutator/typescript-checker",
     "croner",
     "gzip-cli",
@@ -13,9 +21,7 @@
     "lockfile-lint",
     "nodemailer",
     "shellcheck",
-    "valibot",
-    "@fullhuman/postcss-purgecss",
-    "@happy-dom/global-registrator"
+    "valibot"
   ],
   "entry": ["index.ts", "app/**/*.ts", "modules/**/*.ts", "infra/**/*.ts", "scripts/**/*.ts"]
 }
