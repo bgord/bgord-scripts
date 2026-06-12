@@ -13,7 +13,8 @@
     "lockfile-lint",
     "nodemailer",
     "shellcheck",
-    "valibot"
+    "valibot",
+    "@fullhuman/postcss-purgecss"
   ],
   "entry": ["index.ts", "app/**/*.ts", "modules/**/*.ts", "infra/**/*.ts", "scripts/**/*.ts"]
 }
