@@ -27,7 +27,9 @@
     "lockfile-lint",
     "nodemailer",
     "shellcheck",
-    "valibot"
+    "valibot",
+    "yazl",
+    "csv"
   ],
   "entry": ["index.ts", "app/**/*.ts", "modules/**/*.ts", "infra/**/*.ts", "scripts/**/*.ts"]
 }
