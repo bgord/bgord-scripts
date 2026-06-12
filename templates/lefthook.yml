@@ -5,8 +5,8 @@ pre-push:
   commands:
     typecheck:
       run: ./bgord-scripts/typecheck.sh
-    typecheck-prune:
-      run: ./bgord-scripts/typecheck-prune.sh
+    dead-code:
+      run: ./bgord-scripts/dead-code.sh
     test-run:
       run: ./bgord-scripts/test-run.sh
     compare-configs:
