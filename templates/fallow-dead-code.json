@@ -14,7 +14,8 @@
     "nodemailer",
     "shellcheck",
     "valibot",
-    "@fullhuman/postcss-purgecss"
+    "@fullhuman/postcss-purgecss",
+    "@happy-dom/global-registrator"
   ],
   "entry": ["index.ts", "app/**/*.ts", "modules/**/*.ts", "infra/**/*.ts", "scripts/**/*.ts"]
 }
