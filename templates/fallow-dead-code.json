@@ -5,6 +5,7 @@
     "tests/fixtures/*",
     "tests/_setup.ts",
     "public/*",
+    "output/*",
     "web/entry-client.tsx"
   ],
   "ignoreDependencies": [
