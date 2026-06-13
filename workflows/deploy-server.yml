@@ -97,9 +97,9 @@ jobs:
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
         run: echo "/home/runner/.local/bin" >> $GITHUB_PATH
 
-      - name: Run build prechecks
+      - name: Run build verify
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
-        run: ./bgord-scripts/build-prechecks.sh
+        run: ./bgord-scripts/build-verify.sh
 
       - name: Build app
         run: ./scripts/production-server-build.sh
