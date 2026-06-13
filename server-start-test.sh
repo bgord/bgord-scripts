@@ -3,13 +3,13 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-if test -f "scripts/test-server-start.sh"
+if test -f "scripts/server-start-test.sh"
 then
-  info "Test server start script exists"
+  info "Server start test script exists"
   bash scripts/test-server-start.sh
   exit
 else
-  info "Test server start script does not exist"
+  info "Server start test script does not exist"
 fi
 
 # ==========================================================
@@ -22,9 +22,9 @@ info "Environment: test"
 ./bgord-scripts/db-seed-test.sh
 ./bgord-scripts/web-build-bun.sh
 
-step_start "Test server start"
+step_start "Server start test"
 bun run \
   --watch \
   --env-file=".env.$NODE_ENV" \
   index.ts
-step_end "Test server start"
+step_end "Server start test"

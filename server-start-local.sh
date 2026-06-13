@@ -3,13 +3,13 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-if test -f "scripts/local-server-start.sh"
+if test -f "scripts/server-start-local.sh"
 then
-  info "Local server start script exists"
-  bash scripts/local-server-start.sh
+  info "Server start local script exists"
+  bash scripts/server-start-local.sh
   exit
 else
-  info "Local server start script does not exist"
+  info "Server start local script does not exist"
 fi
 
 info "Environment: local"
@@ -18,9 +18,9 @@ info "Environment: local"
 
 export NODE_ENV="local"
 
-step_start "Local server start"
+step_start "Server start local"
 bun run \
   --watch \
   --env-file=".env.$NODE_ENV" \
   index.ts
-step_end "Local server start"
+step_end "Server start local"

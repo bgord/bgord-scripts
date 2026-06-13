@@ -102,7 +102,7 @@ jobs:
         run: ./bgord-scripts/build-verify.sh
 
       - name: Build app
-        run: ./scripts/production-server-build.sh
+        run: ./scripts/server-build-production.sh
 
       - name: Generate build info
         env:
@@ -113,7 +113,7 @@ jobs:
         env:
           PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
-        run: ./bgord-scripts/production-server-inspect.sh "${PROJECT_NAME}"
+        run: ./bgord-scripts/server-inspect-production.sh "${PROJECT_NAME}"
 
       - name: Configure SSH
         run: |

@@ -51,7 +51,7 @@ echo "" >> "$OUTPUT_FILE"
 echo "Start the app" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 echo "\`\`\`" >> "$OUTPUT_FILE"
-echo "./bgord-scripts/local-server-start.sh" >> "$OUTPUT_FILE"
+echo "./bgord-scripts/server-start-local.sh" >> "$OUTPUT_FILE"
 echo "\`\`\`" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
