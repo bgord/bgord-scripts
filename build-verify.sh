@@ -8,7 +8,7 @@ setup_base_config
 ./bgord-scripts/test.sh
 ./bgord-scripts/compare-configs.sh
 ./bgord-scripts/deps-pin.sh
-./bgord-scripts/boundaries.sh
+./bgord-scripts/check-boundaries.sh
 ./bgord-scripts/deps-ensure.sh
 ./bgord-scripts/deps-audit.sh
 ./bgord-scripts/lockfile-lint.sh

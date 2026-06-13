@@ -13,8 +13,8 @@ pre-push:
       run: ./bgord-scripts/compare-configs.sh
     deps-pin:
       run: ./bgord-scripts/deps-pin.sh
-    boundaries:
-      run: ./bgord-scripts/boundaries.sh
+    check-boundaries:
+      run: ./bgord-scripts/check-boundaries.sh
     deps-ensure:
       run: ./bgord-scripts/deps-ensure.sh
     deps-audit:
@@ -35,7 +35,7 @@ pre-commit:
     shellcheck:
       glob: "*.{sh}"
       run: ./bgord-scripts/shellcheck.sh
-    biome-check:
+    check-code:
       run: ./bgord-scripts/check-code.sh
       stage_fixed: true
     gitleaks-scan-staged:
