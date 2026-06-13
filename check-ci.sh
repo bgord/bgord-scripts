@@ -11,6 +11,6 @@ else
   exit 0
 fi
 
-step_start "CI lint"
+step_start "Check CI"
 zizmor --pedantic .github/
-step_end "CI lint"
+step_end "Check CI"
