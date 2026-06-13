@@ -30,8 +30,8 @@ pre-commit:
     format-staged:
       run: ./bgord-scripts/format-staged.sh
       stage_fixed: true
-    cspell:
-      run: ./bgord-scripts/cspell.sh
+    check-spelling:
+      run: ./bgord-scripts/check-spelling.sh
     shellcheck:
       glob: "*.{sh}"
       run: ./bgord-scripts/shellcheck.sh
