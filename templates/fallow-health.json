@@ -1,0 +1,12 @@
+{
+  "$schema": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json",
+  "ignorePatterns": [
+    "bgord-scripts/*",
+    "tests/fixtures/*",
+    "tests/_setup.ts",
+    "public/*",
+    "output/*",
+    "web/entry-client.tsx"
+  ],
+  "health": {}
+}
