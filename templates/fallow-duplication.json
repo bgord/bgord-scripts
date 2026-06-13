@@ -9,5 +9,15 @@
     "output/*",
     "web/entry-client.tsx"
   ],
-  "duplicates": { "enabled": true }
+  "duplicates": {
+    "enabled": true,
+    "mode": "strict",
+    "minLines": 15,
+    "minTokens": 150,
+    "minOccurrences": 3,
+    "ignoreComments": true,
+    "ignoreStringLiterals": true,
+    "ignoreImports": true,
+    "skipLocal": true
+  }
 }
