@@ -1,13 +1,13 @@
 {
   "$schema": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json",
   "ignorePatterns": [
-    "bgord-scripts/",
-    "tests/fixtures/",
-    "dist/",
-    "output/",
-    "public/",
-    "*.test.ts",
-    "*.spec.ts"
+    "bgord-scripts/*",
+    "tests/fixtures/*",
+    "tests/_setup.ts",
+    "tests/*.test.ts",
+    "public/*",
+    "output/*",
+    "web/entry-client.tsx"
   ],
   "duplicates": {
     "enabled": true,
