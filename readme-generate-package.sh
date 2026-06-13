@@ -34,7 +34,7 @@ echo "" >> "$OUTPUT_FILE"
 echo "Run the tests" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 echo "\`\`\`" >> "$OUTPUT_FILE"
-echo "./bgord-scripts/test-run.sh" >> "$OUTPUT_FILE"
+echo "./bgord-scripts/test.sh" >> "$OUTPUT_FILE"
 echo "\`\`\`" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 

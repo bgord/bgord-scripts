@@ -3,7 +3,7 @@
   "packageManager": "npm",
   "testRunner": "command",
   "commandRunner": {
-    "command": "./bgord-scripts/test-run.sh",
+    "command": "./bgord-scripts/test.sh",
     "timeoutMS": 5000
   },
   "mutate": ["src/**/*.ts", "modules/**/*.ts", "app/http/**/*.ts", "!tests/**", "!**/_setup.ts"],
