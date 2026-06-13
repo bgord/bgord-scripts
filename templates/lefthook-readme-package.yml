@@ -1,5 +1,5 @@
 pre-commit:
   commands:
-    generate-readme:
+    readme-generate-package:
       run: ./bgord-scripts/readme-generate-package.sh
       stage_fixed: true
