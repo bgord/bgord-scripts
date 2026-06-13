@@ -3,7 +3,7 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-step_start "Dependencies presence check"
+step_start "Deps presence check"
 
 check_if_file_exists "package.json"
 
@@ -20,4 +20,4 @@ check_if_package_installed "shellcheck"
 check_if_package_installed "typescript"
 check_if_package_installed "@typescript/native-preview"
 
-step_end "Dependencies presence check"
+step_end "Deps presence check"

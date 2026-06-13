@@ -11,14 +11,14 @@ pre-push:
       run: ./bgord-scripts/test.sh
     compare-configs:
       run: ./bgord-scripts/compare-configs.sh
-    dependencies-pinpoint:
-      run: ./bgord-scripts/dependencies-pinpoint.sh
+    deps-pin:
+      run: ./bgord-scripts/deps-pin.sh
     boundaries:
       run: ./bgord-scripts/boundaries.sh
-    dependencies-presence-check:
-      run: ./bgord-scripts/dependencies-presence-check.sh
-    dependencies-audit:
-      run: ./bgord-scripts/dependencies-audit.sh
+    deps-ensure:
+      run: ./bgord-scripts/deps-ensure.sh
+    deps-audit:
+      run: ./bgord-scripts/deps-audit.sh
     lockfile-lint:
       run: ./bgord-scripts/lockfile-lint.sh
     ci-lint:

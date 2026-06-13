@@ -3,7 +3,7 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-step_start "Dependencies outdated"
+step_start "Deps outdated"
 outdated=$(bun outdated)
 
 has_outdated_dependencies=false
@@ -15,10 +15,10 @@ fi
 echo "$outdated"
 
 if [ "$has_outdated_dependencies" = true ]; then
-  error "There are outdated dependencies."
+  error "There are outdated deps."
   exit 1
 else
-  success "All dependencies are up-to-date."
+  success "All deps are up-to-date."
   exit 0
 fi
-step_end "Dependencies outdated"
+step_end "Deps outdated"

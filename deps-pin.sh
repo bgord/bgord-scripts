@@ -3,7 +3,7 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-step_start "Dependencies pinpoint"
+step_start "Deps pin"
 
 check_if_file_exists "package.json"
 # Fail if any version in deps/devDeps/peerDeps starts with '^'
@@ -22,4 +22,4 @@ if CARET_DEPS=$(jq -r '
   exit 1
 fi
 
-step_end "Dependencies pinpoint"
+step_end "Deps pin"
