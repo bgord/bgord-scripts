@@ -36,7 +36,7 @@ pre-commit:
       glob: "*.{sh}"
       run: ./bgord-scripts/shellcheck.sh
     biome-check:
-      run: ./bgord-scripts/biome-check.sh
+      run: ./bgord-scripts/check-code.sh
       stage_fixed: true
     gitleaks-scan-staged:
       run: ./bgord-scripts/gitleaks-scan-staged.sh
