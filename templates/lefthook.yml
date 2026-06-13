@@ -38,5 +38,5 @@ pre-commit:
     check-code:
       run: ./bgord-scripts/check-code.sh
       stage_fixed: true
-    gitleaks-scan-staged:
-      run: ./bgord-scripts/gitleaks-scan-staged.sh
+    check-secrets-staged:
+      run: ./bgord-scripts/check-secrets-staged.sh
