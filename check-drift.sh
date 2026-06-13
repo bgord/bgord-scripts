@@ -9,7 +9,7 @@ PAIRS=(
   "bunfig.toml:bgord-scripts/templates/bunfig.toml"
 )
 
-step_start "Compare configs"
+step_start "Check drift"
 
 for pair in "${PAIRS[@]}"; do
   IFS=: read -r FILE TEMPLATE <<<"$pair"
@@ -33,6 +33,6 @@ for pair in "${PAIRS[@]}"; do
   exit 1
 done
 
-step_end "Compare configs"
+step_end "Check drift"
 
 exit 0

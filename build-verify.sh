@@ -6,7 +6,7 @@ setup_base_config
 ./bgord-scripts/typecheck.sh
 ./bgord-scripts/dead-code.sh
 ./bgord-scripts/test.sh
-./bgord-scripts/compare-configs.sh
+./bgord-scripts/check-drift.sh
 ./bgord-scripts/deps-pin.sh
 ./bgord-scripts/check-boundaries.sh
 ./bgord-scripts/deps-ensure.sh

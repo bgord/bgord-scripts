@@ -9,8 +9,8 @@ pre-push:
       run: ./bgord-scripts/dead-code.sh
     test:
       run: ./bgord-scripts/test.sh
-    compare-configs:
-      run: ./bgord-scripts/compare-configs.sh
+    check-drift:
+      run: ./bgord-scripts/check-drift.sh
     deps-pin:
       run: ./bgord-scripts/deps-pin.sh
     check-boundaries:
