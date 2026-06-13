@@ -11,7 +11,7 @@ setup_base_config
 ./bgord-scripts/check-boundaries.sh
 ./bgord-scripts/deps-ensure.sh
 ./bgord-scripts/deps-audit.sh
-./bgord-scripts/lockfile-lint.sh
+./bgord-scripts/check-lockfile.sh
 ./bgord-scripts/check-shell.sh
 ./bgord-scripts/check-code.sh
 ./bgord-scripts/gitleaks-scan.sh

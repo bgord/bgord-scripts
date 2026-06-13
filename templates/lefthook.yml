@@ -19,8 +19,8 @@ pre-push:
       run: ./bgord-scripts/deps-ensure.sh
     deps-audit:
       run: ./bgord-scripts/deps-audit.sh
-    lockfile-lint:
-      run: ./bgord-scripts/lockfile-lint.sh
+    check-lockfile:
+      run: ./bgord-scripts/check-lockfile.sh
     check-ci:
       run: ./bgord-scripts/check-ci.sh
 

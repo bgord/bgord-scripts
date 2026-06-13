@@ -3,7 +3,7 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-step_start "Lockfile Lint"
+step_start "Check lockfile"
 
 trap "rm -f yarn.lock" EXIT
 
@@ -18,4 +18,4 @@ bunx lockfile-lint \
   --validate-package-names \
   --validate-integrity
 
-step_end "Lockfile Lint"
+step_end "Check lockfile"
