@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       fasttrack:
-        description: "Skip build prechecks"
+        description: "Skip build verify"
         type: boolean
         default: false
 concurrency:
