@@ -5,6 +5,6 @@ setup_base_config
 
 ensure_drizzle_set_up
 
-step_start "Drizzle generate"
+step_start "Database generate"
 bunx drizzle-kit generate --config bgord-scripts/templates/drizzle.config.ts
-step_end "Drizzle generate"
+step_end "Database generate"

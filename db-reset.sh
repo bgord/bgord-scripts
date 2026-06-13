@@ -9,5 +9,5 @@ step_start "Database delete"
 rm -rf sqlite.db
 step_end "Database delete"
 
-./bgord-scripts/drizzle-generate.sh
-./bgord-scripts/drizzle-migrate.sh
+./bgord-scripts/db-generate.sh
+./bgord-scripts/db-migrate.sh

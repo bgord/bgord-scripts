@@ -7,6 +7,6 @@ ensure_drizzle_set_up
 
 export NODE_ENV="test"
 
-step_start "Drizzle seed test"
+step_start "Database seed test"
 bun scripts/db-seed.ts
-step_end "Drizzle seed test"
+step_end "Database seed test"

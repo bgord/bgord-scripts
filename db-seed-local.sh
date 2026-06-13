@@ -7,6 +7,6 @@ ensure_drizzle_set_up
 
 export NODE_ENV="local"
 
-step_start "Drizzle seed local"
+step_start "Database seed local"
 bun scripts/db-seed.ts
-step_end "Drizzle seed local"
+step_end "Database seed local"
