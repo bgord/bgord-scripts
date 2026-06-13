@@ -32,9 +32,9 @@ pre-commit:
       stage_fixed: true
     check-spelling:
       run: ./bgord-scripts/check-spelling.sh
-    shellcheck:
+    check-shell:
       glob: "*.{sh}"
-      run: ./bgord-scripts/shellcheck.sh
+      run: ./bgord-scripts/check-shell.sh
     check-code:
       run: ./bgord-scripts/check-code.sh
       stage_fixed: true
