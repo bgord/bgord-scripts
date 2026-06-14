@@ -104,10 +104,6 @@ function validate_non_empty {
   fi
 }
 
-function install_dev_package {
-  bun i -D $@
-}
-
 function check_if_binary_exists {
   if test -x "$(command -v $1)"
   then
@@ -151,52 +147,9 @@ function check_if_linux_or_macos {
   fi
 }
 
-function ensure_git_root_directory {
-  local NEAREST_GIT_REPOSITORY_ROOT_DIRECTORY=$(git rev-parse --show-toplevel)
-  local CURRENT_DIRECTORY=$(pwd)
-
-  if test $NEAREST_GIT_REPOSITORY_ROOT_DIRECTORY != $CURRENT_DIRECTORY
-  then
-    error "It seems you're trying to run the script outside the root git repository directory"
-    exit 1
-  fi
-}
-
 function press_enter_to_continue {
   read -s -p "Press enter to continue..."
   echo -e ""
-}
-
-function confirm_dangerous_action {
-  WORD=$(grep -E '^[a-z]{4,5}$' /usr/share/dict/words | shuf -n1)
-
-  read -rp "Type the word '$WORD' if you really want to perform this action: " TYPED
-
-  if test "$WORD" != "$TYPED"
-  then
-    error "You typed "$WORD" wrong, aborting"
-    exit 1
-  fi
-}
-
-function ensure_ssh_staging_alias {
-  (ssh -q staging exit)
-
-  if test $? != '0'
-  then
-    error "The [staging] ssh alias is not present or doesn't work"
-    exit 1
-  fi
-}
-
-function ensure_ssh_production_alias {
-  (ssh -q production exit)
-
-  if test $? != '0'
-  then
-    error "The [production] ssh alias is not present or doesn't work"
-    exit 1
-  fi
 }
 
 function validate_pascal_case {
