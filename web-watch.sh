@@ -7,10 +7,7 @@ ensure_web_set_up
 
 info "Environment: local"
 
-step_start "Remove public artifacts"
-rm -f public/*.js
-rm -f public/*.js.map
-step_end "Remove public artifacts"
+public_artifacts_remove
 
 step_start "CSS copy"
 cp node_modules/@bgord/design/dist/main.min.css public

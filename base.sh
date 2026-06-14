@@ -191,6 +191,13 @@ function ensure_drizzle_set_up {
   fi
 }
 
+function public_artifacts_remove {
+  step_start "Remove public artifacts"
+  rm -f public/*.js
+  rm -f public/*.js.map
+  step_end "Remove public artifacts"
+}
+
 # --- STEPS ---
 
 CURRENT_STEP_TITLE=""
