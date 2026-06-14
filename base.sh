@@ -198,6 +198,12 @@ function public_artifacts_remove {
   step_end "Remove public artifacts"
 }
 
+function bgord_design_copy {
+  step_start "@bgord/design copy"
+  cp node_modules/@bgord/design/dist/main.min.css public
+  step_end "@bgord/design copy"
+}
+
 # --- STEPS ---
 
 CURRENT_STEP_TITLE=""
