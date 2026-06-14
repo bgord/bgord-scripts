@@ -5,6 +5,6 @@ setup_base_config
 
 ensure_drizzle_set_up
 
-step_start "Database migrate"
+step_start "DB migrate"
 bunx drizzle-kit migrate --config bgord-scripts/templates/drizzle.config.ts
-step_end "Database migrate"
+step_end "DB migrate"

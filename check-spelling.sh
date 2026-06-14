@@ -3,7 +3,7 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-step_start "cspell"
+step_start "Check spelling"
 git ls-files \
   | grep -v "package.json" \
   | grep -v "readme.md" \
@@ -20,6 +20,5 @@ git ls-files \
   --unique \
   --no-progress \
   --cache \
-  --config "bgord-scripts/templates/cspell.json" \
-  $@
-step_end "cspell"
+  --config "bgord-scripts/templates/cspell.json"
+step_end "Check spelling"

@@ -7,5 +7,4 @@ step_start "Deps audit"
 if ! bun audit --audit-level high; then
   exit 1
 fi
-success "No security vulnerabilities found."
 step_end "Deps audit"

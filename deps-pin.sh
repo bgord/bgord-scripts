@@ -3,10 +3,9 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-step_start "Deps pin"
-
 check_if_file_exists "package.json"
-# Fail if any version in deps/devDeps/peerDeps starts with '^'
+
+step_start "Deps pin"
 if CARET_DEPS=$(jq -r '
   def e(section):
     .[section] // {}
@@ -21,5 +20,4 @@ if CARET_DEPS=$(jq -r '
   echo "${CARET_DEPS}" | sed 's/^/  - /'
   exit 1
 fi
-
 step_end "Deps pin"

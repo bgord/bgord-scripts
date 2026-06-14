@@ -7,6 +7,6 @@ IMAGE_PATH=$1
 
 validate_non_empty "IMAGE_PATH" $IMAGE_PATH
 
-step_start "SVG optimise"
+step_start "Image optimise SVG"
 bunx svgo $IMAGE_PATH
-step_end "SVG optimise"
+step_end "Image optimise SVG"
