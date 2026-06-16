@@ -11,14 +11,14 @@ pre-push:
       run: ./bgord-scripts/test.sh
     check-drift:
       run: ./bgord-scripts/check-drift.sh
-    deps-pin:
-      run: ./bgord-scripts/deps-pin.sh
+    check-deps-pin:
+      run: ./bgord-scripts/check-deps-pin.sh
     check-boundaries:
       run: ./bgord-scripts/check-boundaries.sh
-    deps-ensure:
-      run: ./bgord-scripts/deps-ensure.sh
-    deps-audit:
-      run: ./bgord-scripts/deps-audit.sh
+    check-deps-ensure:
+      run: ./bgord-scripts/check-deps-ensure.sh
+    check-deps-audit:
+      run: ./bgord-scripts/check-deps-audit.sh
     check-lockfile:
       run: ./bgord-scripts/check-lockfile.sh
     check-ci:

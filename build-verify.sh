@@ -7,10 +7,10 @@ setup_base_config
 ./bgord-scripts/check-dead-code.sh
 ./bgord-scripts/test.sh
 ./bgord-scripts/check-drift.sh
-./bgord-scripts/deps-pin.sh
+./bgord-scripts/check-deps-pin.sh
 ./bgord-scripts/check-boundaries.sh
-./bgord-scripts/deps-ensure.sh
-./bgord-scripts/deps-audit.sh
+./bgord-scripts/check-deps-ensure.sh
+./bgord-scripts/check-deps-audit.sh
 ./bgord-scripts/check-lockfile.sh
 ./bgord-scripts/check-shell.sh
 ./bgord-scripts/check-code.sh
