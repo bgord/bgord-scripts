@@ -204,6 +204,16 @@ function bgord_design_copy {
   step_end "@bgord/design copy"
 }
 
+dev_engines_check() {
+  runtime=$(jq -r '.devEngines.runtime.name // ""' package.json)
+  pm=$(jq -r '.devEngines.packageManager.name // ""' package.json)
+
+  if test "$runtime" != "bun" || test "$pm" != "bun"; then
+    error "Invalid devEngines in package.json"
+    exit 1
+  fi
+}
+
 # --- STEPS ---
 
 CURRENT_STEP_TITLE=""
