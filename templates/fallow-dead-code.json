@@ -6,6 +6,7 @@
     "tests/_setup.ts",
     "public/*",
     "output/*",
+    "src/**/*.css",
     "web/entry-client.tsx"
   ],
   "ignoreDependencies": [
@@ -32,5 +33,5 @@
     "yazl",
     "csv"
   ],
-  "entry": ["index.ts", "app/**/*.ts", "modules/**/*.ts", "infra/**/*.ts", "scripts/**/*.ts"]
+  "entry": ["index.ts", "app/**/*.ts", "modules/**/*.ts", "infra/**/*.ts", "scripts/**/*.ts", "src/**/*.ts"]
 }
