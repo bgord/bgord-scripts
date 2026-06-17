@@ -3,3 +3,8 @@ pre-commit:
     readme-generate-app:
       run: ./bgord-scripts/readme-generate-app.sh
       stage_fixed: true
+pre-push:
+  parallel: true
+  commands:
+    check-engines:
+      run: ./bgord-scripts/check-engines.sh
