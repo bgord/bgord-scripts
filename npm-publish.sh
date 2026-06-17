@@ -13,6 +13,8 @@ CURRENT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
 step_start "Version change"
 validate_non_empty "VERSION_CHANGE" $VERSION_CHANGE
 
+check_if_binary_exists "nvm"
+
 if test "$VERSION_CHANGE" == "major" || test "$VERSION_CHANGE" == "minor" || test "$VERSION_CHANGE" == "patch"
 then
   info "Version change: $VERSION_CHANGE"
@@ -29,13 +31,6 @@ then
   npm login
 fi
 step_end "NPM login status"
-
-step_start "Npm stage available"
-if test ! $(npm stage --help)
-then
-  info "npm stage is not available"
-fi
-step_end "Npm stage available"
 
 step_start "Mutation tests"
 info "Have you run the mutation tests?"
