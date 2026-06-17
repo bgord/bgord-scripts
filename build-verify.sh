@@ -10,6 +10,7 @@ setup_base_config
 ./bgord-scripts/check-deps-pin.sh
 ./bgord-scripts/check-boundaries.sh
 ./bgord-scripts/check-deps-ensure.sh
+./bgord-scripts/check-engines.sh
 ./bgord-scripts/check-deps-audit.sh
 ./bgord-scripts/check-lockfile.sh
 ./bgord-scripts/check-shell.sh
