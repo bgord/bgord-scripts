@@ -30,6 +30,13 @@ then
 fi
 step_end "NPM login status"
 
+step_start "Npm stage available"
+if test ! $(npm stage --help)
+then
+  info "npm stage is not available"
+fi
+step_end "Npm stage available"
+
 step_start "Mutation tests"
 info "Have you run the mutation tests?"
 press_enter_to_continue
