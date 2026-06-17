@@ -18,6 +18,4 @@ check_if_package_installed "shellcheck"
 check_if_package_installed "typescript"
 check_if_package_installed "@typescript/native-preview"
 
-dev_engines_check
-
 step_end "Deps ensure"
