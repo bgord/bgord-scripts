@@ -13,7 +13,7 @@ CURRENT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
 step_start "Version change"
 validate_non_empty "VERSION_CHANGE" $VERSION_CHANGE
 
-check_if_binary_exists "nvm"
+check_if_binary_exists "nvm" "npm stage"
 
 if test "$VERSION_CHANGE" == "major" || test "$VERSION_CHANGE" == "minor" || test "$VERSION_CHANGE" == "patch"
 then
