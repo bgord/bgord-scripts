@@ -31,7 +31,8 @@
     "shellcheck",
     "valibot",
     "yazl",
-    "csv"
+    "csv",
+    "publint"
   ],
   "entry": ["index.ts", "app/**/*.ts", "modules/**/*.ts", "infra/**/*.ts", "scripts/**/*.ts", "src/**/*.ts"]
 }
