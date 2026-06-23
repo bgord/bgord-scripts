@@ -4,7 +4,7 @@ source bgord-scripts/base.sh
 setup_base_config
 
 FILE_LIST_PATH=$1
-OUTPUT_PATH="output.md"
+OUTPUT_PATH="output"
 
 validate_non_empty $FILE_LIST_PATH "FILE_LIST_PATH"
 
