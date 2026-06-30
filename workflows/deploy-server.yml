@@ -99,32 +99,46 @@ jobs:
 
       - parallel:
           - name: Typecheck
+            if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
             run: ./bgord-scripts/typecheck.sh
           - name: E2E run
+            if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
             run: ./bgord-scripts/e2e-run.sh
           - name: Check dead code
+            if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
             run: ./bgord-scripts/check-dead-code.sh
           - name: Test
+            if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
             run: ./bgord-scripts/test.sh
           - name: Check boundaries
+            if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
             run: ./bgord-scripts/check-boundaries.sh
           - name: Check engines
+            if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
             run: ./bgord-scripts/check-engines.sh
           - name: Check deps audit
+            if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
             run: ./bgord-scripts/check-deps-audit.sh
           - name: Check lockfile
+            if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
             run: ./bgord-scripts/check-lockfile.sh
           - name: Check shell
+            if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
             run: ./bgord-scripts/check-shell.sh
           - name: Check code
+            if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
             run: ./bgord-scripts/check-code.sh
           - name: Check secrets
+            if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
             run: ./bgord-scripts/check-secrets.sh
           - name: Check drift
+            if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
             run: ./bgord-scripts/check-drift.sh
           - name: Check deps pin
+            if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
             run: ./bgord-scripts/check-deps-pin.sh
           - name: Check deps ensure
+            if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
             run: ./bgord-scripts/check-deps-ensure.sh
 
       - name: Build app
