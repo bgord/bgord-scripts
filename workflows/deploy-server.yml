@@ -99,7 +99,35 @@ jobs:
 
       - name: Run build verify
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
-        run: ./bgord-scripts/build-verify.sh
+        parallel:
+          - name: Typecheck
+            run: ./bgord-scripts/typecheck.sh
+          - name: Check dead code
+            run: ./bgord-scripts/check-dead-code.sh
+          - name: Test
+            run: ./bgord-scripts/test.sh
+          - name: Check drift
+            run: ./bgord-scripts/check-drift.sh
+          - name: Check deps pin
+            run: ./bgord-scripts/check-deps-pin.sh
+          - name: Check boundaries
+            run: ./bgord-scripts/check-boundaries.sh
+          - name: Check deps ensure
+            run: ./bgord-scripts/check-deps-ensure.sh
+          - name: Check engines
+            run: ./bgord-scripts/check-engines.sh
+          - name: Check deps audit
+            run: ./bgord-scripts/check-deps-audit.sh
+          - name: Check lockfile
+            run: ./bgord-scripts/check-lockfile.sh
+          - name: Check shell
+            run: ./bgord-scripts/check-shell.sh
+          - name: Check code
+            run: ./bgord-scripts/check-code.sh
+          - name: Check secrets
+            run: ./bgord-scripts/check-secrets.sh
+          - name: E2E run
+            run: ./bgord-scripts/e2e-run.sh
 
       - name: Build app
         run: ./scripts/server-build-production.sh
