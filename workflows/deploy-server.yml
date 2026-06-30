@@ -16,7 +16,7 @@ permissions:
 jobs:
   deploy:
     name: Deploy server
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     env:
       GITLEAKS_VERSION: 8.30.0
     steps:
