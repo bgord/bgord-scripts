@@ -97,8 +97,7 @@ jobs:
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
         run: echo "/home/runner/.local/bin" >> $GITHUB_PATH
 
-      - if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
-        parallel:
+      - parallel:
           - name: Typecheck
             run: ./bgord-scripts/typecheck.sh
           - name: Check dead code
