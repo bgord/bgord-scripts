@@ -50,14 +50,14 @@ jobs:
 
       - name: Cache Playwright browsers
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: ~/.cache/ms-playwright
           key: ms-pw-${{ runner.os }}-${{ steps.pw.outputs.version }}
 
       - name: Cache TS buildinfo
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: |
             **/*.tsbuildinfo
@@ -74,7 +74,7 @@ jobs:
 
       - name: Cache ShellCheck
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: node_modules/shellcheck/bin
           key: shellcheck-${{ runner.os }}-${{ steps.sc.outputs.version }}
@@ -82,7 +82,7 @@ jobs:
       - name: Cache Gitleaks
         if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
         id: gl-cache
-        uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: /home/runner/.local/bin/gitleaks
           key: gitleaks-${{ runner.os }}-${{ env.GITLEAKS_VERSION }}
