@@ -6,7 +6,7 @@ setup_base_config
 if test -f "scripts/server-start-test.sh"
 then
   info "Server start test script exists"
-  bash scripts/test-server-start.sh
+  bash scripts/server-start-test.sh
   exit
 else
   info "Server start test script does not exist"
