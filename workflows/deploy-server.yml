@@ -173,11 +173,6 @@ jobs:
           SSH_KEY: ${{ secrets.PRIVATE_KEY }}
           SSH_HOST: ${{ secrets.HOSTNAME }}
 
-      - name: Clean public
-        env:
-          PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
-        run: ssh production "cd /var/www/${PROJECT_NAME} && rm -rf public/"
-
       - name: Sync source code
         env:
           PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
@@ -187,3 +182,8 @@ jobs:
         env:
           PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
         run: ssh production sudo systemctl restart "${PROJECT_NAME}.service"
+
+      - name: Clean stale public assets
+        env:
+          PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
+        run: rsync -azP --delete output/public/ "production:/var/www/${PROJECT_NAME}/public/"
