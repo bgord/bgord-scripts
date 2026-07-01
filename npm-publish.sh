@@ -3,14 +3,15 @@
 source bgord-scripts/base.sh
 setup_base_config
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 # ========================================
 
 VERSION_CHANGE=$1
 CURRENT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
 
 # ========================================
-
-check_if_binary_exists nvm "nvm"
 
 step_start "Version change"
 validate_non_empty "VERSION_CHANGE" $VERSION_CHANGE
