@@ -186,4 +186,4 @@ jobs:
       - name: Clean stale public assets
         env:
           PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
-        run: [ -d output/public ] && rsync -azP --delete output/public/ "production:/var/www/${PROJECT_NAME}/public/"
+        run: if [ -d "output/public" ]; then rsync -azP --delete output/public/ "production:/var/www/${PROJECT_NAME}/public/"; fi
