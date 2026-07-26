@@ -33,6 +33,9 @@ jobs:
         with:
           bun-version: 1.3.14
 
+      - name: Install node-gyp
+        run: bun add -g node-gyp
+
       - name: Bun install
         run: bun install --exact --frozen-lockfile --no-summary
 
