@@ -34,5 +34,13 @@
     "csv",
     "publint"
   ],
-  "entry": ["index.ts", "app/**/*.ts", "modules/**/*.ts", "infra/**/*.ts", "scripts/**/*.ts", "src/**/*.ts"]
+  "entry": [
+    "index.ts",
+    "app/**/*.ts",
+    "modules/**/*.ts",
+    "infra/**/*.ts",
+    "scripts/**/*.ts",
+    "src/**/*.ts",
+    "bench/**/*.ts"
+  ]
 }
