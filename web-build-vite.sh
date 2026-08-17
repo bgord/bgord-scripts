@@ -7,6 +7,8 @@ ensure_web_set_up
 
 info "Environment: production"
 
+export NODE_ENV="production"
+
 public_artifacts_remove
 bgord_design_copy
 
