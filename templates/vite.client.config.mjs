@@ -1,10 +1,8 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   base: "/public/",
   publicDir: false,
-  plugins: [react({ jsxRuntime: "automatic" })],
   resolve: {
     dedupe: ["react", "react-dom", "@tanstack/react-router", "@tanstack/router-core"],
   },
