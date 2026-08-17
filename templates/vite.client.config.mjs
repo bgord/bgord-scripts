@@ -17,17 +17,6 @@ export default defineConfig({
     sourcemap: false,
     modulePreload: { polyfill: false },
     assetsInlineLimit: 0,
-    minify: "terser",
-    terserOptions: {
-      module: true,
-      compress: {
-        passes: 3,
-        drop_console: true,
-        drop_debugger: true,
-        pure_funcs: ["console.info", "console.debug", "console.trace"],
-      },
-      format: { comments: false },
-    },
     assetsDir: "",
     rolldownOptions: {
       input: "web/entry-client.tsx",
