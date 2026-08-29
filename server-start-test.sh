@@ -20,7 +20,7 @@ info "Environment: test"
 
 ./bgord-scripts/db-reset.sh
 ./bgord-scripts/db-seed-test.sh
-./bgord-scripts/web-build-vite.sh
+./bgord-scripts/web-build-bun.sh
 
 step_start "Server start test"
 bun run \
