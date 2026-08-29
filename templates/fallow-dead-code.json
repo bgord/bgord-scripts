@@ -18,7 +18,6 @@
     "iconoir-react",
     "react",
     "better-sqlite3",
-    "@better-auth/drizzle-adapter",
     "@fullhuman/postcss-purgecss",
     "@happy-dom/global-registrator",
     "@stryker-mutator/typescript-checker",
@@ -30,8 +29,6 @@
     "nodemailer",
     "shellcheck",
     "valibot",
-    "yazl",
-    "csv",
     "publint"
   ],
   "entry": [
