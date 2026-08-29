@@ -8,3 +8,5 @@ pre-push:
   commands:
     check-package-config:
       run: ./bgord-scripts/check-package-config.sh
+    check-deps-audit:
+      run: ./bgord-scripts/check-deps-audit.sh
