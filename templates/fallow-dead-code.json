@@ -19,6 +19,7 @@
     "react",
     "better-sqlite3",
     "@fullhuman/postcss-purgecss",
+    "postcss",
     "@happy-dom/global-registrator",
     "@stryker-mutator/typescript-checker",
     "croner",
