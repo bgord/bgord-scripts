@@ -14,6 +14,7 @@ step_start "Web build bun"
 bun build web/entry-client.tsx \
   --outdir ./public \
   --target browser \
+  --splitting \
   --minify \
   --production \
   --define process.env.NODE_ENV=\"production\"
