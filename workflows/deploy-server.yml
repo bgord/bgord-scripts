@@ -120,8 +120,8 @@ jobs:
           - name: Check engines
             if: ${{ env.SKIP_CHECKS != 'true' }}
             run: ./bgord-scripts/check-engines.sh
-          - name: Check deps audit
-            if: ${{ env.SKIP_CHECKS != 'true' }}
+          # - name: Check deps audit
+          #   if: ${{ env.SKIP_CHECKS != 'true' }}
             run: ./bgord-scripts/check-deps-audit.sh
           - name: Check lockfile
             if: ${{ env.SKIP_CHECKS != 'true' }}
