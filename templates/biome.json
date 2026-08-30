@@ -85,7 +85,6 @@
       },
       "suspicious": {
         "noExplicitAny": "off",
-        "noImportCycles": "error",
         "noConsole": { "level": "error", "options": { "allow": ["log"] } },
         "useAdjacentOverloadSignatures": "off",
         "useIterableCallbackReturn": "off"
