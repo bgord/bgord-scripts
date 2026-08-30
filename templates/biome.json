@@ -42,21 +42,16 @@
     ]
   },
   "formatter": {
-    "enabled": true,
     "indentStyle": "space",
-    "indentWidth": 2,
     "lineWidth": 110
   },
   "linter": {
-    "enabled": true,
     "domains": { "types": "recommended" },
     "rules": {
-      "recommended": true,
       "complexity": {
         "noStaticOnlyClass": "off",
         "useSimplifiedLogicExpression": "error",
         "useArrowFunction": "off",
-        "noForEach": "off",
         "useLiteralKeys": "off"
       },
       "performance": {
@@ -93,7 +88,6 @@
         "noImportCycles": "error",
         "noConsole": { "level": "error", "options": { "allow": ["log"] } },
         "useAdjacentOverloadSignatures": "off",
-        "noArrayIndexKey": "off",
         "useIterableCallbackReturn": "off"
       },
       "a11y": {
