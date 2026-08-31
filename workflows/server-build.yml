@@ -170,3 +170,8 @@ jobs:
           compression-level: 0
           retention-days: 90
           if-no-files-found: error
+
+      - name: Publish run id
+        env:
+          RUN_ID: ${{ github.run_id }}
+        run: echo "Deploy with run ID \`${RUN_ID}\`" >> "$GITHUB_STEP_SUMMARY"
