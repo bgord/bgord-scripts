@@ -1,0 +1,72 @@
+name: Deploy
+on: # zizmor: ignore[dangerous-triggers] deploy checks out nothing and never executes artifact contents
+  workflow_run:
+    workflows: [Build]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "Build run ID to deploy"
+        type: string
+        required: true
+concurrency:
+  group: ci-deploy-production
+  cancel-in-progress: false
+permissions:
+  contents: read
+  actions: read # read the build run's artifact across workflow runs
+jobs:
+  deploy:
+    name: Deploy server
+    runs-on: ubuntu-26.04
+    environment: production
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    env:
+      RUN_ID: ${{ github.event_name == 'workflow_dispatch' && inputs.run_id || github.event.workflow_run.id }}
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: build
+          run-id: ${{ env.RUN_ID }}
+          github-token: ${{ github.token }}
+
+      - name: Unpack build output
+        run: |
+          mkdir -p output
+          tar -xzf build.tar.gz -C output
+
+      - name: Report deployed build
+        run: cat output/infra/build-info.json
+
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_KEY" > ~/.ssh/production.key
+          chmod 600 ~/.ssh/production.key
+          cat >>~/.ssh/config <<END
+          Host production
+            HostName $SSH_HOST
+            User $SSH_USER
+            IdentityFile ~/.ssh/production.key
+            StrictHostKeyChecking no
+          END
+        env:
+          SSH_USER: ${{ secrets.USER }}
+          SSH_KEY: ${{ secrets.PRIVATE_KEY }}
+          SSH_HOST: ${{ secrets.HOSTNAME }}
+
+      - name: Sync source code
+        env:
+          PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
+        run: rsync -azP output/ "production:/var/www/${PROJECT_NAME}"
+
+      - name: Clean stale public assets
+        env:
+          PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
+        run: if [ -d "output/public" ]; then rsync -azP --delete output/public/ "production:/var/www/${PROJECT_NAME}/public/"; fi
+
+      - name: Restart server
+        env:
+          PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
+        run: ssh production sudo systemctl restart "${PROJECT_NAME}.service"
