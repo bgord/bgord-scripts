@@ -46,7 +46,6 @@
     "lineWidth": 110
   },
   "linter": {
-    "domains": { "types": "recommended" },
     "rules": {
       "complexity": {
         "noStaticOnlyClass": "off",
@@ -100,10 +99,6 @@
       "correctness": {
         "useExhaustiveDependencies": "warn",
         "noUnusedImports": "error"
-      },
-      "nursery": {
-        "noFloatingPromises": "error",
-        "noMisusedPromises": "error"
       }
     }
   },

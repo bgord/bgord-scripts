@@ -132,6 +132,9 @@ jobs:
           - name: Check code
             if: ${{ env.SKIP_CHECKS != 'true' }}
             run: ./bgord-scripts/check-code.sh
+          - name: Check code types
+            if: ${{ env.SKIP_CHECKS != 'true' }}
+            run: ./bgord-scripts/check-code-types.sh
           - name: Check secrets
             if: ${{ env.SKIP_CHECKS != 'true' }}
             run: ./bgord-scripts/check-secrets.sh
