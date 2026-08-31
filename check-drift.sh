@@ -4,7 +4,8 @@ source bgord-scripts/base.sh
 setup_base_config
 
 PAIRS=(
-  ".github/workflows/deploy-server.yml:bgord-scripts/workflows/deploy-server.yml"
+  ".github/workflows/build-server.yml:bgord-scripts/workflows/server-build.yml"
+  ".github/workflows/deploy-server.yml:bgord-scripts/workflows/server-deploy.yml"
   ".github/workflows/healthcheck.yml:bgord-scripts/workflows/healthcheck.yml"
   "bunfig.toml:bgord-scripts/templates/bunfig.toml"
 )
