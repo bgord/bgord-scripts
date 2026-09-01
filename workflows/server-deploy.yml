@@ -37,6 +37,26 @@ jobs:
       - name: Report deployed build
         run: cat output/infra/build-info.json
 
+      - name: Setup Bun environment
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with:
+          bun-version: 1.4.0
+
+      - name: Render secrets.enc
+        env:
+          ENV_SERVER: ${{ secrets.ENV_SERVER }}
+          MASTER_KEY: ${{ secrets.MASTER_KEY }}
+        run: |
+          umask 077
+          test -n "$ENV_SERVER" || { echo "ENV_SERVER is empty"; exit 1; }
+          test -n "$MASTER_KEY" || { echo "MASTER_KEY is empty"; exit 1; }
+          printf '%s\n' "$ENV_SERVER" > "$RUNNER_TEMP/env.production"
+          printf '%s\n' "$MASTER_KEY" > "$RUNNER_TEMP/master.key"
+          bun output/infra/secrets-encrypt.js \
+            --master-key "$RUNNER_TEMP/master.key" \
+            --input "$RUNNER_TEMP/env.production" \
+            --output "$GITHUB_WORKSPACE/output/secrets.enc"
+
       - name: Configure SSH
         run: |
           mkdir -p ~/.ssh/
