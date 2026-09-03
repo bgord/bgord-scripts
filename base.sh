@@ -148,7 +148,7 @@ function check_if_linux_or_macos {
 }
 
 function press_enter_to_continue {
-  read -s -p "Press enter to continue..."
+  read -r -s -p "Press enter to continue..."
   echo -e ""
 }
 

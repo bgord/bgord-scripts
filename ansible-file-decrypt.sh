@@ -7,8 +7,8 @@ FILE_TO_DECRYPT=$1
 
 step_start "Ansible file decrypt"
 
-validate_non_empty "FILE_TO_DECRYPT" $FILE_TO_DECRYPT
-check_if_file_exists $FILE_TO_DECRYPT
-ansible-vault decrypt $FILE_TO_DECRYPT --vault-password-file ansible-vault-password.txt
+validate_non_empty "FILE_TO_DECRYPT" "$FILE_TO_DECRYPT"
+check_if_file_exists "$FILE_TO_DECRYPT"
+ansible-vault decrypt "$FILE_TO_DECRYPT" --vault-password-file ansible-vault-password.txt
 
 step_end "Ansible file decrypt"

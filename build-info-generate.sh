@@ -12,13 +12,13 @@ SIZE=$(jq '.outputs["./index.js"].bytes' meta.json)
 
 step_start "Build info generate"
 
-validate_non_empty "TIMESTAMP" $TIMESTAMP
-validate_non_empty "VERSION" $VERSION
-validate_non_empty "SHA" $SHA
-validate_non_empty "SIZE" $SIZE
+validate_non_empty "TIMESTAMP" "$TIMESTAMP"
+validate_non_empty "VERSION" "$VERSION"
+validate_non_empty "SHA" "$SHA"
+validate_non_empty "SIZE" "$SIZE"
 
-echo "{ \"timestamp\": $TIMESTAMP, \"sha\": \"$SHA\", \"version\": \"$VERSION\", \"size\": $SIZE }" > $OUTPUT_PATH
+echo "{ \"timestamp\": $TIMESTAMP, \"sha\": \"$SHA\", \"version\": \"$VERSION\", \"size\": $SIZE }" > "$OUTPUT_PATH"
 
-cat $OUTPUT_PATH
+cat "$OUTPUT_PATH"
 
 step_end "Build info generate"

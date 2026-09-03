@@ -5,8 +5,8 @@ setup_base_config
 
 IMAGE_PATH=$1
 
-validate_non_empty "IMAGE_PATH" $IMAGE_PATH
+validate_non_empty "IMAGE_PATH" "$IMAGE_PATH"
 
 step_start "Image identify"
-magick identify $IMAGE_PATH
+magick identify "$IMAGE_PATH"
 step_end "Image identify"

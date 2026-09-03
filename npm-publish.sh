@@ -4,17 +4,17 @@ source bgord-scripts/base.sh
 setup_base_config
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# shellcheck source=/dev/null # nvm is an optional, machine-local install
+[[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh" || true
 
 # ========================================
 
 VERSION_CHANGE=$1
-CURRENT_BRANCH=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
 
 # ========================================
 
 step_start "Version change"
-validate_non_empty "VERSION_CHANGE" $VERSION_CHANGE
+validate_non_empty "VERSION_CHANGE" "$VERSION_CHANGE"
 
 if test "$VERSION_CHANGE" == "major" || test "$VERSION_CHANGE" == "minor" || test "$VERSION_CHANGE" == "patch"
 then
@@ -57,7 +57,7 @@ bun run build
 step_end "Build package"
 
 step_start "Version bump: $VERSION_CHANGE"
-npm version $VERSION_CHANGE
+npm version "$VERSION_CHANGE"
 step_end "Version bump: $VERSION_CHANGE"
 
 step_start "Tags push"
