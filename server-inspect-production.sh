@@ -5,9 +5,6 @@ source bgord-scripts/base.sh
 setup_base_config
 
 OUTPUT_DIRECTORY="output"
-PROJECT_NAME=$1
-
-validate_non_empty "PROJECT_NAME" "$PROJECT_NAME"
 
 step_start "Server inspect production"
 ls -al "$OUTPUT_DIRECTORY"

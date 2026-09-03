@@ -154,10 +154,8 @@ jobs:
         run: ./bgord-scripts/build-info-generate.sh "${SHA}"
 
       - name: Inspect app size
-        env:
-          PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
         if: ${{ env.SKIP_CHECKS != 'true' }}
-        run: ./bgord-scripts/server-inspect-production.sh "${PROJECT_NAME}"
+        run: ./bgord-scripts/server-inspect-production.sh
 
       - name: Bundle secrets encryptor
         run: bun build --target=bun --outfile output/infra/secrets-encrypt.js bgord-scripts/secrets-encrypt.ts
