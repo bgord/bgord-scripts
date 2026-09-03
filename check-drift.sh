@@ -17,12 +17,15 @@ for pair in "${PAIRS[@]}"; do
 
   test -f "$FILE" || continue
 
-  if diff -u --color=always "$TEMPLATE" "$FILE" > /dev/null; then
+  STATUS=0
+  diff -u "$TEMPLATE" "$FILE" > /dev/null || STATUS=$?
+
+  if test "$STATUS" -eq 0; then
     success "$FILE matches $TEMPLATE"
     continue
   fi
 
-  if [ $? -eq 2 ]; then
+  if test "$STATUS" -gt 1; then
     error "❌  Comparison failed: $TEMPLATE or $FILE not found."
   else
     # If the exit code was 1, the files differ. Print the difference.
