@@ -7,4 +7,4 @@ info "Project: $PROJECT_NAME"
 
 step_start "DB sync production to local"
 scp "production:/var/www/$PROJECT_NAME/sqlite.db" .
-step_end "DBDatabase sync production to local"
+step_end "DB sync production to local"
