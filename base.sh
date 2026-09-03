@@ -105,11 +105,14 @@ function validate_non_empty {
 }
 
 function check_if_binary_exists {
-  if test -x "$(command -v $1)"
+  local BINARY_NAME=$1
+  local DISPLAY_NAME="${2:-$1}"
+
+  if test -x "$(command -v $BINARY_NAME)"
   then
-    success "$2 is installed"
+    success "$DISPLAY_NAME is installed"
   else
-    error "$2 is not installed"
+    error "$DISPLAY_NAME is not installed"
     exit 1
   fi
 }
