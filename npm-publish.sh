@@ -26,7 +26,7 @@ fi
 step_end "Version change"
 
 step_start "NPM login status"
-if test ! $(npm whoami)
+if ! npm whoami >/dev/null 2>&1
 then
   info "You are not logged in to npm"
   npm login
@@ -44,7 +44,10 @@ press_enter_to_continue
 step_end "Audit"
 
 step_start "Sync status"
-if test $(git rev-parse master) != $(git rev-parse origin/master)
+LOCAL_SHA=$(git rev-parse master)
+REMOTE_SHA=$(git rev-parse origin/master)
+
+if [[ "$LOCAL_SHA" != "$REMOTE_SHA" ]]
 then
     error "There are some differences between master and origin/master"
     info "Please, sync them"
