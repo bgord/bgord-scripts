@@ -4,9 +4,11 @@
     "bgord",
     "biomejs",
     "bunx",
+    "deadlift",
     "deleter",
     "emittery",
     "failer",
+    "glutes",
     "haveibeenpwned",
     "hcaptcha",
     "healthcheck",
@@ -21,6 +23,7 @@
     "panopticon",
     "picklist",
     "prechecks",
+    "pushdown",
     "renamer",
     "requeuer",
     "upcaster",
@@ -28,5 +31,6 @@
     "webp",
     "xmark",
     "zizmor"
-  ]
+  ],
+  "ignorePaths": ["**/infra/exercise-catalog/credits.json"]
 }
