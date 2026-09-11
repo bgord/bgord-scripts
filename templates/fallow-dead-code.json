@@ -29,6 +29,7 @@
     "lockfile-lint",
     "nodemailer",
     "shellcheck",
+    "actions-up",
     "valibot",
     "publint"
   ],
