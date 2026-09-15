@@ -31,7 +31,8 @@
     "shellcheck",
     "actions-up",
     "valibot",
-    "publint"
+    "publint",
+    "temporal-polyfill"
   ],
   "entry": [
     "index.ts",
