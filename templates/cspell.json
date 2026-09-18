@@ -30,7 +30,9 @@
     "vali",
     "webp",
     "xmark",
-    "zizmor"
+    "zizmor",
+    "minh",
+    "minw"
   ],
   "ignorePaths": ["**/infra/exercise-catalog/credits.json"]
 }
