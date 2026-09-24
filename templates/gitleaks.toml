@@ -6,3 +6,4 @@ description = "Global allowlist for development files"
 paths = [
   '''tests/mocks'''
 ]
+regexes = ['''abcdef123456''']
