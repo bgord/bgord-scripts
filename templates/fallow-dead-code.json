@@ -32,7 +32,21 @@
     "actions-up",
     "valibot",
     "publint",
-    "temporal-polyfill"
+    "temporal-polyfill",
+    "@react-email/components",
+    "@react-email/body",
+    "@react-email/button",
+    "@react-email/column",
+    "@react-email/container",
+    "@react-email/head",
+    "@react-email/hr",
+    "@react-email/html",
+    "@react-email/link",
+    "@react-email/preview",
+    "@react-email/render",
+    "@react-email/row",
+    "@react-email/section",
+    "@react-email/text"
   ],
   "entry": [
     "index.ts",
