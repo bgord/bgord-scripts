@@ -2,6 +2,8 @@ name: Build
 on:
   push:
     branches: [master]
+  pull_request:
+    branches: [master]
   workflow_dispatch:
     inputs:
       fasttrack:
@@ -84,6 +86,7 @@ jobs:
     env:
       GITLEAKS_VERSION: 8.30.0
       SKIP_CHECKS: ${{ github.event_name == 'workflow_dispatch' && inputs.fasttrack }}
+      IS_PULL_REQUEST: ${{ github.event_name == 'pull_request' }}
     steps:
       - name: Clone repositories
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -193,24 +196,29 @@ jobs:
             run: ./bgord-scripts/check-deps-ensure.sh
 
       - name: Build app
+        if: ${{ env.IS_PULL_REQUEST != 'true' }}
         run: ./scripts/server-build-production.sh
 
       - name: Generate build info
+        if: ${{ env.IS_PULL_REQUEST != 'true' }}
         env:
           SHA: ${{ github.sha }}
         run: ./bgord-scripts/build-info-generate.sh "${SHA}"
 
       - name: Inspect app size
-        if: ${{ env.SKIP_CHECKS != 'true' }}
+        if: ${{ env.SKIP_CHECKS != 'true' && env.IS_PULL_REQUEST != 'true' }}
         run: ./bgord-scripts/server-inspect-production.sh
 
       - name: Bundle secrets encryptor
+        if: ${{ env.IS_PULL_REQUEST != 'true' }}
         run: bun build --target=bun --outfile output/infra/secrets-encrypt.js bgord-scripts/secrets-encrypt.ts
 
       - name: Package build output
+        if: ${{ env.IS_PULL_REQUEST != 'true' }}
         run: tar -czf build.tar.gz -C output .
 
       - name: Upload build artifact
+        if: ${{ env.IS_PULL_REQUEST != 'true' }}
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: build
@@ -220,6 +228,7 @@ jobs:
           if-no-files-found: error
 
       - name: Publish run id
+        if: ${{ env.IS_PULL_REQUEST != 'true' }}
         env:
           RUN_ID: ${{ github.run_id }}
         run: echo "Deploy with run ID \`${RUN_ID}\`" >> "$GITHUB_STEP_SUMMARY"
