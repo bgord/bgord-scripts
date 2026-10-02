@@ -27,6 +27,7 @@
     "hono",
     "lightningcss-cli",
     "lockfile-lint",
+    "monocart-coverage-reports",
     "nodemailer",
     "shellcheck",
     "actions-up",
