@@ -18,8 +18,13 @@ const { values } = parseArgs({
 
   const FileInspection = new bg.FileInspectionAdapter();
   const FileReaderText = new bg.FileReaderTextAdapter();
-  const FileWriter = new bg.FileWriterAdapter();
   const FileReaderRaw = new bg.FileReaderRawAdapter();
+  const AtomicFileWriter = new bg.AtomicFileWriterAdapter({
+    FileCleaner: new bg.FileCleanerAdapter(),
+    FileRenamer: new bg.FileRenamerNodeAdapter(),
+    FileWriter: new bg.FileWriterAdapter(),
+    NonceProvider: new bg.NonceProviderCryptoAdapter(),
+  });
 
   const CryptoKeyProvider = new bg.CryptoKeyProviderFileAdapter(MasterKeyPath, {
     FileInspection,
@@ -28,7 +33,7 @@ const { values } = parseArgs({
 
   const Encryption = new bg.EncryptionAesGcmAdapter({
     FileReaderRaw,
-    FileWriter,
+    AtomicFileWriter,
     CryptoKeyProvider,
     FileInspection,
   });
