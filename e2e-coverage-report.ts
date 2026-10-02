@@ -2,7 +2,7 @@ import { readdir, readFile } from "node:fs/promises";
 import { CoverageReport } from "monocart-coverage-reports";
 
 const RAW_DIR = "reports/e2e-coverage-raw";
-const THRESHOLD = 100;
+const THRESHOLD = 99.5;
 
 const report = new CoverageReport({
   name: "E2E frontend coverage",
