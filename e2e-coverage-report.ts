@@ -30,7 +30,7 @@ for (const file of await readdir(RAW_DIR)) {
     entry.source = sources.get(path);
   }
 
-  await report.add(bundled);
+  if (bundled.length > 0) await report.add(bundled);
 }
 
 const results = await report.generate();
