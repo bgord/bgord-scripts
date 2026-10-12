@@ -15,7 +15,7 @@ step_start "E2E coverage run"
 export PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=1
 bunx playwright install chromium
 E2E_EXIT_CODE=0
-bunx playwright test --reporter list --timeout 20000 "$@" || E2E_EXIT_CODE=$?
+bunx playwright test --config infra/e2e/playwright.config.ts --reporter list --timeout 20000 "$@" || E2E_EXIT_CODE=$?
 step_end "E2E coverage run"
 
 step_start "E2E coverage report"

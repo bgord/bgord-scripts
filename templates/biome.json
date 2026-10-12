@@ -38,8 +38,7 @@
       "!**/tmp/**",
       "!**/bgord-scripts/**",
       "!**/.stryker-tmp/**",
-      "!**/reports/**",
-      "!**/playwright-report/**"
+      "!**/reports/**"
     ]
   },
   "formatter": {

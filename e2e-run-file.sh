@@ -15,5 +15,5 @@ set_node_timezone_to_utc
 step_start "E2E run file"
 export PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=1
 bunx playwright install chromium
-bunx playwright test --reporter list "$FILE_TO_RUN" "$@"
+bunx playwright test --config infra/e2e/playwright.config.ts --reporter list "$FILE_TO_RUN" "$@"
 step_end "E2E run file"
