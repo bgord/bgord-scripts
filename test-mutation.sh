@@ -8,5 +8,5 @@ set_node_timezone_to_utc
 export NODE_ENV="test"
 
 step_start "Test mutation"
-bunx stryker run bgord-scripts/templates/stryker.config.json
+bunx stryker run bgord-scripts/templates/stryker.config.json "$@"
 step_end "Test mutation"
