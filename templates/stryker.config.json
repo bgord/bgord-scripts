@@ -7,6 +7,7 @@
     "timeoutMS": 5000
   },
   "mutate": ["src/**/*.ts", "modules/**/*.ts", "app/http/**/*.ts", "!tests/**", "!**/_setup.ts"],
+  "ignorePatterns": ["/tmp", "/reports", "/.fallow", "/.auth", "/.cspellcache", "/*.db*"],
   "reporters": ["clear-text", "progress", "html"],
   "coverageAnalysis": "off",
   "concurrency": 5,
