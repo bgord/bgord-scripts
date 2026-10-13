@@ -10,6 +10,7 @@
   "ignorePatterns": ["/tmp", "/reports", "/.fallow", "/.auth", "/.cspellcache", "/*.db*"],
   "reporters": ["clear-text", "progress", "html"],
   "coverageAnalysis": "off",
+  "incremental": true,
   "concurrency": 5,
   "timeoutMS": 5000,
   "checkers": ["typescript"],
