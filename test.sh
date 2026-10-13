@@ -10,8 +10,8 @@ export NODE_ENV="test"
 step_start "Test"
 if test -f "tests/_setup.ts"
 then
-  bun test --preload ./tests/_setup.ts tests/
+  bun test --preload ./tests/_setup.ts tests/ "$@"
 else
-  bun test tests/
+  bun test tests/ "$@"
 fi
 step_end "Test"
