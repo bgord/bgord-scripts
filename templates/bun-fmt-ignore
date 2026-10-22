@@ -1,0 +1,16 @@
+fallow-viz.html
+**/static/**
+**/build/**
+**/dist/**
+**/output/**
+**/public/**
+**/tmp/**
+**/bgord-scripts/**
+**/.stryker-tmp/**
+**/reports/**
+*.md
+*.mdx
+*.html
+*.yml
+*.yaml
+*.toml
