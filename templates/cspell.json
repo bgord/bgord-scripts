@@ -33,7 +33,8 @@
     "xmark",
     "zizmor",
     "minh",
-    "minw"
+    "minw",
+    "raok"
   ],
   "ignorePaths": ["**/infra/exercise-catalog/credits.json"]
 }
