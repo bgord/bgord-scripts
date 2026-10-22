@@ -42,8 +42,7 @@
     ]
   },
   "formatter": {
-    "indentStyle": "space",
-    "lineWidth": 110
+    "enabled": false
   },
   "linter": {
     "rules": {
