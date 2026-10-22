@@ -34,7 +34,8 @@
     "zizmor",
     "minh",
     "minw",
-    "raok"
+    "raok",
+    "metatags"
   ],
   "ignorePaths": ["**/infra/exercise-catalog/credits.json"]
 }
