@@ -4,5 +4,8 @@ source bgord-scripts/base.sh
 setup_base_config
 
 step_start "Format"
-bunx @biomejs/biome format --write --config-path=bgord-scripts/templates/biome.json
+bun fmt \
+  --config=bgord-scripts/templates/bun-fmt.json \
+  --ignore-path=.gitignore \
+  --ignore-path=bgord-scripts/templates/bun-fmt-ignore
 step_end "Format"

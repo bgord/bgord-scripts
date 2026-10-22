@@ -4,9 +4,10 @@ source bgord-scripts/base.sh
 setup_base_config
 
 step_start "Format staged"
-bunx @biomejs/biome format \
-  --write \
+bun fmt \
   --staged \
-  --no-errors-on-unmatched \
-  --config-path=bgord-scripts/templates/biome.json
+  --no-error-on-unmatched-pattern \
+  --config=bgord-scripts/templates/bun-fmt.json \
+  --ignore-path=.gitignore \
+  --ignore-path=bgord-scripts/templates/bun-fmt-ignore
 step_end "Format staged"
