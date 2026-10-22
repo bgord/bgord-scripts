@@ -7,5 +7,5 @@ step_start "Format"
 bun fmt \
   --config=bgord-scripts/templates/bun-fmt.json \
   --ignore-path=.gitignore \
-  --ignore-path=bgord-scripts/templates/bun-fmt-ignore
+  "${BUN_FMT_IGNORE[@]}"
 step_end "Format"

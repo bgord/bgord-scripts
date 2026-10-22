@@ -19,6 +19,25 @@ PROJECT_NAME=$(basename $(git rev-parse --show-toplevel 2>/dev/null) 2>/dev/null
 CURRENT_TIME=$(date +%F-%H-%M-%S)
 CURRENT_TIMESTAMP=$(date +%s)
 
+BUN_FMT_IGNORE=(
+  --ignore-pattern="fallow-viz.html"
+  --ignore-pattern="**/static/**"
+  --ignore-pattern="**/build/**"
+  --ignore-pattern="**/dist/**"
+  --ignore-pattern="**/output/**"
+  --ignore-pattern="**/public/**"
+  --ignore-pattern="**/tmp/**"
+  --ignore-pattern="**/bgord-scripts/**"
+  --ignore-pattern="**/.stryker-tmp/**"
+  --ignore-pattern="**/reports/**"
+  --ignore-pattern="*.md"
+  --ignore-pattern="*.mdx"
+  --ignore-pattern="*.html"
+  --ignore-pattern="*.yml"
+  --ignore-pattern="*.yaml"
+  --ignore-pattern="*.toml"
+)
+
 function info {
   local MESSAGE=$1
   echo -e "$BLUE   [info]$NC   $MESSAGE"
