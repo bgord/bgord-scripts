@@ -36,7 +36,8 @@
     "actions-up",
     "valibot",
     "publint",
-    "temporal-polyfill"
+    "temporal-polyfill",
+    "drizzle-kit"
   ],
   "entry": [
     "index.ts",
