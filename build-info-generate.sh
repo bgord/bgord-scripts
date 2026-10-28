@@ -9,8 +9,13 @@ TIMESTAMP="$(date +%s)000"
 VERSION="v$(jq -r '.version' package.json)"
 SHA=$1
 SIZE_SERVER=$(jq '.outputs["./index.js"].bytes' meta.json)
-SIZE_WEB_JS=$(find output/public -maxdepth 1 -name '*.js.br' -exec cat {} + | wc -c | tr -d ' ')
-SIZE_WEB_CSS=$(find output/public -maxdepth 1 -name '*.css.br' -exec cat {} + | wc -c | tr -d ' ')
+SIZE_WEB_JS=0
+SIZE_WEB_CSS=0
+
+if [ -d output/public ]; then
+  SIZE_WEB_JS=$(find output/public -maxdepth 1 -name '*.js.br' -exec cat {} + | wc -c | tr -d ' ')
+  SIZE_WEB_CSS=$(find output/public -maxdepth 1 -name '*.css.br' -exec cat {} + | wc -c | tr -d ' ')
+fi
 
 step_start "Build info generate"
 
