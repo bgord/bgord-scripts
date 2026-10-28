@@ -6,7 +6,8 @@ on:
 concurrency:
   group: ci-healthcheck-${{ github.ref }}
   cancel-in-progress: true
-permissions: {}
+permissions:
+  contents: read
 jobs:
   healthcheck:
     name: Run healthcheck
@@ -19,6 +20,7 @@ jobs:
           persist-credentials: false
 
       - name: Run healthcheck
+        id: run_healthcheck
         env:
           PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
           BASIC_AUTH_PRODUCTION: ${{ secrets.BASIC_AUTH_PRODUCTION }}
