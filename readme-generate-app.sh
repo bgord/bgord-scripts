@@ -83,6 +83,14 @@ echo "" >> "$OUTPUT_FILE"
 
 # ===============
 
+echo "## Bounded contexts:" >> "$OUTPUT_FILE"
+echo "" >> "$OUTPUT_FILE"
+
+bun run bgord-scripts/bounded-contexts-graph.ts >> "$OUTPUT_FILE"
+echo "" >> "$OUTPUT_FILE"
+
+# ===============
+
 echo "## App:" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
