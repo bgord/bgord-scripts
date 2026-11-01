@@ -8,7 +8,7 @@ set_node_timezone_to_utc
 export E2E_COVERAGE=1
 export E2E_COVERAGE_RAW_DIR="reports/e2e-coverage-raw"
 
-rm -rf reports/e2e-coverage "$E2E_COVERAGE_RAW_DIR"
+rm -rf "$E2E_COVERAGE_RAW_DIR"
 mkdir -p "$E2E_COVERAGE_RAW_DIR"
 
 step_start "E2E coverage run"
