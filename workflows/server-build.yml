@@ -4,6 +4,7 @@ on:
     branches: [master]
   pull_request:
     branches: [master]
+    types: [opened, synchronize, reopened, closed]
   workflow_dispatch:
     inputs:
       fasttrack:
@@ -19,7 +20,7 @@ jobs:
   e2e:
     name: E2E
     runs-on: ubuntu-26.04
-    if: ${{ !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
+    if: ${{ github.event.action != 'closed' && !(github.event_name == 'workflow_dispatch' && inputs.fasttrack) }}
     steps:
       - name: Clone repositories
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -83,6 +84,7 @@ jobs:
   build:
     name: Build server
     runs-on: ubuntu-26.04
+    if: ${{ github.event.action != 'closed' }}
     env:
       GITLEAKS_VERSION: 8.30.0
       SKIP_CHECKS: ${{ github.event_name == 'workflow_dispatch' && inputs.fasttrack }}
