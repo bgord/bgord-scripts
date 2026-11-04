@@ -85,12 +85,12 @@ jobs:
       - name: Sync source code
         env:
           PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
-        run: rsync -azP output/ "production:/var/www/${PROJECT_NAME}"
+        run: rsync -azP --no-group --chmod=D2770,Fug+r,Fo-rwx output/ "production:/var/www/${PROJECT_NAME}"
 
       - name: Clean stale public assets
         env:
           PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
-        run: if [ -d "output/public" ]; then rsync -azP --delete output/public/ "production:/var/www/${PROJECT_NAME}/public/"; fi
+        run: if [ -d "output/public" ]; then rsync -azP --delete --no-group --chmod=D2770,Fug+r,Fo-rwx output/public/ "production:/var/www/${PROJECT_NAME}/public/"; fi
 
       - name: Restart server
         env:
