@@ -87,6 +87,7 @@ jobs:
     if: ${{ github.event.action != 'closed' }}
     env:
       GITLEAKS_VERSION: 8.30.0
+      SHELLCHECK_VERSION: 0.11.0
       SKIP_CHECKS: ${{ github.event_name == 'workflow_dispatch' && inputs.fasttrack }}
       IS_PULL_REQUEST: ${{ github.event_name == 'pull_request' }}
     steps:
@@ -124,19 +125,19 @@ jobs:
           restore-keys: |
             tsbuildinfo-${{ runner.os }}-
 
-      - name: Read ShellCheck wrapper version
-        if: ${{ env.SKIP_CHECKS != 'true' }}
-        id: sc
-        run: |
-          VERSION=$(jq -r '.devDependencies.shellcheck // "unknown"' package.json)
-          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-
       - name: Cache ShellCheck
         if: ${{ env.SKIP_CHECKS != 'true' }}
+        id: sc-cache
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
-          path: node_modules/shellcheck/bin
-          key: shellcheck-${{ runner.os }}-${{ steps.sc.outputs.version }}
+          path: /home/runner/.local/bin/shellcheck
+          key: shellcheck-${{ runner.os }}-${{ env.SHELLCHECK_VERSION }}
+
+      - name: Install ShellCheck
+        if: ${{ env.SKIP_CHECKS != 'true' && steps.sc-cache.outputs.cache-hit != 'true' }}
+        run: |
+          mkdir -p /home/runner/.local/bin
+          curl -sSfL "https://github.com/koalaman/shellcheck/releases/download/v${SHELLCHECK_VERSION}/shellcheck-v${SHELLCHECK_VERSION}.linux.x86_64.tar.xz" | tar -xJ -C /home/runner/.local/bin --strip-components=1 "shellcheck-v${SHELLCHECK_VERSION}/shellcheck"
 
       - name: Cache Gitleaks
         if: ${{ env.SKIP_CHECKS != 'true' }}
@@ -152,7 +153,7 @@ jobs:
           mkdir -p /home/runner/.local/bin
           curl -sSfL "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" | tar -xz -C /home/runner/.local/bin gitleaks
 
-      - name: Add Gitleaks to PATH
+      - name: Add local binaries to PATH
         if: ${{ env.SKIP_CHECKS != 'true' }}
         run: echo "/home/runner/.local/bin" >> $GITHUB_PATH
 
@@ -172,9 +173,9 @@ jobs:
           - name: Check engines
             if: ${{ env.SKIP_CHECKS != 'true' }}
             run: ./bgord-scripts/check-engines.sh
-          # - name: Check deps audit
-          #   if: ${{ env.SKIP_CHECKS != 'true' }}
-          # run: ./bgord-scripts/check-deps-audit.sh
+          - name: Check deps audit
+            if: ${{ env.SKIP_CHECKS != 'true' }}
+            run: ./bgord-scripts/check-deps-audit.sh
           - name: Check lockfile
             if: ${{ env.SKIP_CHECKS != 'true' }}
             run: ./bgord-scripts/check-lockfile.sh

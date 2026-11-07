@@ -31,7 +31,6 @@
     "lightningcss-cli",
     "lockfile-lint",
     "nodemailer",
-    "shellcheck",
     "actions-up",
     "valibot",
     "publint",
