@@ -1,6 +1,6 @@
 {
   "root": false,
-  "$schema": "https://biomejs.dev/schemas/2.6.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.6.6/schema.json",
   "assist": {
     "actions": {
       "source": {
@@ -98,6 +98,26 @@
       "correctness": {
         "useExhaustiveDependencies": "warn",
         "noUnusedImports": "error"
+      },
+      "nursery": {
+        "noAwaitInPromiseMethods": "error",
+        "noSinglePromiseInPromiseMethods": "error",
+        "noMissingThrow": "error",
+        "noUselessAwait": "error",
+        "noMismatchedMapKey": "error",
+        "noObjectLiteralComparison": "error",
+        "noChainedComparison": "error",
+        "noConstantComparisons": "error",
+        "noErasingOperation": "error",
+        "noSharedBranchCode": "error",
+        "noSubtractionComparison": "error",
+        "noInvalidRemoveEventListener": "error",
+        "useSetSize": "error",
+        "noUselessLengthCheck": "error",
+        "noUnnecessaryStringTrim": "error",
+        "noNumberArgumentOutOfRange": "error",
+        "noPlaywrightUnsafeReferences": "error",
+        "noUselessTypeAssertion": "error"
       }
     }
   },
