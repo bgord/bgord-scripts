@@ -60,7 +60,7 @@ jobs:
           test -n "$MASTER_KEY" || { echo "MASTER_KEY is empty"; exit 1; }
           printf '%s\n' "$ENV_SERVER" > "$RUNNER_TEMP/env.production"
           printf '%s\n' "$MASTER_KEY" > "$RUNNER_TEMP/master.key"
-          bun output/infra/secrets-encrypt.js \
+          bun secrets-encrypt.js \
             --master-key "$RUNNER_TEMP/master.key" \
             --input "$RUNNER_TEMP/env.production" \
             --output "$GITHUB_WORKSPACE/output/secrets.enc"
