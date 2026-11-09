@@ -15,6 +15,6 @@ set_node_timezone_to_utc
 
 step_start "E2E open"
 export PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=1
-bunx playwright install chromium
-bunx playwright test --config infra/e2e/playwright.config.ts --reporter null --ui --pass-with-no-tests
+bunx --bun playwright install chromium
+bunx --bun playwright test --config infra/e2e/playwright.config.ts --reporter null --ui --pass-with-no-tests
 step_end "E2E open"

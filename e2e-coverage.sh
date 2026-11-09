@@ -13,9 +13,9 @@ mkdir -p "$E2E_COVERAGE_RAW_DIR"
 
 step_start "E2E coverage run"
 export PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=1
-bunx playwright install chromium
+bunx --bun playwright install chromium
 E2E_EXIT_CODE=0
-bunx playwright test --config infra/e2e/playwright.config.ts --reporter list --timeout 20000 "$@" || E2E_EXIT_CODE=$?
+bunx --bun playwright test --config infra/e2e/playwright.config.ts --reporter list --timeout 20000 "$@" || E2E_EXIT_CODE=$?
 step_end "E2E coverage run"
 
 step_start "E2E coverage report"
