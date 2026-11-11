@@ -84,6 +84,7 @@
       "suspicious": {
         "noExplicitAny": "off",
         "noConsole": { "level": "error", "options": { "allow": ["log"] } },
+        "noDeprecatedImports": "error",
         "useAdjacentOverloadSignatures": "off",
         "useIterableCallbackReturn": "off"
       },
