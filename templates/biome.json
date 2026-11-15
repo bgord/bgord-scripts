@@ -132,8 +132,7 @@
         "noNewArray": "error",
         "noUselessQualifier": "error",
         "noUnresolvedDefaultImport": "error",
-        "useCatchErrorName": "error",
-        "useAtomicUpdates": "error"
+        "useCatchErrorName": "error"
       }
     }
   },
