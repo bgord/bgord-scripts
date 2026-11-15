@@ -1,6 +1,6 @@
 {
   "root": false,
-  "$schema": "https://biomejs.dev/schemas/2.6.6/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.6.7/schema.json",
   "assist": {
     "actions": {
       "source": {
@@ -118,7 +118,22 @@
         "noUnnecessaryStringTrim": "error",
         "noNumberArgumentOutOfRange": "error",
         "noPlaywrightUnsafeReferences": "error",
-        "noUselessTypeAssertion": "error"
+        "noUselessTypeAssertion": "error",
+        "noAsyncPromiseFinally": "error",
+        "noInvalidFetchOptions": "error",
+        "useGlobalRegexInMatchAll": "error",
+        "useGlobalRegexInReplaceAll": "error",
+        "useValidCharacterComparison": "error",
+        "noDuplicateTypeConstituents": "error",
+        "noRedundantTypeConstituents": "error",
+        "noUselessParameterPropertyAssignment": "error",
+        "noUselessSpread": "error",
+        "noUselessFallbackInSpread": "error",
+        "noNewArray": "error",
+        "noUselessQualifier": "error",
+        "noUnresolvedDefaultImport": "error",
+        "useCatchErrorName": "error",
+        "useAtomicUpdates": "error"
       }
     }
   },
