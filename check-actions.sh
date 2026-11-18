@@ -3,7 +3,11 @@
 source bgord-scripts/base.sh
 setup_base_config
 
-check_if_directory_exists ".github/workflows"
+if ! test -d ".github/workflows"
+then
+  info "Workflows not available"
+  exit 0
+fi
 
 step_start "Check actions"
 
