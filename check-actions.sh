@@ -7,11 +7,11 @@ check_if_directory_exists ".github/workflows"
 
 step_start "Check actions"
 
-OUTPUT=$(bunx actions-up --dry-run --recursive --quiet --dir .github/workflows 2>&1)
+OUTPUT=$(bunx actions-up --json --recursive --quiet --dir .github/workflows)
+UPDATES=$(jq '.summary.totalUpdates + .summary.totalRunnerUpdates' <<<"$OUTPUT")
 
-echo "$OUTPUT"
-
-if grep -q 'updates available' <<<"$OUTPUT"; then
+if [ "$UPDATES" -gt 0 ]; then
+  jq -r '.updates[] | "\(.action.file):\(.action.line) \(.action.uses)"' <<<"$OUTPUT"
   error "There are outdated actions."
   exit 1
 fi

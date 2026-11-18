@@ -21,6 +21,8 @@ pre-push:
       run: ./bgord-scripts/check-lockfile.sh
     check-ci:
       run: ./bgord-scripts/check-ci.sh
+    check-actions:
+      run: ./bgord-scripts/check-actions.sh
 
 pre-commit:
   parallel: true
