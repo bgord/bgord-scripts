@@ -23,7 +23,6 @@
     "@happy-dom/global-registrator",
     "@stryker-mutator/core",
     "@stryker-mutator/typescript-checker",
-    "cspell",
     "fallow",
     "croner",
     "gzip-cli",

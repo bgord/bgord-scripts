@@ -28,8 +28,6 @@ pre-commit:
     format-staged:
       run: ./bgord-scripts/format-staged.sh
       stage_fixed: true
-    check-spelling:
-      run: ./bgord-scripts/check-spelling.sh
     check-shell:
       glob: "*.{sh}"
       run: ./bgord-scripts/check-shell.sh
