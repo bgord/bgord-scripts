@@ -12,7 +12,7 @@ validate_non_empty "APP_NAME" $APP_NAME
 echo "# $APP_NAME" > "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
-echo "[![Deploy](https://github.com/bgord/$APP_NAME/actions/workflows/deploy-server.yml/badge.svg)](https://github.com/bgord/$APP_NAME/actions/workflows/deploy-server.yml)" >> "$OUTPUT_FILE"
+echo "[![Build](https://github.com/bgord/$APP_NAME/actions/workflows/server-build.yml/badge.svg)](https://github.com/bgord/$APP_NAME/actions/workflows/server-build.yml)" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
 echo "[![Healthcheck](https://github.com/bgord/$APP_NAME/actions/workflows/healthcheck.yml/badge.svg)](https://github.com/bgord/$APP_NAME/actions/workflows/healthcheck.yml)" >> "$OUTPUT_FILE"
