@@ -18,9 +18,6 @@ echo "" >> "$OUTPUT_FILE"
 echo "[![Healthcheck](https://github.com/bgord/$APP_NAME/actions/workflows/healthcheck.yml/badge.svg)](https://github.com/bgord/$APP_NAME/actions/workflows/healthcheck.yml)" >> "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
-echo "[Check status](https://bgord.github.io/statuses/history/$APP_NAME)" >> "$OUTPUT_FILE"
-echo "" >> "$OUTPUT_FILE"
-
 # ===============
 
 echo "## Configuration:" >> "$OUTPUT_FILE"
